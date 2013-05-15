@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <property name="sql.type" value="mysql"/>
+  <property name="dbunit.datatype" value="org.dbunit.ext.mysql.MySqlDataTypeFactory"/>
+  <property file="src/main/resources/application.properties"/>
+  <sql onerror="continue" userid="${jdbc.username}" driver="${jdbc.driver}" password="${jdbc.password}" url="${jdbc.url}">
+    <classpath refid="maven.test.classpath"/>
+    <transaction src="bin/refresh-db/${sql.type}/schema.sql"/>
+  </sql>
+  <taskdef name="dbunit" classname="org.dbunit.ant.DbUnitTask" classpathref="maven.test.classpath"/>
+  <dbunit userid="${jdbc.username}" driver="${jdbc.driver}" password="${jdbc.password}" url="${jdbc.url}">
+    <dbconfig>
+      <property name="datatypeFactory" value="${dbunit.datatype}"/>
+    </dbconfig>
+    <classpath refid="maven.test.classpath"/>
+    <operation transaction="true" src="bin/refresh-db/init-data.xml" format="flat" type="CLEAN_INSERT"/>
+  </dbunit>
+</target>
+</project>
