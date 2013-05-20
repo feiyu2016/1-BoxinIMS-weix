@@ -17,9 +17,11 @@
 	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/application.properties" />
 	
 	<!-- 使用Annotation自动注册Bean，解决事物失效问题：在主容器中不扫描@Controller注解，在SpringMvc中只扫描@Controller注解。  -->
-	<context:component-scan base-package="com.thinkgem.jeesite"><!-- base-package 如果多个，用“,”分隔 -->
+	<context:component-scan base-package="com.boxin.ims,com.thinkgem.jeesite"><!-- base-package 如果多个，用“,”分隔 -->
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
+	
+	
 	
 	<!-- 数据库方言配置，自动获取数据库方言 -->
 	<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
@@ -34,7 +36,7 @@
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"> 
 		<property name="dataSource" ref="dataSource"/>
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/> 
-		<property name="packagesToScan" value="com.thinkgem.jeesite"/><!-- 如果多个，用“,”分隔 -->
+		<property name="packagesToScan" value="com.boxin.ims,com.thinkgem.jeesite"/><!-- 如果多个，用“,”分隔 -->
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
@@ -49,7 +51,7 @@
 	</bean>
 	
 	<!-- 配置 Spring Data JPA， base-package 如果多个，用“,”分隔 -->
- 	<jpa:repositories base-package="com.thinkgem.jeesite"  transaction-manager-ref="transactionManager"
+ 	<jpa:repositories base-package="com.boxin.ims,com.thinkgem.jeesite"  transaction-manager-ref="transactionManager"
  		entity-manager-factory-ref="entityManagerFactory"/>
    
 	<!-- 配置 JPA Transaction -->
