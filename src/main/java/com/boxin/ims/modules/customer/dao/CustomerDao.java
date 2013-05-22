@@ -20,7 +20,7 @@ public interface CustomerDao extends CustomerDaoCustom, CrudRepository<Customer,
 	public int deleteById(Long id, String likeParentIds);
 	
 
-	@Query("from Office where delFlag='" + Office.DEL_FLAG_NORMAL + "' order by code")
+	@Query("from Customer ")
 	public List<Customer> findAllList();
 	
 	

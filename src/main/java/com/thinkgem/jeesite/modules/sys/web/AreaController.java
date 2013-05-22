@@ -36,9 +36,16 @@ import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
  * @author ThinkGem
  * @version 2013-3-23
  */
+
+
 @Controller
 @RequestMapping(value = Global.ADMIN_PATH+"/sys/area")
 public class AreaController extends BaseController {
+	
+	public AreaController() {
+		// TODO Auto-generated constructor stub
+		System.out.println("初始化 Arear......");
+	}
 
 	@Autowired
 	private AreaService areaService;

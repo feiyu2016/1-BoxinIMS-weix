@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.boxin.framework.base.dao.DaoHelper;
 import com.boxin.ims.modules.customer.entity.Customer;
 import com.boxin.ims.modules.customer.service.CustomerService;
 import com.google.common.collect.Lists;
@@ -21,8 +22,11 @@ import com.thinkgem.jeesite.modules.sys.entity.Menu;
  */
 
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/cust/cust")
+@RequestMapping(value = Global.ADMIN_PATH+"/customer")
 public class CustomerController extends BaseController {
+	
+	@Autowired
+	DaoHelper daoHelper;
 	
 	public CustomerController() {
 		System.out.println("Loading..");

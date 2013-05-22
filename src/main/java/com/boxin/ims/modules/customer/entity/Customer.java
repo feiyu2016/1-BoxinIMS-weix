@@ -13,7 +13,7 @@ import org.hibernate.search.annotations.Indexed;
 import org.wltea.analyzer.lucene.IKAnalyzer;
 
 @Entity
-@Table(name = "zx_customer")
+@Table(name = "ims_customer")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @Indexed @Analyzer(impl = IKAnalyzer.class)
 public class Customer {
