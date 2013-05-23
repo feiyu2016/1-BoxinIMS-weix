@@ -63,19 +63,19 @@
 		</form>
 	</div>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/sys/user/">用户列表</a></li>
-		<shiro:hasPermission name="sys:user:edit"><li><a href="${ctx}/sys/user/form">用户添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}/customer">客户列表</a></li>
+		<shiro:hasPermission name="sys:user:edit"><li><a href="${ctx}/customer/form">用户添加</a></li></shiro:hasPermission>
 	</ul>
-	<form:form id="searchForm" modelAttribute="user" action="${ctx}/sys/user/" method="post" class="breadcrumb form-search">
+	<form:form id="searchForm" modelAttribute="customer" action="${ctx}/sys/user/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
 		<input id="orderBy" name="orderBy" type="hidden" value="${page.orderBy}"/>
 		<div>
-			<label>区域：</label><tags:treeselect id="area" name="area.id" value="${user.area.id}" labelName="area.name" labelValue="${user.area.name}" title="区域" url="/sys/area/treeData" cssClass="input-small"/>
-			<label>登录名：</label><form:input path="loginName" htmlEscape="false" maxlength="50" class="input-medium"/>
+			<label>姓名：</label><form:input path="name" htmlEscape="false" maxlength="50" class="input-medium"/>
+			<label>公司名称：</label><form:input path="qq" htmlEscape="false" maxlength="50" class="input-medium"/>
 		</div><div style="margin-top:8px;">
-			<label>部门：</label><tags:treeselect id="office" name="office.id" value="${user.office.id}" labelName="office.name" labelValue="${user.office.name}" title="部门" url="/sys/office/treeData" cssClass="input-small"/>
-			<label>姓&nbsp;&nbsp;&nbsp;名：</label><form:input path="name" htmlEscape="false" maxlength="50" class="input-medium"/>
+			<label>电话：</label><form:input path="mobile" htmlEscape="false" maxlength="50" class="input-medium"/>
+			<label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：</label><form:input path="mail" htmlEscape="false" maxlength="50" class="input-medium"/>
 			&nbsp;<input id="btnSubmit" class="btn btn-primary" type="submit" value="查询" onclick="page()"/>
 			&nbsp;<input id="btnExport" class="btn btn-primary" type="button" value="导出"/>
 			&nbsp;<input id="btnImport" class="btn btn-primary" type="button" value="导入"/>
@@ -83,20 +83,17 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered ">
-		<thead><tr><th>区域</th><th>部门</th><th class="sort loginName">登录名</th><th class="sort name">姓名</th><th>电话</th><th>手机</th><th>角色</th><shiro:hasPermission name="sys:user:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>姓名</th><th>手机</th><th>电话</th><th class="sort loginName">邮箱</th><th class="sort name">地址</th><shiro:hasPermission name="sys:user:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
-		<c:forEach items="${page.list}" var="user">
+			<c:forEach items="${list}" var="customer">
 			<tr>
-				<td>${user.area.name}</td>
-				<td>${user.office.name}</td>
-				<td><a href="${ctx}/sys/user/form?id=${user.id}">${user.loginName}</a></td>
-				<td>${user.name}</td>
-				<td>${user.phone}</td>
-				<td>${user.mobile}</td>
-				<td>${user.roleNames}</td>
-				<shiro:hasPermission name="sys:user:edit"><td>
-    				<a href="${ctx}/sys/user/form?id=${user.id}">修改</a>
-					<a href="${ctx}/sys/user/delete?id=${user.id}" onclick="return confirmx('确认要删除该用户吗？', this.href)">删除</a>
+				<td><a href="${ctx}/cms/site/form?id=${id}" title="${name}">${customer.name}</a></td>
+				<td>${customer.mobile }</td>
+				<td>${customer.tel }</td>
+				<td>${customer.mail }</td>
+				<td>${customer.address }</td>
+				<shiro:hasPermission name="cms:site:edit"><td>
+    				<a href="${ctx}/cms/site/form?id=">修改</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>
