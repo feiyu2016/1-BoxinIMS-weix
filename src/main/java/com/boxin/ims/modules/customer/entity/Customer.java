@@ -21,9 +21,12 @@ public class Customer {
 	private Long id;
 	private String name;
 	private String mobile;
+	private String tel;
 	private String qq;
 	private String mail;
+	private String address;	//公司地址
 	private String idno;	//身份证号
+	private String remark;	//备注
 	
 	
 	
@@ -64,6 +67,24 @@ public class Customer {
 	}
 	public void setIdno(String idno) {
 		this.idno = idno;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 	
 	

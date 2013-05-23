@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.boxin.framework.base.dao.DaoHelper;
 import com.boxin.ims.modules.customer.entity.Customer;
@@ -14,6 +15,7 @@ import com.boxin.ims.modules.customer.service.CustomerService;
 import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.sys.entity.Area;
 import com.thinkgem.jeesite.modules.sys.entity.Menu;
 
 /**
@@ -40,7 +42,6 @@ public class CustomerController extends BaseController {
 	public String list(Customer customer, Model model) {
 		List<Customer> list = Lists.newArrayList();
 		List<Customer> sourcelist = customerService.findAllCustomer();
-		//Menu.sortList(list, sourcelist, 1L);
         model.addAttribute("list", sourcelist);
 		return "modules/ims/customerList";
 	}
@@ -49,6 +50,19 @@ public class CustomerController extends BaseController {
 	@RequestMapping(value = "form")
 	public String form(Customer customer, Model model) {
 		return "modules/ims/customerForm";
+	}
+	
+	
+	
+	@RequiresPermissions("ims:customer:edit")
+	@RequestMapping(value = "save")
+	public String save(Customer customer, Model model, RedirectAttributes redirectAttributes) {
+		if (!beanValidator(model, customer)){
+			return form(customer, model);
+		}
+		customerService.save(customer);
+		addMessage(redirectAttributes, "保存区域'" + customer.getName() + "'成功");
+		return "redirect:"+Global.ADMIN_PATH+"/customer";
 	}
 
 	
