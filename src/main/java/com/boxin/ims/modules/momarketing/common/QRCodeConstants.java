@@ -1,4 +1,4 @@
-package com.boxin.ims.modules.qrcode.common;
+package com.boxin.ims.modules.momarketing.common;
 
 /**
  * @author Jakemanse
