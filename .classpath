@@ -4,5 +4,9 @@
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk7"/>
 	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/ibatis-2.3.4.726.jar"/>
+	<classpathentry kind="lib" path="libs/mybatis-3.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/mybatis-spring-1.1.1.jar"/>
+	<classpathentry kind="lib" path="libs/toolkit-sandbox-fly-0.0.3-SNAPSHOT.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
