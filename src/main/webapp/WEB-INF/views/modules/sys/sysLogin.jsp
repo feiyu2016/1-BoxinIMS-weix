@@ -48,7 +48,7 @@
 		    <!--[if lte IE 6]><script type="text/javascript">$('#theme').hide();</script><![endif]-->
 	    </div>
       </form>
-      Copyright &copy; 2012-${fns:getConfig('copyrightYear')} <a href="http://thinkgem.iteye.com" target="_blank">ThinkGem</a> - Powered By <a href="https://github.com/thinkgem/jeesite" target="_blank">JeeSite</a> ${fns:getConfig('version')}
+      Copyright &copy; 2012-${fns:getConfig('copyrightYear')} <a href="http://www.hdzhx.com" target="_blank">Jakemanse</a> - Powered By <a href="http://www.hdzhx.com" target="_blank">邯郸智讯</a> ${fns:getConfig('version')}
 	</td></tr></table>
 </body>
 </html>
