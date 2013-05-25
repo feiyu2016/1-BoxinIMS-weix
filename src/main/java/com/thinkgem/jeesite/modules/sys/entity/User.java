@@ -60,6 +60,7 @@ public class User extends BaseEntity {
 	private String email;	// 邮箱
 	private String phone;	// 电话
 	private String mobile;	// 手机
+	private String qq;		//QQ
 	private String remarks;	// 备注
 	private String userType;// 用户类型
 	private Date createDate;// 创建日期
@@ -208,6 +209,17 @@ public class User extends BaseEntity {
 
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
+	}
+	
+	
+	@Length(min=0, max=255)
+	@ExcelField(title="QQ", align=1, sort=900)
+	public String getQq() {
+		return qq;
+	}
+
+	public void setQq(String qq) {
+		this.qq = qq;
 	}
 
 	@Length(min=1, max=1)
