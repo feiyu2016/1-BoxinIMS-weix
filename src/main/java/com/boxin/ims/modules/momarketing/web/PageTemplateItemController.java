@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.PageTemplateItemService;
  * @version 2013-05-26
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/pageTemplateItem")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/pageTemplateItem")
 public class PageTemplateItemController extends BaseController {
 
 	@Autowired

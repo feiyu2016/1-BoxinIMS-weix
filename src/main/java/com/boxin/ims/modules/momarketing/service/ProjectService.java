@@ -17,6 +17,8 @@ import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.BaseService;
 import com.boxin.ims.modules.momarketing.entity.Project;
 import com.boxin.ims.modules.momarketing.dao.ProjectDao;
+import com.boxin.ims.modules.momarketing.dao.QrCodeDao;
+import com.google.zxing.qrcode.encoder.QRCode;
 
 /**
  * 移动营销项目Service
@@ -32,6 +34,8 @@ public class ProjectService extends BaseService {
 	
 	@Autowired
 	private ProjectDao projectDao;
+	@Autowired
+	private QrCodeDao qrCodeDao;
 	
 	public Project get(Long id) {
 		return projectDao.findOne(id);
@@ -55,6 +59,7 @@ public class ProjectService extends BaseService {
 	
 	@Transactional(readOnly = false)
 	public void save(Project project) {
+		
 		projectDao.save(project);
 	}
 	

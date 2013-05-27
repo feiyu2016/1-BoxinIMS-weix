@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.MeetingService;
  * @version 2013-05-25
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/meeting")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/meeting")
 public class MeetingController extends BaseController {
 
 	@Autowired

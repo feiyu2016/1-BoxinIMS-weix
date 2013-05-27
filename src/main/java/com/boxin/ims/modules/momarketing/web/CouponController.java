@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.CouponService;
  * @version 2013-05-25
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/coupon")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/coupon")
 public class CouponController extends BaseController {
 
 	@Autowired

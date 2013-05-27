@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.DeviceService;
  * @version 2013-05-25
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/device")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/device")
 public class DeviceController extends BaseController {
 
 	@Autowired

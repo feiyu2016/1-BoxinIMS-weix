@@ -39,9 +39,6 @@ public class PageTemplateService extends BaseService {
 	
 	public Page<PageTemplate> find(Page<PageTemplate> page, PageTemplate pageTemplate) {
 		DetachedCriteria dc = pageTemplateDao.createDetachedCriteria();
-		if (pageTemplate.getUser()!=null && pageTemplate.getUser().getId()>0){
-			dc.add(Restrictions.eq("user.id", pageTemplate.getUser().getId()));
-		}
 		if (StringUtils.isNotEmpty(pageTemplate.getName())){
 			dc.add(Restrictions.like("name", "%"+pageTemplate.getName()+"%"));
 		}

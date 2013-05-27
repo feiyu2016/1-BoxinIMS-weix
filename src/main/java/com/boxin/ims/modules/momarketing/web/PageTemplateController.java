@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.PageTemplateService;
  * @version 2013-05-26
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/pageTemplate")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/pageTemplate")
 public class PageTemplateController extends BaseController {
 
 	@Autowired
@@ -48,9 +48,6 @@ public class PageTemplateController extends BaseController {
 	@RequestMapping(value = {"list", ""})
 	public String list(PageTemplate pageTemplate, HttpServletRequest request, HttpServletResponse response, Model model) {
 		User user = UserUtils.getUser();
-		if (!user.isAdmin()){
-			pageTemplate.setUser(user);
-		}
         Page<PageTemplate> page = pageTemplateService.find(new Page<PageTemplate>(request, response), pageTemplate); 
         model.addAttribute("page", page);
 		return "modules/momarketing/pageTemplateList";

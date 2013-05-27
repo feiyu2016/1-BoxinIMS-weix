@@ -24,36 +24,39 @@ import com.thinkgem.jeesite.common.persistence.BaseEntity;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 
 /**
- * 项目模板Entity
+ * 二维码Entity
  * @author Jakemanse
- * @version 2013-05-26
+ * @version 2013-05-27
  */
 @Entity
-@Table(name = "ims_page_template")
+@Table(name = "ims_qrcode")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class PageTemplate extends BaseEntity {
+public class QRCode extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id; 		// 编号
-	private String name; 	// 名称
-	private String remarks; // 备注
+	private Integer type;		//二维码类型
 	private Date createDate;	// 创建日期
+	private Date updateDate;	//更新时间
+	private String content;		//二维码内容
+	private String pngPath;		//PNG 路径
+	private String jpegPath;	//jpeg 路径
 	private String delFlag;	// 删除标记（0：正常；1：删除）
 
-	public PageTemplate() {
+	public QRCode() {
 		this.createDate = new Date();
 		this.delFlag = DEL_FLAG_NORMAL;
 	}
 
-	public PageTemplate(Long id){
+	public QRCode(Long id){
 		this();
 		this.id = id;
 	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_momarketing_pageTemplate")
-	//@SequenceGenerator(name = "seq_momarketing_pageTemplate", sequenceName = "seq_momarketing_pageTemplate")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_momarketing_qrCode")
+	//@SequenceGenerator(name = "seq_momarketing_qrCode", sequenceName = "seq_momarketing_qrCode")
 	public Long getId() {
 		return id;
 	}
@@ -61,26 +64,50 @@ public class PageTemplate extends BaseEntity {
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
+	
 
 	
-	@Length(min=1, max=200)
-	public String getName() {
-		return name;
+	public Integer getType() {
+		return type;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setType(Integer type) {
+		this.type = type;
 	}
 
-	@Length(min=0, max=255)
-	public String getRemarks() {
-		return remarks;
+	public Date getUpdateDate() {
+		return updateDate;
 	}
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
 	}
-	
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getPngPath() {
+		return pngPath;
+	}
+
+	public void setPngPath(String pngPath) {
+		this.pngPath = pngPath;
+	}
+
+	public String getJpegPath() {
+		return jpegPath;
+	}
+
+	public void setJpegPath(String jpegPath) {
+		this.jpegPath = jpegPath;
+	}
+
 	@NotNull
 	public Date getCreateDate() {
 		return createDate;

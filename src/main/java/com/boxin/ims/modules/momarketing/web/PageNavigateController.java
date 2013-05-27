@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.PageNavigateService;
  * @version 2013-05-26
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/pageNavigate")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/pageNavigate")
 public class PageNavigateController extends BaseController {
 
 	@Autowired

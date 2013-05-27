@@ -15,13 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.boxin.ims.modules.momarketing.entity.Project;
+import com.boxin.ims.modules.momarketing.entity.QRCode;
+import com.boxin.ims.modules.momarketing.service.ProjectService;
+import com.boxin.ims.modules.momarketing.service.QrCodeService;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.web.BaseController;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
-import com.boxin.ims.modules.momarketing.entity.Project;
-import com.boxin.ims.modules.momarketing.service.ProjectService;
 
 /**
  * 移动营销项目Controller
@@ -29,11 +31,13 @@ import com.boxin.ims.modules.momarketing.service.ProjectService;
  * @version 2013-05-25
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/project")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/project")
 public class ProjectController extends BaseController {
 
 	@Autowired
 	private ProjectService projectService;
+	@Autowired
+	private QrCodeService qrCodeService;
 	
 	@ModelAttribute
 	public Project get(@RequestParam(required=false) Long id) {
@@ -66,6 +70,15 @@ public class ProjectController extends BaseController {
 	@RequiresPermissions("momarketing:project:edit")
 	@RequestMapping(value = "save")
 	public String save(Project project, Model model, RedirectAttributes redirectAttributes) {
+		
+		//生成二维码
+		
+		QRCode qrCode = new QRCode();
+		
+		
+		qrCodeService.save(qrCode);
+		
+		project.setUser(UserUtils.getUser());
 		if (!beanValidator(model, project)){
 			return form(project, model);
 		}
