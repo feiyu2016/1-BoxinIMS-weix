@@ -147,6 +147,16 @@
     <url-pattern>/servlet/validateCodeServlet</url-pattern>
   </servlet-mapping>
   
+  <!-- QRCode  Read -->
+   <servlet>
+    <servlet-name>QRCodeServlet</servlet-name>
+    <servlet-class>com.boxin.ims.modules.momarketing.web.servlet.QRCodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>QRCodeServlet</servlet-name>
+    <url-pattern>/servlet/qrc</url-pattern>
+  </servlet-mapping>
+  
   <!-- Session 配置 -->
   <session-config>
     <session-timeout>20</session-timeout>
