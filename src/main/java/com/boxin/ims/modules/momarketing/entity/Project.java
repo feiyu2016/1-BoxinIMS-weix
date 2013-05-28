@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -22,7 +21,6 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 import org.hibernate.validator.constraints.Length;
 
-import com.google.zxing.qrcode.encoder.QRCode;
 import com.thinkgem.jeesite.common.persistence.BaseEntity;
 import com.thinkgem.jeesite.common.utils.excel.annotation.ExcelField;
 import com.thinkgem.jeesite.modules.sys.entity.User;
@@ -97,7 +95,6 @@ public class Project extends BaseEntity {
 	@JoinColumn(name = "qrcode_id")
 	@NotFound(action = NotFoundAction.IGNORE)
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-	@NotNull
 	public QRCode getQrCode() {
 		return qrCode;
 	}

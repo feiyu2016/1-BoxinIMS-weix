@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.boxin.ims.modules.momarketing.common.QRCodeUtils;
+import com.boxin.ims.modules.momarketing.entity.PageTemplate;
 import com.boxin.ims.modules.momarketing.entity.Project;
 import com.boxin.ims.modules.momarketing.entity.QRCode;
 import com.boxin.ims.modules.momarketing.service.ProjectService;
-import com.boxin.ims.modules.momarketing.service.QrCodeService;
+import com.boxin.ims.modules.momarketing.service.QRCodeService;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.web.BaseController;
@@ -37,7 +39,7 @@ public class ProjectController extends BaseController {
 	@Autowired
 	private ProjectService projectService;
 	@Autowired
-	private QrCodeService qrCodeService;
+	private QRCodeService qrCodeService;
 	
 	@ModelAttribute
 	public Project get(@RequestParam(required=false) Long id) {
@@ -71,14 +73,12 @@ public class ProjectController extends BaseController {
 	@RequestMapping(value = "save")
 	public String save(Project project, Model model, RedirectAttributes redirectAttributes) {
 		
-		//生成二维码
 		
-		QRCode qrCode = new QRCode();
-		
-		
-		qrCodeService.save(qrCode);
 		
 		project.setUser(UserUtils.getUser());
+		PageTemplate pTemplate = new PageTemplate();
+		pTemplate.setId(1l);
+		project.setPageTemplate(pTemplate);
 		if (!beanValidator(model, project)){
 			return form(project, model);
 		}

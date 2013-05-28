@@ -17,10 +17,10 @@ import com.boxin.ims.modules.momarketing.entity.QRCode;
  * @author Jakemanse
  * @version 2013-05-27
  */
-public interface QrCodeDao extends QrCodeDaoCustom, CrudRepository<QRCode, Long> {
+public interface QRCodeDao extends QRCodeDaoCustom, CrudRepository<QRCode, Long> {
 
 	@Modifying
-	@Query("update QrCode set delFlag='" + QRCode.DEL_FLAG_DELETE + "' where id = ?1")
+	@Query("update QRCode set delFlag='" + QRCode.DEL_FLAG_DELETE + "' where id = ?1")
 	public int deleteById(Long id);
 	
 }
@@ -29,7 +29,7 @@ public interface QrCodeDao extends QrCodeDaoCustom, CrudRepository<QRCode, Long>
  * DAO自定义接口
  * @author Jakemanse
  */
-interface QrCodeDaoCustom extends BaseDao<QRCode> {
+interface QRCodeDaoCustom extends BaseDao<QRCode> {
 
 }
 
@@ -38,6 +38,6 @@ interface QrCodeDaoCustom extends BaseDao<QRCode> {
  * @author Jakemanse
  */
 @Component
-class QrCodeDaoImpl extends BaseDaoImpl<QRCode> implements QrCodeDaoCustom {
+class QRCodeDaoImpl extends BaseDaoImpl<QRCode> implements QRCodeDaoCustom {
 
 }

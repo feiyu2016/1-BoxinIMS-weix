@@ -46,11 +46,11 @@ public class Generate {
 		
 		String packageName = "com.boxin.ims.modules";
 		
-		String moduleName = "qrcode";			// 模块名，例：sys
+		String moduleName = "momarketing";			// 模块名，例：sys
 		String subModuleName = "";				// 子模块名（可选） 
-		String className = "meeting";			// 类名，例：user
+		String className = "qrCode";			// 类名，例：user
 		String classAuthor = "Jakemanse";		// 类作者，例：ThinkGem
-		String functionName = "产品";			// 功能名，例：用户
+		String functionName = "二维码";			// 功能名，例：用户
 
 		// 是否启用生成工具
 		Boolean isEnable = true;			

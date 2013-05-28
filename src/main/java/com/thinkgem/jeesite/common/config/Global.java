@@ -34,10 +34,19 @@ public class Global {
 	 */
 	public static final String FRONT_PATH = "/f";
 	
+	
+	public static final String MOBILE_SITE_PATH = FRONT_PATH +"/mobsite";
+	
+	public static final String DNS = "http://www.hdzhx.com";
+	public static final String DNS_TEMP = "http://192.168.1.102:8080/jeesite";
+	
+	
 	/**
 	 * 设置访问URL后缀
 	 */
 	public static final String URL_SUFFIX = ".html";
+
+	public static final String QRCODE_REPOSITORY = "D:\\temp\\ims\\";
 	
 	/**
 	 * 获取配置
@@ -60,5 +69,10 @@ public class Global {
 	public static String getUrlSuffix() {
 		return URL_SUFFIX;
 	}
+	
+	public static String getQRCodeRepository(){
+		return QRCODE_REPOSITORY;
+	}
+
 	
 }

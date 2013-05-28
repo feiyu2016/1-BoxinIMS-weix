@@ -21,7 +21,7 @@ import com.thinkgem.jeesite.common.web.BaseController;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 import com.boxin.ims.modules.momarketing.entity.QRCode;
-import com.boxin.ims.modules.momarketing.service.QrCodeService;
+import com.boxin.ims.modules.momarketing.service.QRCodeService;
 
 /**
  * 二维码Controller
@@ -33,7 +33,7 @@ import com.boxin.ims.modules.momarketing.service.QrCodeService;
 public class QrCodeController extends BaseController {
 
 	@Autowired
-	private QrCodeService qrCodeService;
+	private QRCodeService qrCodeService;
 	
 	@ModelAttribute
 	public QRCode get(@RequestParam(required=false) Long id) {

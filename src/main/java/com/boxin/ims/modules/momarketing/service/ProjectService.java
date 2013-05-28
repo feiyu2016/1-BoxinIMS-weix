@@ -13,12 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.boxin.ims.modules.momarketing.common.QRCodeUtils;
+import com.boxin.ims.modules.momarketing.dao.ProjectDao;
+import com.boxin.ims.modules.momarketing.dao.QRCodeDao;
+import com.boxin.ims.modules.momarketing.entity.Project;
+import com.boxin.ims.modules.momarketing.entity.QRCode;
+import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.BaseService;
-import com.boxin.ims.modules.momarketing.entity.Project;
-import com.boxin.ims.modules.momarketing.dao.ProjectDao;
-import com.boxin.ims.modules.momarketing.dao.QrCodeDao;
-import com.google.zxing.qrcode.encoder.QRCode;
 
 /**
  * 移动营销项目Service
@@ -34,8 +36,10 @@ public class ProjectService extends BaseService {
 	
 	@Autowired
 	private ProjectDao projectDao;
+
 	@Autowired
-	private QrCodeDao qrCodeDao;
+	private QRCodeDao QRCodeDao;
+	
 	
 	public Project get(Long id) {
 		return projectDao.findOne(id);
@@ -60,7 +64,21 @@ public class ProjectService extends BaseService {
 	@Transactional(readOnly = false)
 	public void save(Project project) {
 		
-		projectDao.save(project);
+		//生成二维码
+		QRCode qrCode = new QRCode();
+		qrCode.setContent("None");
+		qrCode.setJpegPath(Global.QRCODE_REPOSITORY+System.currentTimeMillis());
+		
+		QRCode savedqrCode = QRCodeDao.save(qrCode);
+		
+		
+		project.setQrCode(savedqrCode);
+		Project savedProject = projectDao.save(project);
+		String con = QRCodeUtils.generateURL(savedProject.getId());
+		qrCode.setContent(con);
+		QRCodeUtils.generateQRCodeJPEG(qrCode.getContent(), qrCode.getJpegPath(), 200, 200);
+		QRCodeDao.save(qrCode);
+				
 	}
 	
 	@Transactional(readOnly = false)

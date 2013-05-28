@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.BaseService;
 import com.boxin.ims.modules.momarketing.entity.QRCode;
-import com.boxin.ims.modules.momarketing.dao.QrCodeDao;
+import com.boxin.ims.modules.momarketing.dao.QRCodeDao;
 
 /**
  * 二维码Service
@@ -25,36 +25,35 @@ import com.boxin.ims.modules.momarketing.dao.QrCodeDao;
  */
 @Component
 @Transactional(readOnly = true)
-public class QrCodeService extends BaseService {
+public class QRCodeService extends BaseService {
 
 	@SuppressWarnings("unused")
-	private static Logger logger = LoggerFactory.getLogger(QrCodeService.class);
+	private static Logger logger = LoggerFactory.getLogger(QRCodeService.class);
 	
 	@Autowired
-	private QrCodeDao qrCodeDao;
+	private QRCodeDao QRCodeDao;
 	
 	public QRCode get(Long id) {
-		return qrCodeDao.findOne(id);
+		return QRCodeDao.findOne(id);
 	}
 	
 	public Page<QRCode> find(Page<QRCode> page, QRCode qrCode) {
-		DetachedCriteria dc = qrCodeDao.createDetachedCriteria();
+		DetachedCriteria dc = QRCodeDao.createDetachedCriteria();
 		if (StringUtils.isNotEmpty(qrCode.getContent())){
 			dc.add(Restrictions.like("remarks", "%"+qrCode.getContent()+"%"));
 		}
-		dc.add(Restrictions.eq("delFlag", QRCode.DEL_FLAG_NORMAL));
 		dc.addOrder(Order.desc("id"));
-		return qrCodeDao.find(page, dc);
+		return QRCodeDao.find(page, dc);
 	}
 	
 	@Transactional(readOnly = false)
 	public void save(QRCode qrCode) {
-		qrCodeDao.save(qrCode);
+		QRCodeDao.save(qrCode);
 	}
 	
 	@Transactional(readOnly = false)
 	public void delete(Long id) {
-		qrCodeDao.deleteById(id);
+		QRCodeDao.deleteById(id);
 	}
 	
 }
