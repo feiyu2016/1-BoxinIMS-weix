@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
+<%@ include file="/WEB-INF/views/include/head.jsp" %>
 <html>
 <head>
 	<title>移动营销项目管理</title>
@@ -33,7 +34,7 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="project">
 			<tr>
-				<td><a href="${ctx}/mom/project/form?id=${project.id}">${project.name}</a></td>
+				<td><a href="${root}/f/vpc/vp/${project.qrCode.id}.html">${project.name}</a></td>
 				<td>${project.pageTemplate.name}</td>
 				<td>${project.remarks}</td>
 				<shiro:hasPermission name="momarketing:project:edit"><td>
