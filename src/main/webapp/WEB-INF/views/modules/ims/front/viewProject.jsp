@@ -24,20 +24,26 @@
 				}
 			});
 		});
+		
+		
 	</script>
 </head>
-root = ${root }
 <body>
 	<div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2">
-       <iframe src="${root}/servlet/qrc?qrcodeId=${id}"  style   = "overflow-x:hidden;border:0"   width="400px"   height="400px" />
+    <div class="span4 clearfix" >
+    	<h3 class="heading">项目信息</h3>
+    	<p>
+	    	<img src="${root}/servlet/qrc?qrcodeId=${id}"/>预览
+    	</p>
+    	
     </div>
-    <div class="span10">
-       
+    <div class="span8">
+    	<h3>访问统计 </h3>
+    	<table class="table"></table>
     </div>
   </div>
-</div>
+</div> 
 	
 </body>
 </html>

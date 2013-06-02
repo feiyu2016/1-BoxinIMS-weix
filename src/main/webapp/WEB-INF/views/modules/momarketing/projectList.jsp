@@ -38,7 +38,7 @@
 				<td>${project.pageTemplate.name}</td>
 				<td>${project.remarks}</td>
 				<shiro:hasPermission name="momarketing:project:edit"><td>
-    				<a href="${ctx}/momarketing/project/form?id=${project.id}">修改</a>
+    				<a href="${ctx}/mom/project/form?id=${project.id}">修改</a>
     				<a href="${ctx}/momarketing/project/form?id=${project.id}">渠道</a>
 					<a href="${ctx}/momarketing/project/delete?id=${project.id}" onclick="return confirmx('确认要删除该移动营销项目吗？', this.href)">暂停</a>
     				<a href="${ctx}/momarketing/project/form?id=${project.id}">统计分析</a>
