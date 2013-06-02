@@ -28,6 +28,7 @@ import com.thinkgem.jeesite.modules.sys.entity.User;
  * @author Jakemanse
  * @version 2013-05-27
  */
+
 @Entity
 @Table(name = "ims_qrcode")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)

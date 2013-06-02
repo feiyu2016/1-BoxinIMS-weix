@@ -23,8 +23,8 @@ import com.boxin.ims.modules.momarketing.dao.MeetingDao;
  * @author Jakemanse
  * @version 2013-05-25
  */
-@Component
-@Transactional(readOnly = true)
+//@Component
+//@Transactional(readOnly = true)
 public class MeetingService extends BaseService {
 
 	@SuppressWarnings("unused")

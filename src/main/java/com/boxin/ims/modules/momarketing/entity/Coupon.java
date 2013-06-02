@@ -34,17 +34,18 @@ import com.thinkgem.jeesite.modules.sys.entity.User;
 public class Coupon extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
-	private Long id; 		// 编号
+	private Long id; 			// 编号
 	private Project project;	//对应的项目
 	private String number; 		// 优惠券序列号
 	private String mobile;		//对应的手机号
-	private String name; 	// 名称
+	private String email;		//邮箱
+	private String name; 		// 名称
 	private Integer sendType;	//发送方式  0:不发短彩信  1：短信+彩信   2：只彩信  3：只短信	
-	private String remarks; // 备注
+	private String remarks; 	// 备注
 	private Date createDate;	// 创建日期
 	private Date startTime;		//开始生效时间
 	private Date endTime;		//失效时间
-	private String delFlag;	// 删除标记（0：正常；1：删除/作废）
+	private String delFlag;		// 删除标记（0：正常；1：删除/作废）
 
 	public Coupon() {
 		this.createDate = new Date();
@@ -157,6 +158,14 @@ public class Coupon extends BaseEntity {
 
 	public void setDelFlag(String delFlag) {
 		this.delFlag = delFlag;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }

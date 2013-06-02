@@ -37,7 +37,7 @@ interface MeetingDaoCustom extends BaseDao<Meeting> {
  * DAO自定义接口实现
  * @author Jakemanse
  */
-@Component
+//@Component
 class MeetingDaoImpl extends BaseDaoImpl<Meeting> implements MeetingDaoCustom {
 
 }

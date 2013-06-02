@@ -46,7 +46,19 @@ public class Global {
 	 */
 	public static final String URL_SUFFIX = ".html";
 
+	/**
+	 * 二维码存储位置
+	 */
 	public static final String QRCODE_REPOSITORY = "D:\\temp\\ims\\";
+	/**
+	 * Logo图片存储位置
+	 */
+	public static final String LOGO_REPOSITORY  = "D:\\temp\\ims\\logo\\";
+	
+	/**
+	 * 产品资源图片存储位置
+	 */
+	public static final String PRODUCTION_REPSOSITORY = "D:\\temp\\ims\\production\\";
 	
 	/**
 	 * 获取配置

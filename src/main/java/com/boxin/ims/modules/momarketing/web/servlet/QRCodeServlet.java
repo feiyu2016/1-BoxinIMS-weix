@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
@@ -24,13 +25,17 @@ public class QRCodeServlet extends HttpServlet {
 		String qrcodeId = req.getParameter("qrcodeId");
 		
 		QRCode qrCode = 	ProjectUtils.getQRCodeById(Long.parseLong(qrcodeId));
+		req.setAttribute("qrCode", qrCode);
+		
 		String filepath = qrCode.getJpegPath()+".jpeg";
 		File file = new File(filepath);
 		BufferedImage image = 	ImageIO.read(file);
+		
 		OutputStream out = resp.getOutputStream();
 		ImageIO.write(image, "JPEG", out);
 		out.flush();
 		out.close();
+		
 		
 	}
 	
