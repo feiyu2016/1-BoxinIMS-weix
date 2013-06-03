@@ -32,11 +32,10 @@ public class MobileSiteController extends BaseController {
 	@RequestMapping(value = "pro/{id}" + Global.URL_SUFFIX)
 	public String viewSite(@PathVariable Long id,HttpServletRequest request,HttpServletResponse response){
 		
-		request.getRemoteAddr();
+		String nav = request.getParameter("nav").toString();	//导航参数
 		
 		
-		
-		
+		//保存访问 信息
 		System.out.println("ok........");
 		Project project = projectService.get(id);
 		QRCode qrCode = project.getQrCode();
@@ -48,10 +47,14 @@ public class MobileSiteController extends BaseController {
 		pv.setMobile(request.getParameter("mobile"));
 		pv.setQq(request.getParameter("qq"));
 		
-		projectVisitService.save(pv);	
+		projectVisitService.save(pv);
+		
+		
 		
 		request.setAttribute("project", project);
 		request.setAttribute("qrCode", qrCode);
+		
+		//处理导航
 		return "modules/ims/front/mobile/mobile";
 	}
 
