@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.boxin.framework.base.dao.DaoHelper;
 import com.boxin.ims.modules.momarketing.entity.ProjectVisit;
 import com.boxin.ims.modules.momarketing.service.ProjectVisitService;
 import com.thinkgem.jeesite.common.config.Global;
@@ -32,6 +33,9 @@ public class ProjectVisitController extends BaseController {
 
 	@Autowired
 	private ProjectVisitService projectVisitService;
+	
+	@Autowired
+	private DaoHelper daoHelper;
 	
 	@ModelAttribute
 	public ProjectVisit get(@RequestParam(required=false) Long id) {

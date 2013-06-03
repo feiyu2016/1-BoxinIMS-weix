@@ -34,13 +34,23 @@
     <div class="span4 clearfix" >
     	<h3 class="heading">项目信息</h3>
     	<p>
-	    	<img src="${root}/servlet/qrc?qrcodeId=${id}"/>预览
+	    	<img src="${root}/servlet/qrc?qrcodeId=${id}"/><a href="${qrCode.content }" target="_blank">预览 </a> 
     	</p>
     	
     </div>
     <div class="span8">
     	<h3>访问统计 </h3>
-    	<table class="table"></table>
+    	<table id="contentTable" class="table table-striped table-bordered ">
+		<thead><tr><th>日期</th><th>访问量</th></tr></thead>
+		<tbody>
+			<c:forEach items="${visitList}" var="visit">
+			<tr>
+				<td>${visit.vdate}</td>
+				<td>${visit.cnt}</td>
+			</tr>
+		</c:forEach>
+		</tbody>
+	</table>
     </div>
   </div>
 </div> 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="com.boxin.ims.mom">
+	
+	<select id="selectCustomers" resultClass="java.util.HashMap">
+		select * from ims_customer
+	</select>	
+	
+	<select id="selectProjectVisiteStat" resultClass="java.util.HashMap">
+		SELECT COUNT(1) cnt,DATE_FORMAT(create_date,'%Y-%m-%d')  AS vdate FROM ims_project_visit 
+			WHERE project_id = #pid#
+			GROUP BY DATE_FORMAT(create_date,'%Y-%M-%D')  
+			ORDER BY vdate
+			LIMIT 10
+	</select>
+	
+</sqlMap>

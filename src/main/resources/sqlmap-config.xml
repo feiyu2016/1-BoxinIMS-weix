@@ -4,4 +4,5 @@
 	<settings enhancementEnabled="true" lazyLoadingEnabled="true" useStatementNamespaces="true" />
 	<sqlMap resource="myBatis/sqlmap-log.xml" />
 	<sqlMap resource="myBatis/sqlmap-customer.xml" />
+	<sqlMap resource="myBatis/sqlmap-momarketing.xml" />
 </sqlMapConfig>

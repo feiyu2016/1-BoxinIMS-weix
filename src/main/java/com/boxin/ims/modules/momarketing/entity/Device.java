@@ -29,7 +29,7 @@ import com.thinkgem.jeesite.modules.sys.entity.User;
  * @version 2013-05-25
  */
 @Entity
-@Table(name = "momarketing_device")
+@Table(name = "ims_device")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Device extends BaseEntity {
 	

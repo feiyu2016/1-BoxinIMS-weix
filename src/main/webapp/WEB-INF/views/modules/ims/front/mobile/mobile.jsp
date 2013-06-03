@@ -153,7 +153,7 @@
             <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
             <li data-role="list-divider">首页</li>
             <li data-icon="back"><a href="#demo-intro" data-rel="back">产品</a></li>
-            <li data-icon="back"><a href="#demo-intro" data-rel="back">关于我们</a></li>
+            <li data-icon="back"><a href="${root }/" data-rel="back">关于我们</a></li>
             <li data-icon="back"><a href="#demo-intro" data-rel="back">调查</a></li>
             <li data-icon="back"><a href="#demo-intro" data-rel="back">抽奖</a></li>
             <li data-icon="back"><a href="#demo-intro" data-rel="back">公司动态</a></li>

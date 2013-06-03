@@ -34,7 +34,7 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="project">
 			<tr>
-				<td><a href="${root}/f/vpc/vp/${project.qrCode.id}.html">${project.name}</a></td>
+				<td><a href="${root}/f/vpc/vp/${project.qrCode.id}.html?pid=${project.id}">${project.name}</a></td>
 				<td>${project.pageTemplate.name}</td>
 				<td>${project.remarks}</td>
 				<shiro:hasPermission name="momarketing:project:edit"><td>
