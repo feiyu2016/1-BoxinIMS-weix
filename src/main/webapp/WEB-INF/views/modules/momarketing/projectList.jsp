@@ -38,10 +38,26 @@
 				<td>${project.pageTemplate.name}</td>
 				<td>${project.remarks}</td>
 				<shiro:hasPermission name="momarketing:project:edit"><td>
-    				<a href="${ctx}/mom/project/form?id=${project.id}">修改</a>
-    				<a href="${ctx}/momarketing/project/form?id=${project.id}">渠道</a>
-					<a href="${ctx}/momarketing/project/delete?id=${project.id}" onclick="return confirmx('确认要删除该移动营销项目吗？', this.href)">暂停</a>
-    				<a href="${ctx}/momarketing/project/form?id=${project.id}">统计分析</a>
+    				<a href="${ctx}/mom/project/form?id=${project.id}" class="btn">修改</a>
+    				<a href="${ctx}/mom/project/form?id=${project.id}"  class="btn">渠道</a>
+					<a href="${ctx}/mom/project/delete?id=${project.id}" onclick="return confirmx('确认要删除该移动营销项目吗？', this.href)"  class="btn">暂停</a>
+    				<a href="${ctx}/mom/project/form?id=${project.id}"  class="btn">统计分析</a>
+    				<div class="btn-group">
+							  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+							    设计
+							    <span class="caret"></span>
+							  </a>
+							  <ul class="dropdown-menu">
+							    <!-- dropdown menu links -->
+							    <li><a href="">修改模板</a></li>
+							    <li><a href="">添加产品</a></li>
+							    <li><a href="${ctx}/mom/comnews/form?project.id=${project.id}">公司动态</a></li>
+							    <li><a href="">基本信息</a></li>
+							    <li><a href="${ctx}/mom/aboutUs/form?project.id=${project.id}">关于我们</a></li>
+							    <li><a href="">抽奖</a></li>
+							    <li><a href="">联系我们</a></li>
+							  </ul>
+					</div>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>

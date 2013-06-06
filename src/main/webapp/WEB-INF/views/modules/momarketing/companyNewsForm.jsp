@@ -28,15 +28,29 @@
 <body>
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/momarketing/companyNews/">公司动态列表</a></li>
-		<li class="active"><a href="${ctx}/momarketing/companyNews/form?id=${companyNews.id}">公司动态<shiro:hasPermission name="momarketing:companyNews:edit">${not empty companyNews.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="momarketing:companyNews:edit">查看</shiro:lacksPermission></a></li>
+		<li class="active"><a href="${ctx}/mom/comnews/form?id=${companyNews.id}">公司动态<shiro:hasPermission name="momarketing:companyNews:edit">${not empty companyNews.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="momarketing:companyNews:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
-	<form:form id="inputForm" modelAttribute="companyNews" action="${ctx}/momarketing/companyNews/save" method="post" class="form-horizontal">
+	<form:form id="inputForm" modelAttribute="companyNews" action="${ctx}/mom/comnews/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
+		<form:hidden path="project.id"/>
+		<form:hidden path="user.id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
-			<label class="control-label">名称:</label>
+			<label class="control-label">标题:</label>
 			<div class="controls">
-				<form:input path="name" htmlEscape="false" maxlength="11" class="required"/>
+				<form:input path="title" htmlEscape="false" maxlength="11" class="required"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">关键字:</label>
+			<div class="controls">
+				<form:input path="keyWord" htmlEscape="false" maxlength="11" class="required"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">新闻内容:</label>
+			<div class="controls">
+				<form:input path="content" htmlEscape="false" maxlength="11" class="required"/>
 			</div>
 		</div>
 		<div class="control-group">
