@@ -36,6 +36,7 @@ public class ProjectVisit extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id; 		// 编号
+	private Long menuId;	//对应的导航菜单ID
 	private Project project;	//对应的项目
 	private String mobile;		//手机号
 	private String qq;			//QQ
@@ -114,6 +115,14 @@ public class ProjectVisit extends BaseEntity {
 
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
+	}
+
+	public Long getMenuId() {
+		return menuId;
+	}
+
+	public void setMenuId(Long menuId) {
+		this.menuId = menuId;
 	}
 
 	

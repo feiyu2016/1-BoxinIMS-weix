@@ -3,6 +3,8 @@
  */
 package com.boxin.ims.modules.momarketing.service;
 
+import java.util.List;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -15,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.BaseService;
+import com.boxin.ims.modules.momarketing.entity.AboutUs;
 import com.boxin.ims.modules.momarketing.entity.CompanyNews;
 import com.boxin.ims.modules.momarketing.dao.CompanyNewsDao;
 
@@ -36,6 +39,38 @@ public class CompanyNewsService extends BaseService {
 	public CompanyNews get(Long id) {
 		return companyNewsDao.findOne(id);
 	}
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-6-6  上午12:03:30
+	 * @function <p> 根据项目ID 查对象  </p>
+	 * @param pid
+	 * @return
+	 */
+	public CompanyNews getByProjectId(Long pid){
+		List<CompanyNews>  newsList = companyNewsDao.find(" from CompanyNews where project.id = ? ", pid);
+		if(newsList!=null && !newsList.isEmpty()){
+			return newsList.get(0);
+		}
+		return null;
+	}
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-6-6  上午12:03:46
+	 * @function <p> 根据所属用户查对象 </p>
+	 * @param uid
+	 * @return
+	 */
+	public CompanyNews getByUserId(Long uid){
+		List<CompanyNews>  newsList = companyNewsDao.find(" from CompanyNews where user.id = ? ", uid);
+		if(newsList!=null && !newsList.isEmpty()){
+			return newsList.get(0);
+		}
+		return null;
+	}
+	
+	
 	
 	public Page<CompanyNews> find(Page<CompanyNews> page, CompanyNews companyNews) {
 		DetachedCriteria dc = companyNewsDao.createDetachedCriteria();

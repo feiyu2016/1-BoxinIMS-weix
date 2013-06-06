@@ -35,8 +35,12 @@ public class CompanyNews extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
 	private Long id; 		// 编号
+	private Project project;//对应的项目
 	private User user; 		// 用户
 	private String name; 	// 名称
+	private String keyWord;	//关键字
+	private String title;	//标题
+	private String content;	//新闻内容
 	private String remarks; // 备注
 	private Date createDate;	// 创建日期
 	private String delFlag;	// 删除标记（0：正常；1：删除）
@@ -76,6 +80,19 @@ public class CompanyNews extends BaseEntity {
 		this.user = user;
 	}
 	
+	@ManyToOne
+	@JoinColumn(name="project_id")
+	@NotFound(action = NotFoundAction.IGNORE)
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	@NotNull
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	@Length(min=1, max=200)
 	public String getName() {
 		return name;
@@ -111,6 +128,34 @@ public class CompanyNews extends BaseEntity {
 	public void setDelFlag(String delFlag) {
 		this.delFlag = delFlag;
 	}
+
+	public String getKeyWord() {
+		return keyWord;
+	}
+
+	public void setKeyWord(String keyWord) {
+		this.keyWord = keyWord;
+	}
+
+	
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+	
+	
 	
 }
 

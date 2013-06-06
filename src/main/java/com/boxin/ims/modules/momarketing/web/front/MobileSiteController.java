@@ -1,5 +1,8 @@
 package com.boxin.ims.modules.momarketing.web.front;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -8,12 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.alibaba.druid.util.StringUtils;
+import com.boxin.framework.base.dao.DaoHelper;
 import com.boxin.ims.modules.momarketing.entity.Project;
 import com.boxin.ims.modules.momarketing.entity.ProjectVisit;
 import com.boxin.ims.modules.momarketing.entity.QRCode;
 import com.boxin.ims.modules.momarketing.service.ProjectService;
 import com.boxin.ims.modules.momarketing.service.ProjectVisitService;
-import com.boxin.ims.modules.momarketing.service.QRCodeService;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.web.BaseController;
 
@@ -25,15 +29,18 @@ public class MobileSiteController extends BaseController {
 	ProjectService projectService;
 	
 	@Autowired
-	QRCodeService QRCodeService;
+	private DaoHelper daoHelper;
+	
 	@Autowired
 	private ProjectVisitService projectVisitService;
 	
 	@RequestMapping(value = "pro/{id}" + Global.URL_SUFFIX)
 	public String viewSite(@PathVariable Long id,HttpServletRequest request,HttpServletResponse response){
 		
-		String nav = request.getParameter("nav").toString();	//导航参数
-		
+		String menuId = request.getParameter("menuId");
+		if(StringUtils.isEmpty(menuId)){
+			menuId = "1";
+		}
 		
 		//保存访问 信息
 		System.out.println("ok........");
@@ -46,6 +53,7 @@ public class MobileSiteController extends BaseController {
 		pv.setIp(request.getRemoteHost());
 		pv.setMobile(request.getParameter("mobile"));
 		pv.setQq(request.getParameter("qq"));
+		pv.setMenuId(Long.parseLong(menuId));
 		
 		projectVisitService.save(pv);
 		
@@ -55,6 +63,17 @@ public class MobileSiteController extends BaseController {
 		request.setAttribute("qrCode", qrCode);
 		
 		//处理导航
+		List<Map<String,Object>> projectMenus = daoHelper.queryForList("com.boxin.ims.mom.selectProjectMenus", id);
+		
+		//设置显示标题
+		for(Map map:projectMenus){
+			if( map.get("id").toString().equals(menuId)){
+				request.setAttribute("menuName", map.get("name"));
+			}
+		}
+		
+		request.setAttribute("menus", projectMenus);
+		
 		return "modules/ims/front/mobile/mobile";
 	}
 

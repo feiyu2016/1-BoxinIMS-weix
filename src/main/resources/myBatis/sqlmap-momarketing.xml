@@ -17,4 +17,17 @@
 			LIMIT 10
 	</select>
 	
+	
+	
+	<!-- Project Menu -->
+	<select id="selectProjectMenus" resultClass="java.util.HashMap">
+		SELECT * FROM IMS_PROJECT_MENU order by ord
+	</select>
+	
+	<select id="selectProjectMenuById" resultClass="java.util.HashMap">
+		SELECT * FROM IMS_PROJECT_MENU where id = #id#
+	</select>
+	
+	<!-- Project Menu End-->
+	
 </sqlMap>

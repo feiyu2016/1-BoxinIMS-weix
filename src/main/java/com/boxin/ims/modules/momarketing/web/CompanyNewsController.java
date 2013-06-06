@@ -29,7 +29,7 @@ import com.boxin.ims.modules.momarketing.service.CompanyNewsService;
  * @version 2013-05-28
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/momarketing/companyNews")
+@RequestMapping(value = Global.ADMIN_PATH+"/mom/comnews")
 public class CompanyNewsController extends BaseController {
 
 	@Autowired
@@ -59,6 +59,12 @@ public class CompanyNewsController extends BaseController {
 	@RequiresPermissions("momarketing:companyNews:view")
 	@RequestMapping(value = "form")
 	public String form(CompanyNews companyNews, Model model) {
+		CompanyNews cnews = companyNewsService.getByProjectId(companyNews.getProject().getId());
+		if(cnews!=null ){
+			companyNews = cnews;
+		}else{
+			companyNews.setUser(UserUtils.getUser());
+		}
 		model.addAttribute("companyNews", companyNews);
 		return "modules/momarketing/companyNewsForm";
 	}
