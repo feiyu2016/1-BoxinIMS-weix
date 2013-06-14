@@ -86,6 +86,11 @@ public class QRCodeUtils {
 		return Global.DNS_TEMP + Global.MOBILE_SITE_PATH+"/mom/pro/"+projectId+".html";
 	}
 	
+	public static String generateEcardURL(Long ecardId){
+		return Global.DNS_TEMP + Global.MOBILE_ECARD_PATH +"/"+ecardId+Global.URL_SUFFIX;
+	}
+	
+	
 	
 	public void encode(String contents, String imgPath, int width, int height) {  
         Hashtable  hints = new Hashtable<Object, Object>();  

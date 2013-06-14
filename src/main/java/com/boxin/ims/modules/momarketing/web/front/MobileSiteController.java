@@ -19,6 +19,7 @@ import com.boxin.ims.modules.momarketing.entity.QRCode;
 import com.boxin.ims.modules.momarketing.service.ProjectService;
 import com.boxin.ims.modules.momarketing.service.ProjectVisitService;
 import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.persistence.BaseEntity;
 import com.thinkgem.jeesite.common.web.BaseController;
 
 @Controller
@@ -45,6 +46,7 @@ public class MobileSiteController extends BaseController {
 		//保存访问 信息
 		System.out.println("ok........");
 		Project project = projectService.get(id);
+		
 		QRCode qrCode = project.getQrCode();
 		
 		ProjectVisit pv = new ProjectVisit();
@@ -57,7 +59,11 @@ public class MobileSiteController extends BaseController {
 		
 		projectVisitService.save(pv);
 		
-		
+		//判断是否失效
+		if(BaseEntity.DEL_FLAG_DELETE.equals(project.getDelFlag())){
+			request.setAttribute("errorInfo", "您访问的页面已过期!");
+			return "modules/ims/front/mobile/mobile";
+		}
 		
 		request.setAttribute("project", project);
 		request.setAttribute("qrCode", qrCode);
