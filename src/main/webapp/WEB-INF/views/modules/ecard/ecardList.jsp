@@ -1,0 +1,53 @@
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ include file="/WEB-INF/views/modules/cms/front/include/taglib.jsp"%>
+<link href="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.min.css" type="text/css" rel="stylesheet" />
+<script src="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.min.js" type="text/javascript"></script>
+<script src="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.method.min.js" type="text/javascript"></script>
+<style type="text/css">.reply{border:1px solid #ddd;background:#fefefe;margin:10px;}</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+		comment(0);
+	});
+	function commentForm(form){
+		$(form).validate({
+			rules: {
+				validateCode: {remote: "${pageContext.request.contextPath}/servlet/validateCodeServlet"}
+			},
+			messages: {
+				content: {required: "请填写评论内容"},
+				validateCode: {remote: "验证码不正确", required: "请填写验证码"}
+			},
+			submitHandler: function(form){
+			    $.post($(form).attr("action"), $(form).serialize(), function(data){
+			    	data = eval("("+data+")");
+			    	alert(data.message);
+			    	if (data.result==1){
+			    		page(1);
+			    	}
+			    });
+			},
+			errorContainer: form + " .messageBox",
+			errorPlacement: function(error, element) {
+				if (element.is(":checkbox")||element.is(":radio")){
+					error.appendTo(element.parent().parent());
+				} else {
+					error.insertAfter(element);
+				}
+			}
+		});
+	}
+	function comment(id){
+		if ($("#commentForm"+id).html()==""){
+			$(".validateCodeRefresh").click();
+			$(".commentForm").hide(500,function(){$(this).html("");});
+			$("#commentForm"+id).html($("#commentFormTpl").html()).show(500);
+			$("#commentForm"+id+" input[name='replyId']").val(id);
+			commentForm("#commentForm"+id + " form");
+		}else{
+			$("#commentForm"+id).hide(500,function(){$(this).html("");});
+		}
+	}
+</script>
+<h5>评论列表</h5>
+<ul>
+	<c:forEach items="${page.list}" var
