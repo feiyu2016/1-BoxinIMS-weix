@@ -1,6 +1,7 @@
 package com.boxin.ims.modules.customer.web;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +13,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.boxin.framework.base.dao.DaoHelper;
 import com.boxin.ims.modules.customer.entity.Customer;
 import com.boxin.ims.modules.customer.service.CustomerService;
-import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.web.BaseController;
-import com.thinkgem.jeesite.modules.sys.entity.Area;
-import com.thinkgem.jeesite.modules.sys.entity.Menu;
+import com.thinkgem.jeesite.modules.sys.entity.User;
+import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 
 /**
  * @author Jakemanse
@@ -39,16 +40,37 @@ public class CustomerController extends BaseController {
 	
 	@RequiresPermissions("ims:customer:view")
 	@RequestMapping(value = {"list", ""})
-	public String list(Customer customer, Model model) {
-		List<Customer> list = Lists.newArrayList();
-		List<Customer> sourcelist = customerService.findAllCustomer();
-        model.addAttribute("list", sourcelist);
+	public String list(Customer customer,  HttpServletRequest request, HttpServletResponse response,  Model model) {
+//		List<Customer> list = Lists.newArrayList();
+		if(customer.getUser() == null){
+			User user = UserUtils.getUser();
+			String names = user.getRoleNames();
+			customer.setUser(user);
+			if(names.indexOf("CEO") != -1  || names.indexOf("系统管理员") != -1){
+				customer.setUser(null);
+			} 
+			
+		} 
+		 
+		Page<Customer> page = customerService.find(new Page<Customer>(request, response), customer); 
+        //model.addAttribute("list", sourcelist);
+        
+        
+       
+        model.addAttribute("page", page);
+        
+        
+        
 		return "modules/ims/customerList";
 	}
 	
 	@RequiresPermissions("ims:customer:view")
 	@RequestMapping(value = "form")
 	public String form(Customer customer, Model model) {
+		if(customer != null && customer.getId() != null){
+			customer = customerService.get(customer.getId());
+		}
+		model.addAttribute("customer", customer);
 		return "modules/ims/customerForm";
 	}
 	
@@ -60,6 +82,8 @@ public class CustomerController extends BaseController {
 		if (!beanValidator(model, customer)){
 			return form(customer, model);
 		}
+		User user = new UserUtils().getUser();
+		customer.setUser(user);
 		customerService.save(customer);
 		addMessage(redirectAttributes, "保存区域'" + customer.getName() + "'成功");
 		return "redirect:"+Global.ADMIN_PATH+"/customer";
