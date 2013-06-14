@@ -28,16 +28,19 @@
 
 </head>
 <body>
-
+		
 <div data-url="demo-page" data-role="page" id="demo-page" data-theme="d">
+	
+
     <div data-role="header" data-theme="c">
         <h1>${project.companyName }->${menuName }</h1>
         <a href="#left-panel" data-icon="bars" data-shadow="false" data-iconshadow="true" >导航栏</a>
     </div><!-- /header -->
     <div data-role="content">
         <div class="article">
-            <p><img src="../../_assets/img/bike.jpg" alt="Fixed Gear bike"></p>
-            <h2>Fixed Gear</h2>
+            <div class="alert alert-error">
+				${ errorInfo}
+			</div>
             <p>A fixed-gear or fixed-wheel bicycle, commonly known as a fixie, is a bicycle that has a drivetrain wi.</p>
         </div><!-- /article -->
     </div><!-- /content -->
