@@ -35,7 +35,7 @@
 <body>
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/customer">客户列表</a></li>
-		<li class="active"><a href="${ctx}/sys/customer/form?id=${customer.id}">用户<shiro:hasPermission name="sys:customer:edit">${not empty customer.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="sys:customer:edit">查看</shiro:lacksPermission></a></li>
+		<li class="active"><a href="${ctx}/sys/customer/form?id=${customer.id}">用户<shiro:hasPermission name="ims:customer:edit">${not empty customer.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="sys:customer:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="customer" action="${ctx}/customer/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class="form-actions">
-			<shiro:hasPermission name="sys:role:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
+			<shiro:hasPermission name="ims:customer:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>
 		</div>
 	</form:form>

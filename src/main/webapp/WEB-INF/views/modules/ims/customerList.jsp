@@ -30,6 +30,7 @@
 				}
 				page();
 			});
+			
 			$("#btnExport").click(function(){
 				top.$.jBox.confirm("确认要导出用户数据吗？","系统提示",function(v,h,f){
 					if(v=="ok"){
@@ -85,15 +86,17 @@
 	<table id="contentTable" class="table table-striped table-bordered ">
 		<thead><tr><th>姓名</th><th>手机</th><th>电话</th><th class="sort loginName">邮箱</th><th class="sort name">地址</th><shiro:hasPermission name="sys:user:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
-			<c:forEach items="${list}" var="customer">
+			<c:forEach items="${page.list}" var="customer">
 			<tr>
 				<td><a href="${ctx}/cms/site/form?id=${id}" title="${name}">${customer.name}</a></td>
 				<td>${customer.mobile }</td>
 				<td>${customer.tel }</td>
 				<td>${customer.mail }</td>
 				<td>${customer.address }</td>
-				<shiro:hasPermission name="cms:site:edit"><td>
-    				<a href="${ctx}/cms/site/form?id=">修改</a>
+				<shiro:hasPermission name="ims:customer:edit"><td>
+    				<a href="${ctx}/customer/form?id=">修改</a>
+    				<a href="${ctx}/customer/ct?cid=${customer.id}">跟踪列表</a>
+    				<a href="${ctx}/customer/ct/form?customer.id=${customer.id}">添加跟踪</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>
