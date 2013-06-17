@@ -41,9 +41,15 @@
 		<form:hidden path="id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
-			<label class="control-label">姓名:</label>
+			<label class="control-label">客户姓名:</label>
 			<div class="controls">
 				<form:input path="name" htmlEscape="false" maxlength="50" class="required"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">单位名称:</label>
+			<div class="controls">
+				<form:input path="companyName" htmlEscape="false" maxlength="50" class="required"/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -61,17 +67,23 @@
 		<div class="control-group">
 			<label class="control-label">手机:</label>
 			<div class="controls">
-				<form:input path="mobile" htmlEscape="false" maxlength="100"/>
+				<form:input path="mobile" htmlEscape="false" maxlength="20"/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">地址:</label>
+			<label class="control-label">QQ:</label>
+			<div class="controls">
+				<form:input path="qq" htmlEscape="false" maxlength="50"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">单位地址:</label>
 			<div class="controls">
 				<form:input path="address" htmlEscape="false" maxlength="100"/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">备注:</label>
+			<label class="control-label">综合信息:</label>
 			<div class="controls">
 				<form:textarea path="remark" htmlEscape="false" rows="3" maxlength="200" class="input-xlarge"/>
 			</div>

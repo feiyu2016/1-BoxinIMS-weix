@@ -57,7 +57,7 @@
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label">备注:</label>
+			<label class="control-label">个人总结:</label>
 			<div class="controls">
 				<form:input path="remarks" htmlEscape="false" maxlength="50" />
 			</div>

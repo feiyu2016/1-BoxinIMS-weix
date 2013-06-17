@@ -84,17 +84,18 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered ">
-		<thead><tr><th>姓名</th><th>手机</th><th>电话</th><th class="sort loginName">邮箱</th><th class="sort name">地址</th><shiro:hasPermission name="sys:user:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>姓名</th><th>单位</th><th>手机</th><th>电话</th><th class="sort loginName">邮箱</th><th class="sort name">地址</th><shiro:hasPermission name="sys:user:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
 			<c:forEach items="${page.list}" var="customer">
 			<tr>
-				<td><a href="${ctx}/cms/site/form?id=${id}" title="${name}">${customer.name}</a></td>
+				<td><a href="${ctx}/customer/form?id=${customer.id}" title="${name}">${customer.name}</a></td>
+				<td>${customer.companyName }</td>
 				<td>${customer.mobile }</td>
 				<td>${customer.tel }</td>
 				<td>${customer.mail }</td>
 				<td>${customer.address }</td>
 				<shiro:hasPermission name="ims:customer:edit"><td>
-    				<a href="${ctx}/customer/form?id=">修改</a>
+    				<a href="${ctx}/customer/form?id=${customer.id}">修改</a>
     				<a href="${ctx}/customer/ct?cid=${customer.id}">跟踪列表</a>
     				<a href="${ctx}/customer/ct/form?customer.id=${customer.id}">添加跟踪</a>
 				</td></shiro:hasPermission>
