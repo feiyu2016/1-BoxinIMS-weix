@@ -52,6 +52,14 @@
   </function>
   
   <function>
+    <description>获取主页轮播文章列表</description>
+    <name>getIndexArticles</name>
+    <function-class>com.thinkgem.jeesite.modules.cms.utils.CmsUtils</function-class>
+    <function-signature>java.util.List getIndexArticles(int)</function-signature>
+    <example>${fnc:getIndexArticles(size)}</example>  
+  </function>
+  
+  <function>
     <description>获取文章</description>
     <name>getArticle</name>
     <function-class>com.thinkgem.jeesite.modules.cms.utils.CmsUtils</function-class>
