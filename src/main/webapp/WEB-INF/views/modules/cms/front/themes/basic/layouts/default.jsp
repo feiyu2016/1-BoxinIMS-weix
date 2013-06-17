@@ -4,16 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><sitemesh:title default="欢迎光临"/> - ${site.title} - Powered By 邯郸博信科技</title>
+	<title><sitemesh:title default="欢迎光临"/> - ${site.title} - Powered By JeeSite</title>
 	<%@include file="/WEB-INF/views/modules/cms/front/include/head.jsp" %>
-	<!-- Baidu tongji analytics --><script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="//hm.baidu.com/hm.js?82116c626a8d504a5c0675073362ef6f";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script>
 	<sitemesh:head/>
 </head>
 <body>
-	<div class="navbar navbar-fixed-top">
+	<div class="navbar navbar-fixed-top  navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="${ctx}/index-${site.id}${fns:getUrlSuffix()}" title="${site.title}">${fns:abbr(site.title,18)}</a>
+        	<div class="span3">
+         		<a class="brand" href="${ctx}/index-${site.id}${fns:getUrlSuffix()}" title="${site.title}"><img alt="Logo" src="${ctxStatic }/images/logo.jpg"  class="img-rounded" width="60" height="70">${fns:abbr(site.title,18)}</a>
+         	</div>
           <div class="nav-collapse">
             <ul id="main_nav" class="nav">
              	<li class="${empty category.id?'active':''}"><a href="${ctx}/index-${site.id}${fns:getUrlSuffix()}"><span>首  页</span></a></li>
@@ -30,22 +31,31 @@
 		    		<li class="${requestScope.category.id eq category.id||fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"><a href="${url}" target="${category.target}"><span>${category.name}</span></a></li>
 		    	</c:if></c:forEach>
             </ul>
-            <form class="navbar-search pull-right" action="${ctx}/search" method="get">
-              	<input type="text" name="q" maxlength="20" class="search-query span2" placeholder="全站搜索..." value="${q}">
-            </form>
+            <div   style="display:none">
+	            <form class="navbar-search pull-right" action="${ctx}/search" method="get">
+	              	<input type="text" name="q" maxlength="20" class="search-query span2" placeholder="全站搜索..." value="${q}">
+	            </form>
+            
+            </div>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-	<div class="container">
+	<div class="container"  >
 		<div class="content">
 			<sitemesh:body/>
 		</div>
-		<hr style="margin:20px 0 10px;">
-		<footer>
-			<div class="footer_nav"><a href="${ctx}/guestbook" target="_blank">公共留言</a> | <a href="${ctx}/search" target="_blank">全站搜索</a> | <a href="${ctx}/map-${site.id}${fns:getUrlSuffix()}" target="_blank">站点地图</a> | <a href="mailto:thinkgem@163.com">技术支持</a> | <a href="${pageContext.request.contextPath}${fns:getAdminPath()}" target="_blank">后台管理</a></div>
-			<div class="pull-right">${fns:getDate('yyyy年MM月dd日 E')}</div><div class="copyright">${site.copyright}</div>
-      	</footer>
+		
     </div> <!-- /container -->
+    <hr style="margin:20px 0 10px;">
+		<footer>
+			<div class="container row-fluid " >
+					<div class="footer_nav"><a href="${ctx}/guestbook" target="_blank">公共留言</a> | <a href="${ctx}/search" target="_blank">全站搜索</a> | <a href="${ctx}/map-${site.id}${fns:getUrlSuffix()}" target="_blank">站点地图</a> | <a href="mailto:thinkgem@163.com">技术支持</a> | <a href="${pageContext.request.contextPath}${fns:getAdminPath()}" target="_blank">业务管理</a></div>
+					<div class="pull-right">${fns:getDate('yyyy年MM月dd日 E')}</div><div class="copyright">${site.copyright}</div>
+				<div class="narrow row-fluid ">
+				</div>
+			</div>
+      	</footer>
+    
 </body>
 </html>
