@@ -48,7 +48,7 @@
 		function page(n,s){
 			$("#pageNo").val(n);
 			$("#pageSize").val(s);
-			$("#searchForm").attr("action","${ctx}/sys/user/");
+			$("#searchForm").attr("action","${ctx}/customer");
 			$("#searchForm").submit();
 	    	return false;
 	    }
