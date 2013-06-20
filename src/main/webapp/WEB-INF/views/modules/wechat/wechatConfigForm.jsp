@@ -27,8 +27,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li><a href="${ctx}/wechat/config/">问签交互列表</a></li>
-		<li class="active"><a href="${ctx}/wechat/wechat/form?id=${wechatConfig.id}">微信上下行数据交互<shiro:hasPermission name="wechat:wechatConfig:edit">${not empty wechatConfig.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:wechatConfig:edit">查看</shiro:lacksPermission></a></li>
+		<li><a href="${ctx}/wechat/config/">自动回复列表</a></li>
+		<li class="active"><a href="${ctx}/wechat/wechat/form?id=${wechatConfig.id}">自动回复<shiro:hasPermission name="wechat:wechatConfig:edit">${not empty wechatConfig.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:wechatConfig:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
@@ -41,9 +41,9 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">答复:</label>
+			<label class="control-label">回复内容:</label>
 			<div class="controls">
-				<form:input path="downContent" htmlEscape="false" maxlength="50" class="required"/>
+				<form:textarea path="downContent" htmlEscape="false"  cols="20" rows="6" class="required"/>
 			</div>
 		</div>
 		<div class="form-actions">
