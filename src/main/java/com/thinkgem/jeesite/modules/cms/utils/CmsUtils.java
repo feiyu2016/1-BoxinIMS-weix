@@ -5,6 +5,7 @@
  */
 package com.thinkgem.jeesite.modules.cms.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -123,6 +124,12 @@ public class CmsUtils implements ApplicationContextAware {
 	 */
 	public static Article getArticle(long articleId){
 		return articleService.get(articleId);
+	}
+	
+	public static List<Article> getIndexArticles(int size){
+		if(size>6) size = 6;
+		
+		return getArticleList(1, 3, size, null);
 	}
 	
 	/**

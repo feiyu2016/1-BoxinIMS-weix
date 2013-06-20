@@ -69,6 +69,20 @@
 	<!-- iBatis Config -->
 
 	
+	 <bean id="dialectFactory" class="com.boxin.framework.base.ibatis.dialect.DialectFactoryImpl" >
+        <property name="dialectMap">
+            <map>
+                <entry key="oracle" value="com.boxin.framework.base.ibatis.dialect.OracleDialect" />
+                <entry key="mysql" value="com.boxin.framework.base.ibatis.dialect.Db2Dialect" />
+                <entry key="db2" value="com.boxin.framework.base.ibatis.dialect.Db2Dialect" />
+                <entry key="sqlserver" value="com.boxin.framework.base.ibatis.dialect.SqlServerDialect" />
+            </map>
+        </property>
+    </bean>
+	
+	<bean id="sqlExecutor" class="com.boxin.framework.base.ibatis.PaginationSqlExecutor">
+        <property name="dialectFactory" ref="dialectFactory" />
+    </bean>
 		
 	<bean id="sqlMapClient" class="com.boxin.framework.base.ibatis.SqlMapClientFactoryBean" scope="prototype">
 		<property name="configLocation" value="classpath:/sqlmap-config.xml" />
@@ -76,6 +90,11 @@
 	</bean>
 	
 	
+    <bean id="ibatisTemplate" class="com.boxin.framework.base.dao.IBatisTemplateImpl"
+          lazy-init="true" scope="prototype">
+        <property name="sqlMapClient" ref="sqlMapClient" />
+        <property name="dialectFactory" ref="dialectFactory" />
+    </bean>
 	
 	
 	
@@ -86,26 +105,10 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
 
-    <bean id="ibatisTemplate" class="com.boxin.framework.base.dao.IBatisTemplateImpl"
-          lazy-init="true" scope="prototype">
-        <property name="sqlMapClient" ref="sqlMapClient" />
-        <property name="dialectFactory" ref="dialectFactory" />
-    </bean>
 
-    <bean id="sqlExecutor" class="com.boxin.framework.base.ibatis.PaginationSqlExecutor">
-        <property name="dialectFactory" ref="dialectFactory" />
-    </bean>
+    
 
-    <bean id="dialectFactory" class="com.boxin.framework.base.ibatis.dialect.DialectFactoryImpl" >
-        <property name="dialectMap">
-            <map>
-                <entry key="oracle" value="com.boxin.framework.base.ibatis.dialect.OracleDialect" />
-                <entry key="mysql" value="com.boxin.framework.base.ibatis.dialect.Db2Dialect" />
-                <entry key="db2" value="com.boxin.framework.base.ibatis.dialect.Db2Dialect" />
-                <entry key="sqlserver" value="com.boxin.framework.base.ibatis.dialect.SqlServerDialect" />
-            </map>
-        </property>
-    </bean>
+   
 
 
 

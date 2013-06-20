@@ -6,6 +6,7 @@
 package com.thinkgem.jeesite.modules.sys.web;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,13 +27,18 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.thinkgem.jeesite.common.beanvalidator.BeanValidators;
 import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.mapper.JsonMapper;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.utils.DateUtils;
 import com.thinkgem.jeesite.common.utils.excel.ExportExcel;
 import com.thinkgem.jeesite.common.utils.excel.ImportExcel;
 import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.sys.dao.UserDao;
+import com.thinkgem.jeesite.modules.sys.entity.Area;
+import com.thinkgem.jeesite.modules.sys.entity.Role;
 import com.thinkgem.jeesite.modules.sys.entity.User;
 import com.thinkgem.jeesite.modules.sys.service.SystemService;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
@@ -48,6 +54,11 @@ public class UserController extends BaseController {
 
 	@Autowired
 	private SystemService systemService;
+	
+	@Autowired
+	private UserDao userDao;
+	
+	
 	
 	@ModelAttribute
 	public User get(@RequestParam(required=false) Long id) {
@@ -225,6 +236,33 @@ public class UserController extends BaseController {
 		return "modules/sys/userModifyPwd";
 	}
     
+	
+	@RequiresUser
+	@ResponseBody
+	@RequestMapping(value = "treeData")
+	public String treeData(@RequestParam(required=false) Long extId, HttpServletResponse response) {
+		response.setContentType("application/json; charset=UTF-8");
+		List<Map<String, Object>> mapList = Lists.newArrayList();
+		User user = UserUtils.getUser();
+		Role role = 	systemService.findRoleByName("业务员");
+		if("业务员".equals(role.getName())){
+			List<User> list = role.getUserList();
+			for (int i=0; i<list.size(); i++){
+				User e = list.get(i);
+				if (extId == null || (extId!=null && !extId.equals(e.getId()))){
+					Map<String, Object> map = Maps.newHashMap();
+					map.put("id", e.getId());
+					map.put("pId", e.getId());
+					map.put("name", e.getName());
+					mapList.add(map);
+				}
+			}
+		}	
+		
+		return JsonMapper.getInstance().toJson(mapList);
+	}
+	
+	
 //	@InitBinder
 //	public void initBinder(WebDataBinder b) {
 //		b.registerCustomEditor(List.class, "roleList", new PropertyEditorSupport(){

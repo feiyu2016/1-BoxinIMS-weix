@@ -1,42 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" isErrorPage="true" %>
-<%@ page import="com.thinkgem.jeesite.common.beanvalidator.BeanValidators"%>
-<%@ page import="org.slf4j.Logger,org.slf4j.LoggerFactory" %>
-<%@ include file="/WEB-INF/views/include/taglib.jsp"%>
-<%response.setStatus(200);%>
-<%
-	Throwable ex = null;
-	if (exception != null)
-		ex = exception;
-	if (request.getAttribute("javax.servlet.error.exception") != null)
-		ex = (Throwable) request.getAttribute("javax.servlet.error.exception");
-	//记录日志
-	Logger logger = LoggerFactory.getLogger("500.jsp");
-	logger.error(ex.getMessage(), ex);
-%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>500 - 系统内部错误</title>
-	<%@include file="/WEB-INF/views/include/head.jsp" %>
-</head>
-<body>
-	<div class="container-fluid">
-		<div class="page-header"><h1>系统发生内部错误.</h1></div>
-		<p>错误信息：</p><p>
-		<%
-			if (ex!=null){
-				if (ex instanceof javax.validation.ConstraintViolationException){
-					for (String s : BeanValidators.extractPropertyAndMessageAsList((javax.validation.ConstraintViolationException)ex, ": ")){
-						out.print(s+"<br/>");
-					}
-				}else{
-					out.print(ex+"<br/>");
-				}
-			}
-		%>
-		</p>
-		<div><a href="javascript:" onclick="history.go(-1);" class="btn">返回上一页</a></div>
-		<script>try{top.$.jBox.closeTip();}catch(e){}</script>
-	</div>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<Content Type="AdministrativeMaterials"> 
+ <Indexes> 
+  <Index Level="1" HasChildren="0"> 
+   <Caption>L2 - Legalization Application for Adjustment to Permanent Resident Status</Caption>  
+   <Description>Matter of [Name redacted],[File name redacted] (AAO Aug. 30, 2005)</Description>  
+   <Content>&lt;!--OPINION TEXT STARTS HERE--&gt;&lt;P&gt;FILE: [File name redacted]&lt;/P&gt;&lt;P&gt;Office: Los Angeles&lt;/P&gt;&lt;P&gt;Date: AUG. 30, 2005&lt;/P&gt;&lt;P&gt;IN RE: Applicant: [Name redacted]&lt;/P&gt;&lt;P&gt;APPLICATION: Application for Status as a Permanent Resident pursuant to Section 1104 of the Legal Immigration Family Equity (LIFE) Act of 2000, Pub. L. 106-553, 114 Stat. 2762 (2000), &lt;i&gt;amended by LIFE &lt;/i&gt;Act Amendments, Pub. L. 106-554, 114 Stat. 2763 (2000).&lt;/P&gt;&lt;P&gt;ON BEHALF OF APPLICANT: [Lawyer name redacted]&lt;/P&gt;&lt;P&gt;INSTRUCTIONS:&lt;/P&gt;&lt;P&gt;This is the decision of the Administrative Appeals Office in your case. All documents have been returned to the office that originally decided your case. If your appeal was sustained, or if the matter was remanded for further action, you will be contacted. If your appeal was dismissed, you no longer have a case pending before this office, and you are not entitled to file a motion to reopen or reconsider your case.&lt;/P&gt;&lt;p&gt;Robert P. Wiemann, Director&lt;br&gt;Administrative Appeals Office&lt;br&gt;&lt;/p&gt;&lt;P&gt;Page 2&lt;/P&gt;&lt;P&gt;&lt;b

@@ -19,6 +19,12 @@ public class SqlMapClientFactoryBean extends
 		return sqlExecutor;
 
 	}
+	
+	@Override
+	public SqlMapClient getObject() {
+		// TODO Auto-generated method stub
+		return super.getObject();
+	}
 
 	public void setSqlExecutor(SqlExecutor sqlExecutor) {
 		this.sqlExecutor = sqlExecutor;

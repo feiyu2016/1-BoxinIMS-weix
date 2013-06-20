@@ -1,53 +1,49 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
-<%@ include file="/WEB-INF/views/modules/cms/front/include/taglib.jsp"%>
-<link href="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.min.css" type="text/css" rel="stylesheet" />
-<script src="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.min.js" type="text/javascript"></script>
-<script src="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.method.min.js" type="text/javascript"></script>
-<style type="text/css">.reply{border:1px solid #ddd;background:#fefefe;margin:10px;}</style>
-<script type="text/javascript">
-	$(document).ready(function() {
-		comment(0);
-	});
-	function commentForm(form){
-		$(form).validate({
-			rules: {
-				validateCode: {remote: "${pageContext.request.contextPath}/servlet/validateCodeServlet"}
-			},
-			messages: {
-				content: {required: "请填写评论内容"},
-				validateCode: {remote: "验证码不正确", required: "请填写验证码"}
-			},
-			submitHandler: function(form){
-			    $.post($(form).attr("action"), $(form).serialize(), function(data){
-			    	data = eval("("+data+")");
-			    	alert(data.message);
-			    	if (data.result==1){
-			    		page(1);
-			    	}
-			    });
-			},
-			errorContainer: form + " .messageBox",
-			errorPlacement: function(error, element) {
-				if (element.is(":checkbox")||element.is(":radio")){
-					error.appendTo(element.parent().parent());
-				} else {
-					error.insertAfter(element);
-				}
-			}
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ include file="/WEB-INF/views/include/taglib.jsp"%>
+<html>
+<head>
+	<title>公司活动管理</title>
+	<meta name="decorator" content="default"/>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
 		});
-	}
-	function comment(id){
-		if ($("#commentForm"+id).html()==""){
-			$(".validateCodeRefresh").click();
-			$(".commentForm").hide(500,function(){$(this).html("");});
-			$("#commentForm"+id).html($("#commentFormTpl").html()).show(500);
-			$("#commentForm"+id+" input[name='replyId']").val(id);
-			commentForm("#commentForm"+id + " form");
-		}else{
-			$("#commentForm"+id).hide(500,function(){$(this).html("");});
-		}
-	}
-</script>
-<h5>评论列表</h5>
-<ul>
-	<c:forEach items="${page.list}" var
+		function page(n,s){
+			$("#pageNo").val(n);
+			$("#pageSize").val(s);
+			$("#searchForm").submit();
+        	return false;
+        }
+	</script>
+</head>
+<body>
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="${ctx}/ecard/ecard/">电子名片列表</a></li>
+		<shiro:hasPermission name="ecard:ecard:edit"><li><a href="${ctx}/ecard/ecard/form">电子名片添加</a></li></shiro:hasPermission>
+	</ul>
+	<form:form id="searchForm" modelAttribute="ecard" action="${ctx}/ecard/ecard/" method="post" class="breadcrumb form-search">
+		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
+		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
+		<label>主题：</label><form:input path="title" htmlEscape="false" maxlength="50" class="input-medium"/>
+		&nbsp;<input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/>
+	</form:form>
+	<tags:message content="${message}"/>
+	<table id="contentTable" class="table table-striped table-bordered ">
+		<thead><tr><th>名称</th><th>活动内容</th><th>备注</th><shiro:hasPermission name="ecard:ecard:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<tbody>
+		<c:forEach items="${page.list}" var="ecard">
+			<tr>
+				<td><a href="${ctx}/ecard/ecard/form?id=${ecard.id}">${ecard.title}</a></td>
+				<td>${ecard.name}</td>
+				<td>${ecard.remarks}</td>
+				<shiro:hasPermission name="ecard:ecard:edit"><td>
+    				<a href="${ctx}/ecard/ecard/form?id=${ecard.id}">修改</a>
+					<a href="${ctx}/ecard/ecard/delete?id=${ecard.id}" onclick="return confirmx('确认要删除该公司活动吗？', this.href)">删除</a>
+				</td></shiro:hasPermission>
+			</tr>
+		</c:forEach>
+		</tbody>
+	</table>
+	<div class="pagination">${page}</div>
+</body>
+</html>

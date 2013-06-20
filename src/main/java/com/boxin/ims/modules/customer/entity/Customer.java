@@ -40,6 +40,7 @@ public class Customer extends BaseEntity {
 	private String address;	//公司地址
 	private String idno;	//身份证号
 	private String delFlag ;
+	private boolean isSigned;		//签合同
 	private String remark;	//备注
 	
 	
@@ -143,6 +144,14 @@ public class Customer extends BaseEntity {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public boolean isSigned() {
+		return isSigned;
+	}
+
+	public void setSigned(boolean isSigned) {
+		this.isSigned = isSigned;
 	} 
 	
 	

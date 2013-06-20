@@ -46,7 +46,7 @@
 		<div class="control-group">
 			<label class="control-label">姓名:</label>
 			<div class="controls">
-				<form:input path="name" htmlEscape="false" maxlength="11" />
+				<form:input path="name" htmlEscape="false" maxlength="11" class="required"/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -82,19 +82,19 @@
 		<div class="control-group">
 			<label class="control-label">QQ:</label>
 			<div class="controls">
-				<form:input path="qq" htmlEscape="false" maxlength="11" />
+				<form:input path="qq" htmlEscape="false" maxlength="20" />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">微信:</label>
 			<div class="controls">
-				<form:input path="weixin" htmlEscape="false" maxlength="11" />
+				<form:input path="weixin" htmlEscape="false" maxlength="30" />
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">微博:</label>
 			<div class="controls">
-				<form:input path="weibo" htmlEscape="false" maxlength="11" />
+				<form:input path="weibo" htmlEscape="false" maxlength="30" />
 			</div>
 		</div>
 		
@@ -107,7 +107,7 @@
 		<div class="control-group">
 			<label class="control-label">简介:</label>
 			<div class="controls">
-				<form:input path="logo" htmlEscape="false" maxlength="11" />
+				<form:input path="logo" htmlEscape="false" maxlength="200" />
 			</div>
 		</div>
 		

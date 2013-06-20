@@ -157,6 +157,18 @@
     <url-pattern>/servlet/qrc</url-pattern>
   </servlet-mapping>
   
+  
+  <!-- Wechat Platform Servlet -->
+  <servlet>
+    <servlet-name>WechatServlet</servlet-name>
+    <servlet-class>com.boxin.ims.modules.wechat.web.front.WechatServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WechatServlet</servlet-name>
+    <url-pattern>/wp</url-pattern>
+  </servlet-mapping>
+  
+  
   <!-- Session 配置 -->
   <session-config>
     <session-timeout>20</session-timeout>
