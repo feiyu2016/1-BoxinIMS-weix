@@ -42,13 +42,13 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">标题:</label>
+			<label class="control-label">图片标题:</label>
 			<div class="controls">
 				<form:input path="title" htmlEscape="false" maxlength="50" class="required"/>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">描述:</label>
+			<label class="control-label">图片描述:</label>
 			<div class="controls">
 				<form:textarea path="description" htmlEscape="false" cols="10" rows="6" class="required"/>
 			</div>
