@@ -5,4 +5,5 @@
 	<sqlMap resource="myBatis/sqlmap-log.xml" />
 	<sqlMap resource="myBatis/sqlmap-customer.xml" />
 	<sqlMap resource="myBatis/sqlmap-momarketing.xml" />
+	<sqlMap resource="myBatis/sqlmap-wechat.xml" />
 </sqlMapConfig>
