@@ -15,10 +15,13 @@ package com.boxin.ims.modules.wechat.entity;
  */
 public class EventMessage extends Message {
 	public final static String MSG_TYPE = "event";
+	
+	public final static String EVENT_TYPE_QUIT = "unsubscribe";
+	public final static String EVENT_TYPE_JOIN = "subscribe";
 
 	@Override
 	public String getMsgType() {
-		return "event";
+		return MSG_TYPE;
 	}
 	
 	

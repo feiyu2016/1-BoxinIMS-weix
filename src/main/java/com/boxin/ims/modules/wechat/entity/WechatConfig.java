@@ -4,24 +4,32 @@
 package com.boxin.ims.modules.wechat.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
-import org.hibernate.validator.constraints.Length;
+import org.hibernate.annotations.Where;
 
+import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.persistence.BaseEntity;
-import com.thinkgem.jeesite.modules.sys.entity.User;
 
 /**
  * 微信上下行数据交互Entity
@@ -42,6 +50,7 @@ public class WechatConfig extends BaseEntity {
 	private Date createTime;	// 创建日期
 	private Date updateTime;	//更新时间
 	private String delFlag ;
+	private List<NewsReply> newsReplyList =  Lists.newArrayList() ; 	//对应的回复的条目
 
 	public WechatConfig() {
 		this.createTime = new Date();
@@ -124,6 +133,21 @@ public class WechatConfig extends BaseEntity {
 
 	public void setDelFlag(String delFlag) {
 		this.delFlag = delFlag;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "wp_news_reply", joinColumns = { @JoinColumn(name = "config_id") },
+		inverseJoinColumns = { @JoinColumn(name = "id") })
+	@Where(clause="del_flag='"+DEL_FLAG_NORMAL+"'")
+	@OrderBy("id") @Fetch(FetchMode.SUBSELECT)
+	@NotFound(action = NotFoundAction.IGNORE)
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	public List<NewsReply> getNewsReplyList() {
+		return newsReplyList;
+	}
+
+	public void setNewsReplyList(List<NewsReply> newsReplyList) {
+		this.newsReplyList = newsReplyList;
 	}
 
 

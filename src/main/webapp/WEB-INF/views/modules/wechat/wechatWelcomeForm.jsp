@@ -6,7 +6,7 @@
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			changeType('text');
+			changeType('${wechatWelcome.type}');
 			$("#name").focus();
 			$("#inputForm").validate({
 				submitHandler: function(form){
@@ -32,7 +32,7 @@
 			}else if('music' === v){
 				$('#pureTextContent').hide();
 				$('#musicContent').show();
-			}else if('image' === v){
+			}else if('news' === v){
 				$('#musicContent').show();
 				$('#pureTextContent').hide();
 			}else{
@@ -55,7 +55,7 @@
 				<div class="controls">
   					<form:radiobutton   path="type" id="reaio" value="text"  checked="checked" onclick="changeType(this.value)"/> 文字
   					<form:radiobutton   path="type" id="reaio" value="music"  onclick="changeType(this.value)"/> 声音
-  					<form:radiobutton   path="type" id="reaio" value="image"  onclick="changeType(this.value)"/> 图文
+  					<form:radiobutton   path="type" id="reaio" value="news"  onclick="changeType(this.value)"/> 图文
 				</div>
 				
 			</div>

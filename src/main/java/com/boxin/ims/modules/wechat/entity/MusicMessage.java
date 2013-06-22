@@ -47,10 +47,10 @@ public class MusicMessage extends Message{
 		sb.append("\t").append("<ToUserName><![CDATA["+this.getToUserName()+"]]></ToUserName>").append("\n");
 		sb.append("\t").append("<FromUserName><![CDATA["+this.getFromUserName()+"]]></FromUserName>").append("\n");
 		sb.append("\t").append("<CreateTime>"+System.currentTimeMillis()+"</CreateTime>").append("\n");
-		sb.append("\t").append("<MsgType><![CDATA["+this.getMsgType()+"]]></MsgType>").append("\n");
+		sb.append("\t").append("<MsgType><![CDATA["+getMsgType()+"]]></MsgType>").append("\n");
 		sb.append("\t").append("<Music>").append("\n");
 		sb.append("\t").append("<Title><![CDATA["+getTitle()+"]]></Title>").append("\n");
-		sb.append("\t").append("<Description><![CDATA["+this.getDescription()+"]]></Description>").append("\n");
+		sb.append("\t").append("<Description><![CDATA["+getDescription()+"]]></Description>").append("\n");
 		sb.append("\t").append("<MusicUrl><![CDATA["+getHQMusicUrl()+"]]></MusicUrl>").append("\n");
 		sb.append("\t").append("<HQMusicUrl><![CDATA["+getHQMusicUrl()+"]]></HQMusicUrl>").append("\n");
 		sb.append("\t").append("</Music>").append("\n");
