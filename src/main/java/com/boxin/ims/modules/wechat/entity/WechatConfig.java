@@ -49,7 +49,8 @@ public class WechatConfig extends BaseEntity {
 	private String msgType;		//消息类型
 	private Date createTime;	// 创建日期
 	private Date updateTime;	//更新时间
-	private String delFlag ;
+	private String delFlag ;	
+	private boolean isDefault;	//是否默认的回复
 	private List<NewsReply> newsReplyList =  Lists.newArrayList() ; 	//对应的回复的条目
 
 	public WechatConfig() {
@@ -150,7 +151,15 @@ public class WechatConfig extends BaseEntity {
 		this.newsReplyList = newsReplyList;
 	}
 
+	public boolean isDefault() {
+		return isDefault;
+	}
 
+	public void setDefault(boolean isDefault) {
+		this.isDefault = isDefault;
+	}
+
+	
 	
 	
 }

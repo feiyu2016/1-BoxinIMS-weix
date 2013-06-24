@@ -5,12 +5,11 @@
 
 <sqlMap namespace="com.boxin.ims.wechat">
 	
-		
 	<typeAlias alias="newReply" type="com.boxin.ims.modules.wechat.entity.NewsReply" />
 	<resultMap class="newReply" id="newsReplyMap">
 		<result property="id"    column="id"/>
 		<result property="description"    column="description"  />
-		<result property="title"    column="description"  />
+		<result property="title"    column="title"  />
 		<result property="filePath"    column="file_path"/>
 		<result property="picUrl"    column="pic_url"  />
 		<result property="url"    column="url"  />
@@ -22,7 +21,7 @@
 	</resultMap>
 	
 	
-	<select id="selectNewsReplysBy" resultMap="newsReplyMap">
+	<select id="selectNewsReplys" resultMap="newsReplyMap">
 		select * from wp_news_reply where 1=1
 		<isNotEmpty property="configId">
 			and config_id = #configId#
