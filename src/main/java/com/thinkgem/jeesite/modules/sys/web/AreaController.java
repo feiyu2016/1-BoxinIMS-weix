@@ -43,8 +43,6 @@ import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 public class AreaController extends BaseController {
 	
 	public AreaController() {
-		// TODO Auto-generated constructor stub
-		System.out.println("初始化 Arear......");
 	}
 
 	@Autowired

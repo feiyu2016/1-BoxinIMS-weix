@@ -1,9 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
+
+
 <html>
 <head>
 	<title>图文富内容回复管理</title>
 	<meta name="decorator" content="default"/>
+	<script type="text/javascript" src="${ctxStatic}/bootstrap/2.3.1/docs/assets/js/bootstrap-popover.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#name").focus();
@@ -23,6 +26,14 @@
 				}
 			});
 		});
+		
+		function showTip(id){
+			//$('#question_tip').popover('show')
+		}
+		
+		function  setUrl(url){
+			$('#url').value(url);
+		}
 	</script>
 </head>
 <body>
@@ -38,19 +49,21 @@
 		<div class="control-group">
 			<label class="control-label">问题:</label>
 			<div class="controls">
-				<form:input path="wechatConfig.upContent" htmlEscape="false" maxlength="11" class="required"/>
+				<form:input path="wechatConfig.upContent" htmlEscape="false" onclick="showTip('question')" maxlength="11" class="required"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">图片标题:</label>
 			<div class="controls">
-				<form:input path="title" htmlEscape="false" maxlength="50" class="required"/>
+				<form:input path="title" htmlEscape="false" maxlength="50" onmouseover="showTip('pic_title')" class="required"/>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">图片描述:</label>
 			<div class="controls">
-				<form:textarea path="description" htmlEscape="false" cols="10" rows="6" class="required"/>
+				<form:textarea path="description" htmlEscape="false" cols="10" rows="6"   class="required"
+					data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on right"
+				/>
 			</div>
 		</div>
 		<div class="control-group">
@@ -59,10 +72,33 @@
 				<input type="file" name="file" htmlEscape="false" maxlength="50" class="required"/>
 			</div>
 		</div>
+		
+		<div class="control-group">
+			<label class="control-label">链接URL:</label>
+			<div class="controls">
+				<form:input path="url"  id="url" htmlEscape="false" maxlength="50" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">上传二维码图片:</label>
+			<div class="controls">
+				<input type="file" name="qrfile" htmlEscape="false" maxlength="50" class="required" onchange="setUrl(this.value)"/>
+			</div>
+		</div>
+		
 		<div class="form-actions">
 			<shiro:hasPermission name="wechat:newsReply:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>
 		</div>
 	</form:form>
+
+	<div class="popover fade right in" 
+		style="top: 12.5px; left: 242px; display: none;" id="question_tip">
+		<div class="arrow"></div>
+		<h3 class="popover-title">设置问题</h3>
+		<div class="popover-content">在此处请输入自动回复设置的问题。</div>
+	</div>
+	
+	
 </body>
 </html>

@@ -1,13 +1,25 @@
 package com.boxin.ims.modules.momarketing.common;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.Hashtable;
 
+import javax.imageio.ImageIO;
+
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.DecodeHintType;
 import com.google.zxing.EncodeHintType;
+import com.google.zxing.LuminanceSource;
+import com.google.zxing.MultiFormatReader;
 import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.ReaderException;
+import com.google.zxing.Result;
+import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
+import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.thinkgem.jeesite.common.config.Global;
 
@@ -88,6 +100,49 @@ public class QRCodeUtils {
 	
 	public static String generateEcardURL(Long ecardId){
 		return Global.DNS_TEMP + Global.MOBILE_ECARD_PATH +"/"+ecardId+Global.URL_SUFFIX;
+	}
+	
+	
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-6-24  上午11:36:57
+	 * @function <p> 解析二维码  </p>
+	 * @param file
+	 * @return
+	 */
+	public static String decode(File file){
+		try {
+			String imgPath = "D:\\temp\\QRCode\\1367552294529.png";
+//			File file = new File(imgPath);
+			BufferedImage image;
+			try {
+				image = ImageIO.read(file);
+				if (image == null) {
+					System.out.println("Could not decode image");
+				}
+				LuminanceSource source = new BufferedImageLuminanceSource(image);
+				BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(
+						source));
+				Result result;
+				Hashtable hints = new Hashtable();
+				hints.put(DecodeHintType.CHARACTER_SET, "UTF-8");
+				// 解码设置编码方式为：utf-8，
+				result = new MultiFormatReader().decode(bitmap, hints);
+				String resultStr = result.getText();
+				System.out.println("解析后内容：" + resultStr);
+				return resultStr;
+			} catch (IOException ioe) {
+				System.out.println(ioe.toString());
+			} catch (ReaderException re) {
+				System.out.println(re.toString());
+			}
+
+		} catch (Exception ex) {
+			System.out.println(ex.toString());
+		}
+		
+		return null;
 	}
 	
 	

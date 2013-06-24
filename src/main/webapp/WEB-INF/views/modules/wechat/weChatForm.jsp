@@ -28,6 +28,7 @@
 <body>
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/wechat/weChat/">微信公众平台用户列表</a></li>
+		<li><a href="${ctx}/wechat/welcome/form">设定欢迎词</a></li>
 		<li class="active"><a href="${ctx}/wechat/weChat/form?id=${weChat.id}">微信公众平台用户<shiro:hasPermission name="wechat:weChat:edit">${not empty weChat.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:weChat:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="weChat" action="${ctx}/wechat/weChat/save" method="post" class="form-horizontal">

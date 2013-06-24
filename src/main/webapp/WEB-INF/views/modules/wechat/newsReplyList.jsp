@@ -33,7 +33,7 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="newsReply">
 			<tr>
-				<td><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">${newsReply.name}</a></td>
+				<td><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">${newsReply.title}</a></td>
 				<td>${newsReply.remarks}</td>
 				<shiro:hasPermission name="wechat:newsReply:edit"><td>
     				<a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">修改</a>

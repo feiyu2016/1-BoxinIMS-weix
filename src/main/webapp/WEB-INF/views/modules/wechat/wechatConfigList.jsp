@@ -38,7 +38,7 @@
 				<shiro:hasPermission name="wechat:wechatConfig:edit"><td>
     				<a href="${ctx}/wechat/config/form?id=${wechatConfig.id}">修改</a>
 					<a href="${ctx}/wechat/config/delete?id=${wechatConfig.id}" onclick="return confirmx('确认要删除该微信上下行数据交互吗？', this.href)">删除</a>
-					<a href="${ctx}/wechat/newsReply/form?fcid=${wechatConfig.id}&wid=${wechatConfig.weChat.id}">添加图文回复</a>
+					<a href="${ctx}/wechat/newsReply/form?cfid=${wechatConfig.id}&wid=${wechatConfig.weChat.id}">添加图文回复</a>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>

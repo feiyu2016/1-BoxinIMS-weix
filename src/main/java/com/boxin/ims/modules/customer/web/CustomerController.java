@@ -32,7 +32,6 @@ public class CustomerController extends BaseController {
 	DaoHelper daoHelper;
 	
 	public CustomerController() {
-		System.out.println("Loading..");
 	}
 	@Autowired
 	private CustomerService customerService;
