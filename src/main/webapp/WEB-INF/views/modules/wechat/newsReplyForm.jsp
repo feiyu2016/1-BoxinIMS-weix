@@ -93,11 +93,7 @@
 	</form:form>
 
 	<div class="popover fade right in" 
-<<<<<<< HEAD
 		style="top: 12.5px; left: 242px; display: none;" id="question_tip">
-=======
-		style="top: 12.5px; left: 242px; display: block;" id="question_tip">
->>>>>>> 994d3d37b372fc388d9bc5987d26f16f207fdab8
 		<div class="arrow"></div>
 		<h3 class="popover-title">设置问题</h3>
 		<div class="popover-content">在此处请输入自动回复设置的问题。</div>
