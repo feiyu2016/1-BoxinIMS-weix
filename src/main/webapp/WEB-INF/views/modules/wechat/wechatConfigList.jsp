@@ -18,8 +18,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/wechat/config/">回复交互列表</a></li>
-		<shiro:hasPermission name="wechat:wechatConfig:edit"><li><a href="${ctx}/wechat/config/form">自动回复交互添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}/wechat/config/">回复设置列表</a></li>
+		<shiro:hasPermission name="wechat:wechatConfig:edit"><li><a href="${ctx}/wechat/config/form">回复设置添加</a></li></shiro:hasPermission>
 	</ul>
 	<form:form id="searchForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>

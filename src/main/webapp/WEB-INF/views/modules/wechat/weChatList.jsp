@@ -18,8 +18,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/wechat/weChat/">微信公众平台用户列表</a></li>
-		<shiro:hasPermission name="wechat:weChat:edit"><li><a href="${ctx}/wechat/weChat/form">微信公众平台用户添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}/wechat/weChat/">Token列表</a></li>
+		<shiro:hasPermission name="wechat:weChat:edit"><li><a href="${ctx}/wechat/weChat/form">Token绑定</a></li></shiro:hasPermission>
 	</ul>
 	<form:form id="searchForm" modelAttribute="weChat" action="${ctx}/wechat/weChat/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>

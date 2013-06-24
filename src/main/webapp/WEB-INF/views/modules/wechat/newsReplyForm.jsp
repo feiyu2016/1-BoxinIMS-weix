@@ -38,8 +38,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li><a href="${ctx}/wechat/newsReply/">图文富内容回复列表</a></li>
-		<li class="active"><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">图文富内容回复<shiro:hasPermission name="wechat:newsReply:edit">${not empty newsReply.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:newsReply:edit">查看</shiro:lacksPermission></a></li>
+		<li><a href="${ctx}/wechat/newsReply/">图文回复设置列表</a></li>
+		<li class="active"><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">图文回复设置<shiro:hasPermission name="wechat:newsReply:edit">${not empty newsReply.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:newsReply:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="newsReply" action="${ctx}/wechat/newsReply/save" method="post" class="form-horizontal"  enctype="multipart/form-data">
 		<form:hidden path="id"/>
