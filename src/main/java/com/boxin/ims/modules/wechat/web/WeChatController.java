@@ -77,8 +77,8 @@ public class WeChatController extends BaseController {
 			return form(weChat, model);
 		}
 		weChatService.save(weChat);
-		addMessage(redirectAttributes, "保存微信公众平台用户'" + weChat.getName() + "'成功");
-		return "redirect:"+Global.ADMIN_PATH+"/modules/wechat/weChat/?repage";
+		addMessage(redirectAttributes, "保存微信公众平台用户'" + weChat.getToken()+ "'成功");
+		return "redirect:"+Global.ADMIN_PATH+"/wechat/weChat/?repage";
 	}
 	
 	@RequiresPermissions("wechat:weChat:edit")
@@ -86,7 +86,7 @@ public class WeChatController extends BaseController {
 	public String delete(Long id, RedirectAttributes redirectAttributes) {
 		weChatService.delete(id);
 		addMessage(redirectAttributes, "删除微信公众平台用户成功");
-		return "redirect:"+Global.ADMIN_PATH+"/modules/wechat/weChat/?repage";
+		return "redirect:"+Global.ADMIN_PATH+"/wechat/weChat/?repage";
 	}
 
 }

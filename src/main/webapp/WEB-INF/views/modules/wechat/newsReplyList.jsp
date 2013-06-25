@@ -29,10 +29,11 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered ">
-		<thead><tr><th>标题</th><th>描述</th><shiro:hasPermission name="wechat:newsReply:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>关键词</th><th>图片标题</th><th>描述</th><shiro:hasPermission name="wechat:newsReply:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="newsReply">
 			<tr>
+				<td>${newsReply.wechatConfig.upContent}</td>
 				<td><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}&cfid=${newsReply.wechatConfig.id}">${newsReply.title}</a></td>
 				<td>${newsReply.description}</td>
 				<shiro:hasPermission name="wechat:newsReply:edit"><td>

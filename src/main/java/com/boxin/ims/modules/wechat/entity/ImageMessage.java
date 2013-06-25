@@ -6,11 +6,13 @@ import java.util.Map;
 public class ImageMessage extends Message {
 	
 	public final static String MSG_TYPE = "news";
+	public final static Integer NEWS_ITEMS_COUNT = 3;
 	private String PicUrl;
 	private String Title;
 	private String Description;
 	private String Url;
 	private String ArticleCount;
+	
 
 	public ImageMessage() {
 		// TODO Auto-generated constructor stub
@@ -81,7 +83,9 @@ public class ImageMessage extends Message {
 		sb.append("\t").append("<Title><![CDATA["+getTitle()+"]]></Title>").append("\n");
 		sb.append("\t").append("<Description><![CDATA["+getDescription()+"]]></Description>").append("\n");
 		sb.append("\t").append("<PicUrl><![CDATA["+getPicUrl()+"]]></PicUrl>").append("\n");
-		sb.append("\t").append("<Url><![CDATA["+getUrl()+"]]></Url>").append("\n");
+		if(getUrl()!=null || getUrl().trim().length()>0){
+			sb.append("\t").append("<Url><![CDATA["+getUrl()+"]]></Url>").append("\n");
+		}
 		sb.append("\t").append("</item>").append("\n");
 		sb.append("\t").append("</Articles>").append("\n");
 		sb.append("\t").append("<FuncFlag>1</FuncFlag>").append("\n");

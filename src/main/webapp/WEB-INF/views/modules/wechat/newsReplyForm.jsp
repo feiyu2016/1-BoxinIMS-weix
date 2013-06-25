@@ -72,14 +72,14 @@
 		<form:hidden path="wechatConfig.weChat.id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
-			<label class="control-label">问题:</label>
+			<label class="control-label">关键词:</label>
 			<div class="controls">
 				<form:input path="wechatConfig.upContent" htmlEscape="false"  maxlength="11" class="required"
 				data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"/> 
 				&nbsp; <a href="#" onclick="showTip('question')"><img src="${ctxStatic}/images/question.png"></img></a>
 				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" onclick="hideTip('question')">
 		            <button type="button" class="close"  onclick="hideTip('question')" >×</button>
-		            <h4 class="alert-heading">用户发送的内容</h4>
+		            <h4 class="alert-heading">用户发送的关键词</h4>
 		            <p>设定好用户预咨的问题,针对此问题作图文内容回复.</p>
     			</div>
 			</div>
@@ -111,9 +111,9 @@
 				<div class="alert alert-block alert-error fade in" id="pic_desc" style="display:none;margin-top:5px;" onclick="hideTip('pic_desc')">
 		            <button type="button" class="close"  onclick="hideTip('pic_desc')" >×</button>
 		            <h4 class="alert-heading">图片描述</h4>
-		            <p>这里设置的标题将会显示在微信中的图片下方的描述中.</p>
+		            <p>这里设置的标题将会显示在微信中的图片下方的描述中，如下图：</p>
 		            <p>
-		                 
+		                 <img alt="描述图" src="${ctxStatic}/images/weixin_tile_desc.jpg">
 		            </p>
     			</div>
 				

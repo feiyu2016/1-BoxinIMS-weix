@@ -27,6 +27,7 @@ import com.boxin.ims.modules.wechat.entity.WechatConfig;
 import com.boxin.ims.modules.wechat.service.NewsReplyService;
 import com.boxin.ims.modules.wechat.service.WeChatService;
 import com.boxin.ims.modules.wechat.service.WechatConfigService;
+import com.boxin.ims.modules.wechat.service.WechatMybatisService;
 import com.boxin.ims.modules.wechat.utils.WeChatUtils;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
@@ -51,6 +52,9 @@ public class NewsReplyController extends BaseController {
 	
 	@Autowired
 	private WechatConfigService wechatConfigService;
+	
+	@Autowired
+	private WechatMybatisService wechatMybatisService;
 	
 	@ModelAttribute
 	public NewsReply get(@RequestParam(required=false) Long id) {
@@ -90,18 +94,25 @@ public class NewsReplyController extends BaseController {
 			//保存新闻消息回复
 			newsReply.setWechatConfig(config);
 			
+			
 		}else{
 			WechatConfig config = wechatConfigService.get(Long.parseLong(cfid));
 			
 //			config.setUpContent(newsReply.getWechatConfig().getUpContent());
 //			config.setMsgType(ImageMessage.MSG_TYPE);
-			
+			Integer count = wechatMybatisService.getNewsReplyCountByConfigId(config.getId());
+			if(count <= ImageMessage.NEWS_ITEMS_COUNT){//可以继续添加
+				model.addAttribute("addFlag", true);
+			}else{
+				model.addAttribute("addFlag", false);
+			}
 			//保存新闻消息回复
 			newsReply.setWechatConfig(config);
 		}
 			
 		
 		model.addAttribute("newsReply", newsReply);
+		
 		return "modules/wechat/newsReplyForm";
 	}
 
@@ -113,30 +124,35 @@ public class NewsReplyController extends BaseController {
 		}
 		if(image != null){
 			String wpPath = WeChatUtils.getWechatResourceSavePath();
-			File file = new File(wpPath+image.getOriginalFilename());
+			String sname = image.getOriginalFilename();
+			String fileType = sname.substring(sname.lastIndexOf("."));
+			String fname  = "wp"+System.currentTimeMillis()+fileType;
+			File file = new File(wpPath+fname);
+			System.out.println("保存文件:"+wpPath+fname);
 			try {
 				image.transferTo(file);
 				
 				newsReply.setFilePath(file.getPath());	
 			} catch (Exception e) {
+				System.out.println("上传文件失败:"+wpPath+fname);
 				e.printStackTrace();
 			}
 			
 		}
 		
-		if(qrfile != null){
 			try {
-				String wpPath = WeChatUtils.getWechatResourceSavePath();
-				File file = new File(wpPath+image.getOriginalFilename());
-				qrfile.transferTo(file);
-				String content = QRCodeUtils.decode(file);
-				if(content != null && content.length()>0){
-					newsReply.setUrl(content);
+				if(qrfile != null && qrfile.getBytes().length>10){
+					String wpPath = WeChatUtils.getWechatResourceSavePath();
+					File file = new File(wpPath+image.getOriginalFilename());
+					qrfile.transferTo(file);
+					String content = QRCodeUtils.decode(file);
+					if(content != null && content.length()>0){
+						newsReply.setUrl(content);
+					}
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
 			
 		newsReplyService.save(newsReply);
 		

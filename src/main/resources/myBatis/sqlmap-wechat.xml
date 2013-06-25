@@ -28,4 +28,10 @@
 		</isNotEmpty>
 	</select>	
 	
+	<select id="getNewsReplyCountByConfigId" resultClass="java.lang.Integer">
+		select 1 from wp_news_reply where config_id = #id#
+	</select>
+
+	
+	
 </sqlMap>
