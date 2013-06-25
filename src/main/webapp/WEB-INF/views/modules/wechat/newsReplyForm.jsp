@@ -7,6 +7,7 @@
 	<title>图文富内容回复管理</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript" src="${ctxStatic}/bootstrap/2.3.1/docs/assets/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="${ctxStatic}/bootstrap/2.3.1/docs/assets/js/bootstrap-tooltip.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#name").focus();
@@ -41,6 +42,18 @@
 		<li><a href="${ctx}/wechat/newsReply/">图文回复设置列表</a></li>
 		<li class="active"><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">图文回复设置<shiro:hasPermission name="wechat:newsReply:edit">${not empty newsReply.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:newsReply:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
+	
+	<c:if test="${addFlag } eq(false)">
+		<div class="alert alert-block alert-error fade in">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h4 class="alert-heading">Oh snap! You got an error!</h4>
+            <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            <p>
+              <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
+            </p>
+          </div>
+	</c:if>
+	
 	<form:form id="inputForm" modelAttribute="newsReply" action="${ctx}/wechat/newsReply/save" method="post" class="form-horizontal"  enctype="multipart/form-data">
 		<form:hidden path="id"/>
 		<form:hidden path="wechatConfig.id"/>
@@ -49,7 +62,8 @@
 		<div class="control-group">
 			<label class="control-label">问题:</label>
 			<div class="controls">
-				<form:input path="wechatConfig.upContent" htmlEscape="false" onclick="showTip('question')" maxlength="11" class="required"/>
+				<form:input path="wechatConfig.upContent" htmlEscape="false" onclick="showTip('question')" maxlength="11" class="required"
+				data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"		/>
 			</div>
 		</div>
 		<div class="control-group">
