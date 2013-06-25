@@ -71,6 +71,10 @@
 					<form:input path="title" htmlEscape="false"  class="required"/>
 				</div>
 				
+				<label class="control-label">链接地址:</label>
+				<div   class="controls" style="margin-top:5px;margin-buttom:5px;">
+					<form:input path="url" htmlEscape="false"  class="required"/>  &nbsp; <span class="label label-warning">必须以 http://开头.</span>
+				</div>
 				<label class="control-label">描述:</label>
 				<div   class="controls" style="margin-top:5px;margin-buttom:5px;">
 					<form:textarea path="description" htmlEscape="false"  cols="6" rows="5" class="required"/>
