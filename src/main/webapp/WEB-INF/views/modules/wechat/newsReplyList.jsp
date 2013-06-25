@@ -33,10 +33,10 @@
 		<tbody>
 		<c:forEach items="${page.list}" var="newsReply">
 			<tr>
-				<td><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">${newsReply.title}</a></td>
+				<td><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}&cfid=${newsReply.wechatConfig.id}">${newsReply.title}</a></td>
 				<td>${newsReply.description}</td>
 				<shiro:hasPermission name="wechat:newsReply:edit"><td>
-    				<a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">修改</a>
+    				<a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}&cfid=${newsReply.wechatConfig.id}">修改</a>
 					<a href="${ctx}/wechat/newsReply/delete?id=${newsReply.id}" onclick="return confirmx('确认要删除该图文富内容回复吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
