@@ -18,8 +18,8 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/wechat/newsReply/">图文富内容回复列表</a></li>
-		<shiro:hasPermission name="wechat:newsReply:edit"><li><a href="${ctx}/wechat/newsReply/form">图文富内容回复添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}/wechat/newsReply/">图文消息列表</a></li>
+		<shiro:hasPermission name="wechat:newsReply:edit"><li><a href="${ctx}/wechat/newsReply/form">图文回复</a></li></shiro:hasPermission>
 	</ul>
 	<form:form id="searchForm" modelAttribute="newsReply" action="${ctx}/wechat/newsReply/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>

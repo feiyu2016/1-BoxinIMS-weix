@@ -29,11 +29,22 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered ">
-		<thead><tr><th>问题</th><th>回复</th><shiro:hasPermission name="wechat:wechatConfig:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>关键词</th><th>消息类型</th><th>回复内容</th><shiro:hasPermission name="wechat:wechatConfig:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="wechatConfig">
 			<tr>
 				<td><a href="${ctx}/wechat/config/form?id=${wechatConfig.id}">${wechatConfig.upContent}</a></td>
+				<td>${wechatConfig.downContent}
+					<c:if test='${wechatConfig.msgType eq  "news"  }'>
+						图文
+					</c:if>
+					<c:if test='${wechatConfig.msgType eq  "text"  }'>
+						文字
+					</c:if>
+					<c:if test='${wechatConfig.msgType eq  "music"  }'>
+						声音
+					</c:if>
+				</td>
 				<td>${wechatConfig.downContent}</td>
 				<shiro:hasPermission name="wechat:wechatConfig:edit"><td>
     				<a href="${ctx}/wechat/config/form?id=${wechatConfig.id}">修改</a>

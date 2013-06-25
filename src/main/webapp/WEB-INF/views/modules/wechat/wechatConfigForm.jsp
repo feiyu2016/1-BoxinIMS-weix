@@ -29,7 +29,7 @@
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/wechat/config/">回复列表</a></li>
 		<li><a href="${ctx}/wechat/newsReply/form?cfid=${wechatConfig.id}&wid=${weChat.id}">图文回复</a></li>
-		<li class="active"><a href="${ctx}/wechat/wechat/form?id=${wechatConfig.id}">文字回复<shiro:hasPermission name="wechat:wechatConfig:edit">${not empty wechatConfig.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="wechat:wechatConfig:edit">查看</shiro:lacksPermission></a></li>
+		<li class="active"><a href="${ctx}/wechat/wechat/form?id=${wechatConfig.id}">文字回复</a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
