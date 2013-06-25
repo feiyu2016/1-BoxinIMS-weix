@@ -39,6 +39,7 @@
     				<a href="${ctx}/wechat/config/form?id=${wechatConfig.id}">修改</a>
 					<a href="${ctx}/wechat/config/delete?id=${wechatConfig.id}" onclick="return confirmx('确认要删除该微信上下行数据交互吗？', this.href)">删除</a>
 					<a href="${ctx}/wechat/newsReply/form?cfid=${wechatConfig.id}&wid=${wechatConfig.weChat.id}">添加图文回复</a>
+					<c:if test='${wechatConfig.msgType eq  "news"  }'> <a href="${ctx}/wechat/newsReply/?wechatConfig.id=${wechatConfig.id}&wid=${wechatConfig.weChat.id}">图文回复列表</a> </c:if>
 				</td></shiro:hasPermission>
 			</tr>
 		</c:forEach>
