@@ -18,13 +18,13 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li class="active"><a href="${ctx}/wechat/config/">回复设置列表</a></li>
-		<shiro:hasPermission name="wechat:wechatConfig:edit"><li><a href="${ctx}/wechat/config/form">回复设置添加</a></li></shiro:hasPermission>
+		<li class="active"><a href="${ctx}/wechat/config/">回复列表</a></li>
+		<shiro:hasPermission name="wechat:wechatConfig:edit"><li><a href="${ctx}/wechat/config/form">文字回复</a></li></shiro:hasPermission>
 	</ul>
 	<form:form id="searchForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/" method="post" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
 		<input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
-		<label>问题 ：</label><form:input path="upContent" htmlEscape="false" maxlength="50" class="input-medium"/>
+		<label>关键词：</label><form:input path="upContent" htmlEscape="false" maxlength="50" class="input-medium"/>
 		&nbsp;<input id="btnSubmit" class="btn btn-primary" type="submit" value="查询"/>
 	</form:form>
 	<tags:message content="${message}"/>

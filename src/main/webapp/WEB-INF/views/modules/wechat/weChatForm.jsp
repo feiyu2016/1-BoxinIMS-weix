@@ -32,6 +32,7 @@
 		<li><a href="${ctx}/wechat/welcome/form">欢迎词</a></li>
 		<li><a href="${ctx}/wechat/config/form">文字回复</a></li>
 		<li><a href="${ctx}/wechat/newsReply/form">图文回复</a></li>
+		<li><a href="${ctx}/wechat/config/form?type=music">语音回复</a></li>
 		<li><a href="${ctx}/wechat/newsReply/">回复列表</a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="weChat" action="${ctx}/wechat/weChat/save" method="post" class="form-horizontal">

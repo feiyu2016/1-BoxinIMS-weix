@@ -59,7 +59,7 @@
 		<div class="alert alert-block alert-error fade in">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <h4 class="alert-heading">用户发送的内容</h4>
-            <p>设定好用户可以要咨的问题,再针对每一个ukj</p>
+            <p>设定好用户可以要咨的关键词,根据关键词回复不同的内容。</p>
             <p>
               <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
             </p>
@@ -80,7 +80,7 @@
 				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" onclick="hideTip('question')">
 		            <button type="button" class="close"  onclick="hideTip('question')" >×</button>
 		            <h4 class="alert-heading">用户发送的关键词</h4>
-		            <p>设定好用户预咨的问题,针对此问题作图文内容回复.</p>
+		            <p>设定好用户预咨的关键词,针对此问题作图文内容回复.</p>
     			</div>
 			</div>
 			
@@ -148,8 +148,8 @@
 	<div class="popover fade right in" 
 		style="top: 12.5px; left: 242px; display: none;" id="question_tip">
 		<div class="arrow"></div>
-		<h3 class="popover-title">设置问题</h3>
-		<div class="popover-content">在此处请输入自动回复设置的问题。</div>
+		<h3 class="popover-title">关键词</h3>
+		<div class="popover-content">在此处请输入自动回复设置的关键词。</div>
 	</div>
 	
 	
