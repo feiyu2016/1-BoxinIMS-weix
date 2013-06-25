@@ -77,13 +77,10 @@
 				<form:input path="wechatConfig.upContent" htmlEscape="false"  maxlength="11" class="required"
 				data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"/> 
 				&nbsp; <a href="#" onclick="showTip('question')"><img src="${ctxStatic}/images/question.png"></img></a>
-				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" >
+				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" onclick="hideTip('question')">
 		            <button type="button" class="close"  onclick="hideTip('question')" >×</button>
 		            <h4 class="alert-heading">用户发送的内容</h4>
-		            <p>设定好用户可以要咨的问题,再针对每一个问题做相应的内容回复.</p>
-		            <p>
-		                <a class="btn" href="#"   onclick="hideTip('question')" >隐藏</a>
-		            </p>
+		            <p>设定好用户预咨的问题,针对此问题作图文内容回复.</p>
     			</div>
 			</div>
 			
@@ -93,12 +90,12 @@
 			<div class="controls">
 				<form:input path="title" htmlEscape="false" maxlength="50"   class="required"/>
 				&nbsp;<a href="#" onclick="showTip('pic_title')"><img src="${ctxStatic}/images/question.png"></img></a>
-				<div class="alert alert-block alert-error fade in" id="pic_title" style="display:none;margin-top:5px;" >
+				<div class="alert alert-block alert-error fade in" id="pic_title" style="display:none;margin-top:5px;"  onclick="hideTip('pic_title')">
 		            <button type="button" class="close"  onclick="hideTip('pic_title')" >×</button>
-		            <h4 class="alert-heading">返回给粉丝的图片标题</h4>
-		            <p>这里设置的标题将会显示在微信中的图片的标题。</p>
+		            <h4 class="alert-heading">返回的图片标题</h4>
+		            <p>这里设置的标题将会显示在微信中的图片的标题,如下图：</p>
 		            <p>
-		                <a class="btn" href="#"   onclick="hideTip('pic_title')" >隐藏</a>
+		                 <img alt="图片标题" src="${ctxStatic }/images/weixin_items_title.png">
 		            </p>
     			</div>
 			</div>
@@ -111,12 +108,12 @@
 				/>
 				
 				&nbsp;<a href="#" onclick="showTip('pic_desc')"><img src="${ctxStatic}/images/question.png"></img></a>
-				<div class="alert alert-block alert-error fade in" id="pic_desc" style="display:none;margin-top:5px;" >
+				<div class="alert alert-block alert-error fade in" id="pic_desc" style="display:none;margin-top:5px;" onclick="hideTip('pic_desc')">
 		            <button type="button" class="close"  onclick="hideTip('pic_desc')" >×</button>
-		            <h4 class="alert-heading">返回给粉丝的图片描述</h4>
+		            <h4 class="alert-heading">图片描述</h4>
 		            <p>这里设置的标题将会显示在微信中的图片下方的描述中.</p>
 		            <p>
-		                <a class="btn" href="#"   onclick="hideTip('pic_desc')" >隐藏</a>
+		                 
 		            </p>
     			</div>
 				

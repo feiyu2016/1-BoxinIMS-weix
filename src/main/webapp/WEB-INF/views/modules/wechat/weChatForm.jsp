@@ -42,12 +42,20 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">备注:</label>
+			<label class="control-label">默认回复内容:</label>
 			<div class="controls">
-				<form:input path="remarks" htmlEscape="false" maxlength="50" class="required"/>
+				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10" class="required"/>  <span class="label label-warning">用户输入内容无法找到预先设置好的内容时，刚回复此默认回复内容。</span> 
+				
 			</div>
 		</div>
-		<div class="hero-unit">
+		<div class="control-group">
+			<label class="control-label">示例图:</label>
+			<div class="controls">
+				<img alt="微信绑定"  height="80%" width="80%" src="${ctxStatic }/images/weixintoken.png"> 
+				
+			</div>
+		</div>
+		<div class="alert alert-block alert-error fade in">
 	  		<h5>绑定的地址:</h5>
 	  		<c:if test="${weChat.id == null} ">
 	  			<p>未生成绑定地址。</p>
