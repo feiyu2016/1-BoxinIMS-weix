@@ -29,7 +29,19 @@
 		});
 		
 		function showTip(id){
-			//$('#question_tip').popover('show')
+			
+			var flag = $('#'+id).css('display');
+			if('none' === flag){
+				$('#'+id).show();
+			}else{
+				$('#'+id).hide();
+			}
+		}
+		
+		
+		
+		function hideTip(id){
+			 $('#'+id).hide();
 		}
 		
 		function  setUrl(url){
@@ -46,8 +58,8 @@
 	<c:if test="${addFlag } eq(false)">
 		<div class="alert alert-block alert-error fade in">
             <button type="button" class="close" data-dismiss="alert">×</button>
-            <h4 class="alert-heading">Oh snap! You got an error!</h4>
-            <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            <h4 class="alert-heading">用户发送的内容</h4>
+            <p>设定好用户可以要咨的问题,再针对每一个ukj</p>
             <p>
               <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
             </p>
@@ -63,13 +75,32 @@
 			<label class="control-label">问题:</label>
 			<div class="controls">
 				<form:input path="wechatConfig.upContent" htmlEscape="false" onclick="showTip('question')" maxlength="11" class="required"
-				data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"		/>
+				data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"/> 
+				&nbsp; <a href="#" onclick="showTip('question')"><img src="${ctxStatic}/images/question.png"></img></a>
+				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" >
+		            <button type="button" class="close"  onclick="hideTip('question')" >×</button>
+		            <h4 class="alert-heading">用户发送的内容</h4>
+		            <p>设定好用户可以要咨的问题,再针对每一个问题做相应的内容回复.</p>
+		            <p>
+		                <a class="btn" href="#"   onclick="hideTip('question')" >隐藏</a>
+		            </p>
+    			</div>
 			</div>
+			
 		</div>
 		<div class="control-group">
 			<label class="control-label">图片标题:</label>
 			<div class="controls">
 				<form:input path="title" htmlEscape="false" maxlength="50" onmouseover="showTip('pic_title')" class="required"/>
+				&nbsp;<a href="#" onclick="showTip('pic_title')"><img src="${ctxStatic}/images/question.png"></img></a>
+				<div class="alert alert-block alert-error fade in" id="pic_title" style="display:none;margin-top:5px;" >
+		            <button type="button" class="close"  onclick="hideTip('pic_title')" >×</button>
+		            <h4 class="alert-heading">返回给粉丝的图片标题</h4>
+		            <p>这里设置的标题将会显示在微信中的图片的标题。</p>
+		            <p>
+		                <a class="btn" href="#"   onclick="hideTip('pic_title')" >隐藏</a>
+		            </p>
+    			</div>
 			</div>
 		</div>
 		<div class="control-group">
@@ -78,6 +109,17 @@
 				<form:textarea path="description" htmlEscape="false" cols="10" rows="6"   class="required"
 					data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="" data-original-title="Popover on right"
 				/>
+				
+				&nbsp;<a href="#" onclick="showTip('pic_desc')"><img src="${ctxStatic}/images/question.png"></img></a>
+				<div class="alert alert-block alert-error fade in" id="pic_desc" style="display:none;margin-top:5px;" >
+		            <button type="button" class="close"  onclick="hideTip('pic_desc')" >×</button>
+		            <h4 class="alert-heading">返回给粉丝的图片描述</h4>
+		            <p>这里设置的标题将会显示在微信中的图片下方的描述中.</p>
+		            <p>
+		                <a class="btn" href="#"   onclick="hideTip('pic_desc')" >隐藏</a>
+		            </p>
+    			</div>
+				
 			</div>
 		</div>
 		<div class="control-group">
@@ -112,6 +154,9 @@
 		<h3 class="popover-title">设置问题</h3>
 		<div class="popover-content">在此处请输入自动回复设置的问题。</div>
 	</div>
+	
+	
+	
 	
 	
 </body>
