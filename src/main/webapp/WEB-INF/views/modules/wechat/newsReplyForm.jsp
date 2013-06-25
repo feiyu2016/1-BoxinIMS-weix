@@ -74,7 +74,7 @@
 		<div class="control-group">
 			<label class="control-label">问题:</label>
 			<div class="controls">
-				<form:input path="wechatConfig.upContent" htmlEscape="false" onclick="showTip('question')" maxlength="11" class="required"
+				<form:input path="wechatConfig.upContent" htmlEscape="false"  maxlength="11" class="required"
 				data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top"/> 
 				&nbsp; <a href="#" onclick="showTip('question')"><img src="${ctxStatic}/images/question.png"></img></a>
 				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" >
@@ -91,7 +91,7 @@
 		<div class="control-group">
 			<label class="control-label">图片标题:</label>
 			<div class="controls">
-				<form:input path="title" htmlEscape="false" maxlength="50" onmouseover="showTip('pic_title')" class="required"/>
+				<form:input path="title" htmlEscape="false" maxlength="50"   class="required"/>
 				&nbsp;<a href="#" onclick="showTip('pic_title')"><img src="${ctxStatic}/images/question.png"></img></a>
 				<div class="alert alert-block alert-error fade in" id="pic_title" style="display:none;margin-top:5px;" >
 		            <button type="button" class="close"  onclick="hideTip('pic_title')" >×</button>
@@ -138,7 +138,7 @@
 		<div class="control-group">
 			<label class="control-label">上传二维码图片:</label>
 			<div class="controls">
-				<input type="file" name="qrfile" htmlEscape="false" maxlength="50" class="required" onchange="setUrl(this.value)"/>
+				<input type="file" name="qrfile" htmlEscape="false" maxlength="50"  onchange="setUrl(this.value)"/>
 			</div>
 		</div>
 		
