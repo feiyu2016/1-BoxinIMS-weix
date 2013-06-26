@@ -48,9 +48,6 @@
 			</div>
 		</div>
 		
-		
-		 
-		
 		<div class="form-actions">
 			<shiro:hasPermission name="wechat:wechatConfig:edit"><input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>
