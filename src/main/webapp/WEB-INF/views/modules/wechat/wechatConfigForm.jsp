@@ -34,7 +34,7 @@
 	<form:form id="inputForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
 		<form:hidden path="weChat.id"/>
-		 
+		<tags:message content="${message}"/>
 		<div class="control-group">
 			<label class="control-label">关键词:</label>
 			<div class="controls">
