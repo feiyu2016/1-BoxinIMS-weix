@@ -123,7 +123,7 @@
 		<div class="control-group">
 			<label class="control-label">上传图片:</label>
 			<div class="controls">
-				<input type="file" name="file" htmlEscape="false"   class="required"/>   <h6>大图片建议尺寸：720像素 * 400像素</h6>    <h6>小图片建议尺寸：400像素 * 400像素 </h6>  
+				<input type="file" name="file" htmlEscape="false"   class="required"/>    <span>大图片建议尺寸：720像素 * 400像素;</span>    <span>小图片建议尺寸：400像素 * 400像素 </span>  
 			</div>
 		</div>
 		
