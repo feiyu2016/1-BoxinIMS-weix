@@ -26,6 +26,9 @@
 		<isNotEmpty property="configId">
 			and config_id = #configId#
 		</isNotEmpty>
+		<isNotEmpty property="welcomeId">
+			and welcome_id = #welcomeId#
+		</isNotEmpty>
 	</select>	
 	
 	<select id="getNewsReplyCountByConfigId" resultClass="java.lang.Integer">
