@@ -42,23 +42,17 @@
 		<div class="control-group">
 			<label class="control-label">Token:</label>
 			<div class="controls">
-				<form:input path="token" htmlEscape="false" maxlength="11" class="required"/>&nbsp;<span class="label label-warning">此Token与微信公众平台的Token必须一致</span>
+				<form:input path="token" htmlEscape="false" maxlength="11" class="required"/>&nbsp;<span  >此Token对应微信公众平台的Token</span>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">默认回复内容:</label>
 			<div class="controls">
-				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10" class="required"/>  <span class="label label-warning">用户输入内容无法找到预先设置好的内容时，刚回复此默认回复内容。</span> 
+				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10" class="required"/>  <span  >用户输入内容无法找到预先设置好的内容时，刚回复此默认回复内容。</span> 
 				
 			</div>
 		</div>
-		<div class="control-group">
-			<label class="control-label">示例图:</label>
-			<div class="controls">
-				<img alt="微信绑定"  height="80%" width="80%" src="${ctxStatic }/images/weixintoken.png"> 
-				
-			</div>
-		</div>
+		
 		<div class="alert alert-block alert-error fade in">
 	  		<h5>绑定的地址:</h5>
 	  		<c:if test="${weChat.id == null} ">
@@ -73,6 +67,14 @@
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>
 		</div>
 	</form:form>
+	
+	<div class="control-group">
+			<label class="control-label">示例图:</label>
+			<div class="controls">
+				<img alt="微信绑定"  height="80%" width="80%" src="${ctxStatic }/images/weixintoken.png"> 
+				
+			</div>
+		</div>
 	
 </body>
 </html>
