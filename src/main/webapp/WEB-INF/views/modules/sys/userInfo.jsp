@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">所属部门:</label>
+			<label class="control-label">所属单位:</label>
 			<div class="controls">
 				<label class="lbl">${user.office.name}</label>
 			</div>
