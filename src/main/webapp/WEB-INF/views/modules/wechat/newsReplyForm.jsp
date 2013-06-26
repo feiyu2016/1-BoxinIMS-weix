@@ -123,20 +123,20 @@
 		<div class="control-group">
 			<label class="control-label">上传图片:</label>
 			<div class="controls">
-				<input type="file" name="file" htmlEscape="false" maxlength="50" class="required"/>   <h6>大图片建议尺寸：720像素 * 400像素</h6>    <h6>小图片建议尺寸：400像素 * 400像素 </h6>  
+				<input type="file" name="file" htmlEscape="false"   class="required"/>   <h6>大图片建议尺寸：720像素 * 400像素</h6>    <h6>小图片建议尺寸：400像素 * 400像素 </h6>  
 			</div>
 		</div>
 		
 		<div class="control-group">
 			<label class="control-label">原文链接:</label>
 			<div class="controls">
-				<form:input path="url"  id="url" htmlEscape="false" maxlength="50" />  &nbsp;链接必须以 htt://开头
+				<form:input path="url"  id="url" htmlEscape="false"   />  &nbsp;链接必须以 htt://开头
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">上传二维码图片:</label>
 			<div class="controls">
-				<input type="file" name="qrfile" htmlEscape="false" maxlength="50"  onchange="setUrl(this.value)"/>
+				<input type="file" name="qrfile" htmlEscape="false"    onchange="setUrl(this.value)"/>
 			</div>
 		</div>
 		
