@@ -53,6 +53,7 @@
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/wechat/newsReply/">图文回复列表</a></li>
 		<li class="active"><a href="${ctx}/wechat/newsReply/form?id=${newsReply.id}">图文回复</a></li>
+		<li><a href="${ctx}/wechat/config/form">文字回复</a></li>
 	</ul><br/>
 	
 	<c:if test="${addFlag } eq(false)">
