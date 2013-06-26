@@ -87,7 +87,8 @@ public class WechatWelcomeController extends BaseController {
 		
 		if(MusicMessage.MSG_TYPE.equals(wechatWelcome.getType()) || ImageMessage.MSG_TYPE.equals(wechatWelcome.getType())){
 			String wpPath = WeChatUtils.getWechatResourceSavePath();
-			File file = new File(wpPath+image.getOriginalFilename());
+			String fname = UserUtils.getUser().getLoginName() +System.currentTimeMillis()+"mp3";
+			File file = new File(wpPath+fname);
 			try {
 				image.transferTo(file);
 				

@@ -126,12 +126,11 @@ public class NewsReplyController extends BaseController {
 			String wpPath = WeChatUtils.getWechatResourceSavePath();
 			String sname = image.getOriginalFilename();
 			String fileType = sname.substring(sname.lastIndexOf("."));
-			String fname  = "wp"+System.currentTimeMillis()+fileType;
+			String fname  = UserUtils.getUser().getLoginName()+	"_wp_"+System.currentTimeMillis()+fileType;
 			File file = new File(wpPath+fname);
 			System.out.println("保存文件:"+wpPath+fname);
 			try {
 				image.transferTo(file);
-				
 				newsReply.setFilePath(file.getPath());	
 			} catch (Exception e) {
 				System.out.println("上传文件失败:"+wpPath+fname);
