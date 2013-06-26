@@ -36,7 +36,7 @@
 		<form:hidden path="weChat.id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
-			<label class="control-label">Key Word</label>
+			<label class="control-label">关键词：</label>
 			<div class="controls">
 				<form:input path="upContent" htmlEscape="false" maxlength="11" class="required"/>
 			</div>
