@@ -29,7 +29,7 @@
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/wechat/config/">回复列表</a></li>
 		<li><a href="${ctx}/wechat/newsReply/form?cfid=${wechatConfig.id}&wid=${weChat.id}">图文回复</a></li>
-		<li class="active"><a href="${ctx}/wechat/wechat/form?id=${wechatConfig.id}">文字回复</a></li>
+		<li class="active"><a href="${ctx}/wechat/wechat/form">文字回复</a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
