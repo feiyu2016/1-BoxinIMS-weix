@@ -19,7 +19,7 @@
 <body>
 	<ul class="nav nav-tabs">
 		<li class="active"><a href="${ctx}/wechat/newsReply/">图文消息列表</a></li>
-		<shiro:hasPermission name="wechat:newsReply:edit"><li><a href="${ctx}/wechat/newsReply/form">图文回复</a></li></shiro:hasPermission>
+		<li><a href="${ctx}/wechat/newsReply/form">图文回复</a></li> 
 		<li><a href="${ctx}/wechat/wechat/form">文字回复</a></li>
 	</ul>
 	<form:form id="searchForm" modelAttribute="newsReply" action="${ctx}/wechat/newsReply/" method="post" class="breadcrumb form-search">
