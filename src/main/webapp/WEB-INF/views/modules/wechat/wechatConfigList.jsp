@@ -35,7 +35,7 @@
 		<c:forEach items="${page.list}" var="wechatConfig">
 			<tr>
 				<td><a href="${ctx}/wechat/config/form?id=${wechatConfig.id}">${wechatConfig.upContent}</a></td>
-				<td>${wechatConfig.downContent}
+				<td> 
 					<c:if test='${wechatConfig.msgType eq  "news"  }'>
 						图文
 					</c:if>
