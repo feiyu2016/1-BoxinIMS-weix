@@ -29,7 +29,7 @@
 			<div id="title">
 				<span class="pull-right hide">您好, 
 			    	<shiro:user><a href="${ctx}/sys/user/info" target="mainFrame"><shiro:principal property="name"/></a></shiro:user><shiro:guest>请<a href="${ctx}/login">登录</a>!</shiro:guest>
-					<shiro:user> | <a href="${ctx}/logout">退出</a></shiro:user> | <a href="${pageContext.request.contextPath}${fns:getFrontPath()}/index-${fnc:getCurrentSiteId()}.html" target="_blank">访问网站</a>
+					<shiro:user> | <a href="${ctx}/logout">退出</a></shiro:user> 
 					&nbsp;&nbsp;&nbsp;
 				</span>
 				<ul class="pull-right">
