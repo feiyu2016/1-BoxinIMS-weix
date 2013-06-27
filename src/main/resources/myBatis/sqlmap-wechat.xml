@@ -29,6 +29,8 @@
 		<isNotEmpty property="welcomeId">
 			and welcome_id = #welcomeId#
 		</isNotEmpty>
+		    and del_flag = 0
+		    order by id desc
 	</select>	
 	
 	<select id="getNewsReplyCountByConfigId" resultClass="java.lang.Integer">
