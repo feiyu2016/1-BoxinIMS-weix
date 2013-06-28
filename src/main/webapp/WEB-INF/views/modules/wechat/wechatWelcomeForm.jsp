@@ -86,7 +86,7 @@
 				
 				<label class="control-label">链接地址:</label>
 				<div   class="controls" style="margin-top:5px;margin-buttom:5px;">
-					<form:input path="url" htmlEscape="false"  class="required"  id="pic_url"/>  &nbsp; <span class="label label-warning">必须以 http://开头.</span>
+					<form:input path="url" htmlEscape="false"  class="required"  id="pic_url"/>  &nbsp; <span class="alert">必须以 http://开头.</span>
 				</div>
 				<label class="control-label">图片描述:</label>
 				<div   class="controls" style="margin-top:5px;margin-buttom:5px;">
@@ -95,7 +95,7 @@
 				</div>
 				<label class="control-label">上传文件:</label>
 				<div class="controls" id="uploadfile">
-					<input type="file"  name="file"/> <span>大图片建议尺寸：720像素 * 400像素;</span>    <span>小图片建议尺寸：400像素 * 400像素 </span>
+					<input type="file"  name="file"/> <span class="alert">大图片建议尺寸：720像素 * 400像素;  &nbsp; 小图片建议尺寸：400像素 * 400像素</span>    
 				</div>
 				
 			</div>
