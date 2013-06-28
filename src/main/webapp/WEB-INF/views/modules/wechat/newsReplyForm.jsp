@@ -123,14 +123,14 @@
 		<div class="control-group">
 			<label class="control-label">上传图片:</label>
 			<div class="controls">
-				<input type="file" name="file" htmlEscape="false"   class="required"/>    <span>大图片建议尺寸：720像素 * 400像素;</span>    <span>小图片建议尺寸：400像素 * 400像素 </span>  
+				<input type="file" name="file" htmlEscape="false"   class="required"/>    <span class="alert">大图片建议尺寸：720像素 * 400像素;  小图片建议尺寸：400像素 * 400像素 </span>      
 			</div>
 		</div>
 		
 		<div class="control-group">
 			<label class="control-label">原文链接:</label>
 			<div class="controls">
-				<form:input path="url"  id="url" htmlEscape="false"   />  &nbsp;链接必须以 htt://开头
+				<form:input path="url"  id="url" htmlEscape="false"   />  &nbsp;<span class="alert">链接必须以 htt://开头</span>
 			</div>
 		</div>
 		<div class="control-group">
