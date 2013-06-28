@@ -52,6 +52,9 @@ public class WechatConfigController extends BaseController {
 	@RequiresPermissions("wechat:wechatConfig:view")
 	@RequestMapping(value = {"list", ""})
 	public String list(WechatConfig wechatConfig, HttpServletRequest request, HttpServletResponse response, Model model) {
+		
+		WeChat weChat = weChatService.getWeChatByUserId(UserUtils.getUser().getId());
+		wechatConfig.setWeChat(weChat);
         Page<WechatConfig> page = wechatConfigService.find(new Page<WechatConfig>(request, response), wechatConfig); 
         model.addAttribute("page", page);
 		return "modules/wechat/wechatConfigList";

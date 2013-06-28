@@ -56,6 +56,8 @@ public class NewsReplyService extends BaseService {
 		DetachedCriteria dc = newsReplyDao.createDetachedCriteria();
 		if (newsReply.getWechatConfig()!=null && newsReply.getWechatConfig().getId()>0){
 			dc.add(Restrictions.eq("wechatConfig.id", newsReply.getWechatConfig().getId()));
+		}else{
+			dc.add(Restrictions.eq("wechatConfig.id", -1L));
 		}
 		if (StringUtils.isNotEmpty(newsReply.getTitle())){
 			dc.add(Restrictions.like("title", "%"+newsReply.getTitle()+"%"));
@@ -70,7 +72,7 @@ public class NewsReplyService extends BaseService {
 	
 	public List<NewsReply> findNewsReply(Map<String,String> params){
 		
-		return  daoHelper.queryForList("com.boxin.ims.wechat.selectNewsReplysBy", params);
+		return  daoHelper.queryForList("com.boxin.ims.wechat.selectNewsReplys", params);
 	}
 	
 	@Transactional(readOnly = false)

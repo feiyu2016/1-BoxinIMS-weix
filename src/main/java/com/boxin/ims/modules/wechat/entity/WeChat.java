@@ -48,6 +48,7 @@ public class WeChat extends BaseEntity {
 
 	public WeChat() {
 		this.createTime = new Date();
+		this.updateTime = new Date();
 		this.delFlag = DEL_FLAG_NORMAL;
 	}
 

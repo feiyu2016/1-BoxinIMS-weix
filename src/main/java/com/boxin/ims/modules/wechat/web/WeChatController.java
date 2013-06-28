@@ -63,8 +63,11 @@ public class WeChatController extends BaseController {
 		if(weChat.getUser() == null || weChat.getUser().getId() == null){
 			User user = UserUtils.getUser();
 			weChat  = weChatService.getWeChatByUserId(user.getId());
-			if(weChat == null) weChat = new WeChat();
-			weChat.setUser(UserUtils.getUser());
+			if(weChat == null) {
+				weChat = new WeChat();
+				weChat.setUser(UserUtils.getUser());
+				weChatService.save(weChat);
+			}
 		}
 		model.addAttribute("weChat", weChat);
 		return "modules/wechat/weChatForm";

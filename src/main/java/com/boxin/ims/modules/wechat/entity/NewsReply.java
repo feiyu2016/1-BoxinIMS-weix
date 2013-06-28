@@ -37,11 +37,13 @@ public class NewsReply extends BaseEntity {
 	private Long id; 		// 编号
 	private String title;	//微信ID
 	private WechatConfig wechatConfig;	//对应的上行
+	private WechatWelcome wechatWelcome;	//对应的欢迎信息
 	private String description; 	// 微信名称
 	private String filePath;		//存储路径
 	private String picUrl;	//Token 微信接口标识
 	private String url; 		// 用户
 	private Integer ord; // 备注
+	private Boolean isWelcome=false;				//是否欢迎词项
 	private Integer articleCount; // 备注
 	private Date createTime;	// 创建日期
 	private Date updateTime;	//更新时间
@@ -125,7 +127,6 @@ public class NewsReply extends BaseEntity {
 	@JoinColumn(name="config_id")
 	@NotFound(action = NotFoundAction.IGNORE)
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-	@NotNull
 	public WechatConfig getWechatConfig() {
 		return wechatConfig;
 	}
@@ -137,6 +138,33 @@ public class NewsReply extends BaseEntity {
 	}
 	public void setFilePath(String filePath) {
 		this.filePath = filePath;
+	}
+
+
+
+	public Boolean getIsWelcome() {
+		return isWelcome;
+	}
+
+
+
+	public void setIsWelcome(Boolean isWelcome) {
+		this.isWelcome = isWelcome;
+	}
+
+
+	@ManyToOne
+	@JoinColumn(name="welcome_id")
+	@NotFound(action = NotFoundAction.IGNORE)
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	public WechatWelcome getWechatWelcome() {
+		return wechatWelcome;
+	}
+
+
+
+	public void setWechatWelcome(WechatWelcome wechatWelcome) {
+		this.wechatWelcome = wechatWelcome;
 	}
 	
 	

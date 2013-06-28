@@ -4,6 +4,9 @@
 package com.boxin.ims.modules.wechat.web;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,18 +21,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.boxin.framework.base.dao.DaoHelper;
 import com.boxin.ims.modules.wechat.entity.ImageMessage;
 import com.boxin.ims.modules.wechat.entity.MusicMessage;
+import com.boxin.ims.modules.wechat.entity.NewsReply;
 import com.boxin.ims.modules.wechat.entity.WeChat;
 import com.boxin.ims.modules.wechat.entity.WechatWelcome;
+import com.boxin.ims.modules.wechat.service.NewsReplyService;
 import com.boxin.ims.modules.wechat.service.WeChatService;
+import com.boxin.ims.modules.wechat.service.WechatMybatisService;
 import com.boxin.ims.modules.wechat.service.WechatWelcomeService;
 import com.boxin.ims.modules.wechat.utils.WeChatUtils;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.web.BaseController;
-import com.thinkgem.jeesite.modules.sys.entity.User;
-import com.thinkgem.jeesite.modules.sys.utils.DictUtils;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 
 /**
@@ -47,6 +52,11 @@ public class WechatWelcomeController extends BaseController {
 	@Autowired
 	private WeChatService weChatService;
 	
+	@Autowired
+	private NewsReplyService newsReplyService;
+	
+	@Autowired
+	private  WechatMybatisService wechatMybatisService;
 	@ModelAttribute
 	public WechatWelcome get(@RequestParam(required=false) Long id) {
 		if (id != null){
@@ -59,7 +69,6 @@ public class WechatWelcomeController extends BaseController {
 	@RequiresPermissions("wechat:wechatWelcome:view")
 	@RequestMapping(value = {"list", ""})
 	public String list(WechatWelcome wechatWelcome, HttpServletRequest request, HttpServletResponse response, Model model) {
-		User user = UserUtils.getUser();
         Page<WechatWelcome> page = wechatWelcomeService.find(new Page<WechatWelcome>(request, response), wechatWelcome); 
         model.addAttribute("page", page);
 		return "modules/wechat/wechatWelcomeList";
@@ -69,10 +78,22 @@ public class WechatWelcomeController extends BaseController {
 	@RequestMapping(value = "form")
 	public String form(WechatWelcome wechatWelcome, Model model) {
 		WeChat weChat = weChatService.getWeChatByUserId(UserUtils.getUser().getId());
-		if(weChat.getWechatWelcome()!= null){
-			wechatWelcome = weChat.getWechatWelcome();
+		if(weChat == null){
+			model.addAttribute("message", "请先绑定微信.");
+		}else{
+			if(weChat.getWechatWelcome()!= null){
+				wechatWelcome = weChat.getWechatWelcome();
+				NewsReply reply = new NewsReply();
+				reply.setWechatWelcome(wechatWelcome);
+				Map<String,String> params = new HashMap<String,String>();
+				params.put("welcomeId", wechatWelcome.getId()+"");
+				
+				List<NewsReply> newsReplyList = wechatMybatisService.findNewsReply(params);
+				model.addAttribute("newsReplyList", newsReplyList);
+				
+			}
+			model.addAttribute("wechatWelcome", wechatWelcome);
 		}
-		model.addAttribute("wechatWelcome", wechatWelcome);
 		
 		
 		return "modules/wechat/wechatWelcomeForm";
@@ -85,9 +106,11 @@ public class WechatWelcomeController extends BaseController {
 			return form(wechatWelcome, model);
 		}
 		
-		if(MusicMessage.MSG_TYPE.equals(wechatWelcome.getType()) || ImageMessage.MSG_TYPE.equals(wechatWelcome.getType())){
+		if(MusicMessage.MSG_TYPE.equals(wechatWelcome.getType()) ){
 			String wpPath = WeChatUtils.getWechatResourceSavePath();
-			String fname = UserUtils.getUser().getLoginName() +System.currentTimeMillis()+"mp3";
+			String sname = image.getOriginalFilename();
+			String fileType = sname.substring(sname.lastIndexOf("."));
+			String fname  = UserUtils.getUser().getLoginName()+	"_wp_"+System.currentTimeMillis()+fileType;
 			File file = new File(wpPath+fname);
 			try {
 				image.transferTo(file);
@@ -98,6 +121,20 @@ public class WechatWelcomeController extends BaseController {
 			}
 			//FileUtils.copyFile(, "D:\\temp\\"+image.getOriginalFilename());
 			wechatWelcome.setFilePath(file.getPath());
+		}else if(ImageMessage.MSG_TYPE.equals(wechatWelcome.getType())){
+			String wpPath = WeChatUtils.getWechatResourceSavePath();
+			String sname = image.getOriginalFilename();
+			String fileType = sname.substring(sname.lastIndexOf("."));
+			String fname  = UserUtils.getUser().getLoginName()+	"_wp_"+System.currentTimeMillis()+fileType;
+			File file = new File(wpPath+fname);
+			System.out.println("保存文件:"+wpPath+fname);
+			try {
+				image.transferTo(file);
+				wechatWelcome.setFilePath(file.getPath());
+			} catch (Exception e) {
+				System.out.println("上传文件失败:"+wpPath+fname);
+				e.printStackTrace();
+			}
 		}
 			
 		wechatWelcomeService.save(wechatWelcome);

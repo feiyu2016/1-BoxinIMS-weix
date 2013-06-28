@@ -46,11 +46,11 @@ public class Generate {
 		
 		String packageName = "com.boxin.ims.modules";
 		
-		String moduleName = "wechat";			// 模块名，例：sys
+		String moduleName = "momarketing";			// 模块名，例：sys
 		String subModuleName = "";				// 子模块名（可选） 
-		String className = "newsReply";			// 类名，例：user
+		String className = "product";			// 类名，例：user
 		String classAuthor = "Jakemanse";		// 类作者，例：ThinkGem
-		String functionName = "图文富内容回复";			// 功能名，例：用户
+		String functionName = "产品";			// 功能名，例：用户
 
 		// 是否启用生成工具
 		Boolean isEnable = true;			

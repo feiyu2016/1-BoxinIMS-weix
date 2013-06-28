@@ -85,7 +85,8 @@ public class NewsReplyController extends BaseController {
 			WeChat weChat = weChatService.getWeChatByUserId(UserUtils.getUser().getId());
 			if(weChat == null ){
 				//需要返回绑家微信公众平台
-				return "";
+				model.addAttribute("message", "请先绑定微信!");
+				return "modules/wechat/newsReplyForm";
 			}
 			WechatConfig config = new WechatConfig();
 			config.setWeChat(weChat);

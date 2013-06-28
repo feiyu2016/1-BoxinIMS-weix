@@ -43,6 +43,8 @@ public class WechatConfigService extends BaseService {
 		DetachedCriteria dc = wechatConfigDao.createDetachedCriteria();
 		if (wechatConfig.getWeChat()!=null && wechatConfig.getWeChat().getId()>0){
 			dc.add(Restrictions.eq("weChat.id", wechatConfig.getWeChat().getId()));
+		}else{
+			dc.add(Restrictions.eq("weChat.id", -1L));
 		}
 		if (StringUtils.isNotEmpty(wechatConfig.getUpContent())){
 			dc.add(Restrictions.like("upContent", "%"+wechatConfig.getUpContent()+"%"));

@@ -3,7 +3,6 @@
  */
 package com.boxin.ims.modules.wechat.service;
 
-import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -13,13 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.boxin.ims.modules.wechat.dao.NewsReplyDao;
+import com.boxin.ims.modules.wechat.dao.WechatWelcomeDao;
+import com.boxin.ims.modules.wechat.entity.ImageMessage;
+import com.boxin.ims.modules.wechat.entity.NewsReply;
+import com.boxin.ims.modules.wechat.entity.WeChat;
+import com.boxin.ims.modules.wechat.entity.WechatWelcome;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.BaseService;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
-import com.boxin.ims.modules.wechat.entity.WeChat;
-import com.boxin.ims.modules.wechat.entity.WechatWelcome;
-import com.boxin.ims.modules.wechat.dao.WeChatDao;
-import com.boxin.ims.modules.wechat.dao.WechatWelcomeDao;
 
 /**
  * 欢迎词Service
@@ -37,6 +38,9 @@ public class WechatWelcomeService extends BaseService {
 	private WechatWelcomeDao wechatWelcomeDao;
 	@Autowired
 	private WeChatService weChatService;
+	
+	@Autowired
+	private NewsReplyDao newsReplyDao;
 	
 	public WechatWelcome get(Long id) {
 		return wechatWelcomeDao.findOne(id);
@@ -59,6 +63,25 @@ public class WechatWelcomeService extends BaseService {
 		if(weChat != null){
 			weChat.setWechatWelcome(wechatWelcome);
 			weChatService.save(weChat);
+			
+			if(ImageMessage.MSG_TYPE.equals(wechatWelcome.getType())){
+				NewsReply newsReply = new NewsReply();
+				newsReply.setFilePath(wechatWelcome.getFilePath());
+				newsReply.setWechatWelcome(wechatWelcome);
+				newsReply.setUrl(wechatWelcome.getUrl());
+				newsReply.setTitle(wechatWelcome.getTitle());
+				newsReply.setDescription(wechatWelcome.getDescription());
+				newsReply.setIsWelcome(true);
+				newsReplyDao.save(newsReply);
+				//newsReplyDao保存后得到ID 再更新
+				newsReply.setPicUrl("http://www.hdzhx.com/zxims/f/mobsite/wp/vr?wid="+weChat.getId()+"&rid="+newsReply.getId()+"&vtype=reply&ctime="+System.currentTimeMillis());
+				newsReplyDao.save(newsReply);
+				
+				
+			}else{
+				
+			}
+			
 			wechatWelcome.setMusicUrl("http://www.hdzhx.com/zxims/f/mobsite/wp/vr?wid="+weChat.getId()+"&rid="+wechatWelcome.getId()+"&type="+wechatWelcome.getType()+"&ctime="+System.currentTimeMillis());
 			wechatWelcome.setPicUrl("http://www.hdzhx.com/zxims/f/mobsite/wp/vr?wid="+weChat.getId()+"&rid="+wechatWelcome.getId()+"&type="+wechatWelcome.getType()+"&ctime="+System.currentTimeMillis());
 		}

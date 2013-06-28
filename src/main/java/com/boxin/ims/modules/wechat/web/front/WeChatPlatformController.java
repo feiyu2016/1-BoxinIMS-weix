@@ -39,9 +39,11 @@ import com.boxin.ims.modules.wechat.service.NewsReplyService;
 import com.boxin.ims.modules.wechat.service.RegionService;
 import com.boxin.ims.modules.wechat.service.WeChatService;
 import com.boxin.ims.modules.wechat.service.WechatConfigService;
+import com.boxin.ims.modules.wechat.service.WechatMybatisService;
 import com.boxin.ims.modules.wechat.service.WechatWelcomeService;
 import com.boxin.ims.modules.wechat.utils.WeChatUtils;
 import com.boxin.ims.modules.wechat.utils.XMLUtils;
+import com.google.common.collect.Maps;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.web.BaseController;
 import com.thinkgem.jeesite.modules.sys.entity.User;
@@ -72,6 +74,9 @@ public class WeChatPlatformController  extends BaseController{
 	
 	@Autowired
 	DaoHelper daoHelper;
+	
+	@Autowired
+	WechatMybatisService wechatMybatisService;
 	
 	
 	@RequestMapping(value = {"chat", ""})
@@ -166,7 +171,13 @@ public class WeChatPlatformController  extends BaseController{
 						imageMessage.setDescription(wechatWelcome.getDescription());
 						imageMessage.setPicUrl(wechatWelcome.getPicUrl());
 						imageMessage.setUrl(wechatWelcome.getUrl());
-						response.getWriter().print(imageMessage.replyMessage() );
+						
+						wechatWelcome.getNewsReplyList();
+						
+						Map<String,String> params = Maps.newHashMap();
+						params.put("welcomeId", wechatWelcome.getId()+"");
+						List<NewsReply> newsReplyList = wechatMybatisService.findNewsReply(params);
+						response.getWriter().print(imageMessage.replyMessage(newsReplyList));
 						System.out.println("回复的图文内容:"+imageMessage.replyMessage());
 						return ;
 					}else{
@@ -198,9 +209,18 @@ public class WeChatPlatformController  extends BaseController{
 					JSONObject jsonw = JSONObject.fromObject(json.getString("weatherinfo"));
 					Weather weather = WeChatUtils.convertJsonToWeather(  jsonw);
 					reply = weather.toMailWeatherString();
-					printReplyLogger(reply);
+					TextMessage txtMsg = new TextMessage(map);
+					txtMsg.setContent(reply);
+					response.getWriter().print(txtMsg.replyMessage() );
+					printReplyLogger(txtMsg.replyMessage());
 					return ;
 				}else{
+					TextMessage txtMessage = new TextMessage(map);
+					txtMessage.setContent(reply);
+					response.getWriter().print(txtMessage.replyMessage() );
+					printReplyLogger(txtMessage.replyMessage());
+					return ;
+					
 					//未找到。
 				}
 				

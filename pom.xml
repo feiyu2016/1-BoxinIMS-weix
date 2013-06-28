@@ -7,7 +7,7 @@
 	<artifactId>jeesite</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>JeeSite</name>
+	<name>zxims</name>
 	<url>http://thinkgem.github.com/jeesite</url>
     
 	<!-- 项目属性 -->
@@ -564,6 +564,20 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.3</version>
 		</dependency>
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.3</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.nuxeo.common</groupId>
+			<artifactId>nuxeo</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>E:\Git_Repository\BoxinIMS\src\main\webapp\WEB-INF\lib\nuxeo-common-1.0.jar</systemPath>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -718,5 +732,7 @@
 			<timezone>+8</timezone>  
 		</developer>
 	</developers>
+	<modules>
+	</modules>
 	
 </project>

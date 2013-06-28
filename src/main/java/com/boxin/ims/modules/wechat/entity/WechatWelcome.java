@@ -26,6 +26,7 @@ import org.hibernate.annotations.NotFoundAction;
 import org.hibernate.annotations.Where;
 import org.hibernate.validator.constraints.Length;
 
+import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.persistence.BaseEntity;
 
 /**
@@ -49,8 +50,7 @@ public class WechatWelcome extends BaseEntity {
 	private String description;	//声音或图片描述
 	private String picUrl;		//图片URL
 	private String url;		//	连接地址
-	//private WeChat	weChat;	//
-	//private List<RichReply> richReplyList;
+	private List<NewsReply> newsReplyList  = Lists.newArrayList();		//图文回复
 	private Date createTime;	// 创建日期
 	private String delFlag;	// 删除标记（0：正常；1：删除）
 
@@ -167,6 +167,22 @@ public class WechatWelcome extends BaseEntity {
 		this.picUrl = picUrl;
 	}
 
+	
+	@OneToMany
+	@JoinColumn(name="welcome_id")
+	@Where(clause="del_flag='"+DEL_FLAG_NORMAL+"' and welcome = 1")
+	@NotFound(action = NotFoundAction.IGNORE)
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	@NotNull
+	public List<NewsReply> getNewsReplyList() {
+		return newsReplyList;
+	}
+
+	public void setNewsReplyList(List<NewsReply> newsReplyList) {
+		this.newsReplyList = newsReplyList;
+	}
+
+	
 	
 	
 	
