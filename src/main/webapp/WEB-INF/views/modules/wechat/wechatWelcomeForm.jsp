@@ -75,7 +75,7 @@
 			<div id="pureTextContent" class="control-group">
 				<label class="control-label">回复内容:</label>
 				<div class="controls" id="">
-					<form:textarea path="content" htmlEscape="false"  cols="6" rows="5" class="required"/>
+					<form:textarea path="content" htmlEscape="false"  cols="6" rows="5"  />
 				</div>
 			</div>
 			<div id="musicContent" class="control-group">
