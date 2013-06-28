@@ -134,7 +134,7 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">二维码地址内容:</label>
+			<label class="control-label">链接二维码图片:</label>
 			<div class="controls">
 				<input type="file" name="qrfile" htmlEscape="false"    onchange="setUrl(this.value)"/> &nbsp;<span class="alert">二维码的内容是以 htt://开头的链接地址.</span>
 			</div>
