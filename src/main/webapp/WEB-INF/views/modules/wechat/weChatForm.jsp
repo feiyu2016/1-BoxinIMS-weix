@@ -42,13 +42,13 @@
 		<div class="control-group">
 			<label class="control-label">Token:</label>
 			<div class="controls">
-				<form:input path="token" htmlEscape="false" maxlength="11" class="required"/>&nbsp;<span class="alert">此Token对应微信公众平台的Token</span>
+				<form:input path="token" htmlEscape="false" maxlength="50" class="required"/>&nbsp;<span class="alert">此Token对应微信公众平台的Token</span>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">默认回复内容:</label>
 			<div class="controls">
-				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10" class="required"/>  <span class="alert">用户输入内容无法找到预先设置好的内容时，刚回复此默认回复内容。</span> 
+				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10"  />  <span class="alert">用户输入内容无法找到预先设置好的内容时，刚回复此默认回复内容。</span> 
 				
 			</div>
 		</div>
