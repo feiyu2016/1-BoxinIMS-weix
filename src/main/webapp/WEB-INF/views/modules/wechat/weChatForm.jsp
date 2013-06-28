@@ -46,9 +46,9 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">默认回复内容:</label>
+			<label class="control-label">默认回复消息:</label>
 			<div class="controls">
-				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10"  />  <span class="alert">用户输入内容无法找到预先设置好的内容时，刚回复此默认回复内容。</span> 
+				<form:textarea path="remarks" htmlEscape="false"  cols="6" rows="10"  />  <span class="alert">用户发送的消息未找到匹配的预设置回复消息时，则回复此默认消息。</span> 
 				
 			</div>
 		</div>
