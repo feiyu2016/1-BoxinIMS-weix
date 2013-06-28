@@ -60,7 +60,7 @@
 		<div class="alert alert-block alert-error fade in">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <h4 class="alert-heading">用户发送的内容</h4>
-            <p>设定好用户可以要咨的关键词,根据关键词回复不同的内容。</p>
+            <p>设定好用户要咨询的关键词,根据关键词回复设定的消息内容。</p>
             <p>
               <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
             </p>
@@ -81,7 +81,7 @@
 				<div class="alert alert-block alert-error fade in" id="question" style="display:none;margin-top:5px;" onclick="hideTip('question')">
 		            <button type="button" class="close"  onclick="hideTip('question')" >×</button>
 		            <h4 class="alert-heading">用户发送的关键词</h4>
-		            <p>设定好用户预咨的关键词,针对此问题作图文内容回复.</p>
+		            <p>设定好用户预咨询的关键词,并对此关键词回复设定的图文消息内容.</p>
     			</div>
 			</div>
 			
@@ -112,7 +112,7 @@
 				<div class="alert alert-block alert-error fade in" id="pic_desc" style="display:none;margin-top:5px;" onclick="hideTip('pic_desc')">
 		            <button type="button" class="close"  onclick="hideTip('pic_desc')" >×</button>
 		            <h4 class="alert-heading">图片描述</h4>
-		            <p>这里设置的标题将会显示在微信中的图片下方的描述中，如下图：</p>
+		            <p>这里设置的描述内容将会显示在微信中的图片下方的描述中，如下图：</p>
 		            <p>
 		                 <img alt="描述图" src="${ctxStatic}/images/weixin_tile_desc.jpg">
 		            </p>
@@ -134,9 +134,9 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">上传二维码图片:</label>
+			<label class="control-label">二维码地址内容:</label>
 			<div class="controls">
-				<input type="file" name="qrfile" htmlEscape="false"    onchange="setUrl(this.value)"/>
+				<input type="file" name="qrfile" htmlEscape="false"    onchange="setUrl(this.value)"/> &nbsp;<span class="alert">二维码的内容是以 htt://开头的链接地址.</span>
 			</div>
 		</div>
 		
@@ -150,7 +150,7 @@
 		style="top: 12.5px; left: 242px; display: none;" id="question_tip">
 		<div class="arrow"></div>
 		<h3 class="popover-title">关键词</h3>
-		<div class="popover-content">在此处请输入自动回复设置的关键词。</div>
+		<div class="popover-content">在此处请输入自动回复的关键词。</div>
 	</div>
 	
 	
