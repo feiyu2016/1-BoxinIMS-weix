@@ -130,13 +130,13 @@
 		<div class="control-group">
 			<label class="control-label">原文链接:</label>
 			<div class="controls">
-				<form:input path="url"  id="url" htmlEscape="false"   />  &nbsp;<span class="alert">链接必须以 htt://开头</span>
+				<form:input path="url"  id="url" htmlEscape="false"   />  &nbsp;<span class="alert">链接必须以 http://开头</span>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">链接二维码图片:</label>
 			<div class="controls">
-				<input type="file" name="qrfile" htmlEscape="false"    onchange="setUrl(this.value)"/> &nbsp;<span class="alert">二维码的内容是以 htt://开头的链接地址.</span>
+				<input type="file" name="qrfile" htmlEscape="false"    onchange="setUrl(this.value)"/> &nbsp;<span class="alert">二维码的内容是以 http://开头的链接地址.</span>
 			</div>
 		</div>
 		

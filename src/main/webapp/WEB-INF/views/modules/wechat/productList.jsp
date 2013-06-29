@@ -29,12 +29,15 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered ">
-		<thead><tr><th>名称</th><th>备注</th><shiro:hasPermission name="wechat:product:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>名称</th><th>价格</th><th>原价</th><th>详情</th><th>是否发布</th><shiro:hasPermission name="wechat:product:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="product">
 			<tr>
 				<td><a href="${ctx}/wechat/product/form?id=${product.id}">${product.name}</a></td>
-				<td>${product.remarks}</td>
+				<td>${product.price}</td>
+				<td>${product.sourcePrice}</td>
+				<td>${product.description}</td>
+				<td>${product.isSale}</td>
 				<shiro:hasPermission name="wechat:product:edit"><td>
     				<a href="${ctx}/wechat/product/form?id=${product.id}">修改</a>
 					<a href="${ctx}/wechat/product/delete?id=${product.id}" onclick="return confirmx('确认要删除该产品吗？', this.href)">删除</a>

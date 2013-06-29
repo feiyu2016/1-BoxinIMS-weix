@@ -32,6 +32,7 @@
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="product" action="${ctx}/wechat/product/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
+		<form:hidden path="user.id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
 			<label class="control-label">名称:</label>
@@ -40,9 +41,62 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">备注:</label>
+			<label class="control-label">价格:</label>
 			<div class="controls">
-				<form:input path="remarks" htmlEscape="false" maxlength="50" class="required"/>
+				<form:input path="price" htmlEscape="false" maxlength="150"  />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">原价格:</label>
+			<div class="controls">
+				<form:input path="sourcePrice" htmlEscape="false" maxlength="150"  />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">产品数量:</label>
+			<div class="controls">
+				<form:input path="amount" htmlEscape="false" maxlength="150"  />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">发布:</label>
+			<div class="controls">
+				<form:radiobutton path="isSale"/> 发布       <form:radiobutton path="isSale"/> 不发布  
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">简介:</label>
+			<div class="controls">
+				<form:textarea path="description" htmlEscape="false"  cols="6" rows="8" />
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">产品图片1:</label>
+			<div class="controls">
+				<input type="file"	name="productPic1"/>			
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">产品图片2:</label>
+			<div class="controls">
+				<input type="file"	name="productPic2"/>			
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">产品图片3:</label>
+			<div class="controls">
+				<input type="file"	name="productPic3"/>			
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label">展示图片:</label>
+			<div class="controls">
+				<input type="file"	name="productPic"/>	<span class="alert">推荐尺寸294*145</span>		
 			</div>
 		</div>
 		<div class="form-actions">
