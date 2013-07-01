@@ -24,13 +24,12 @@
 </head>
 <body>
 		
-<div class="container">
  	
  	    <div class="row-fluid">
-    <div class="span12" align="center"><h1>${ecard.name }</h1></div>
-    <div class="span8" align="center"><label>部门</label>	</div>
-    </div>
-    
+		    <div class="span12" align="center"><h1>${ecard.name }</h1></div>
+		    <div class="span8" align="center"><label>部门</label>	</div>
+    	</div>
+    	<img alt="照片" src="${url }">
     
     <div id="footer" class="fluid">   公司活动</div>
     	<ul>
@@ -39,6 +38,5 @@
     	<li>${event.title }</li>
     </c:forEach>
     	</ul>
-</div>
 
 </html>
