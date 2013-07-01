@@ -19,7 +19,9 @@
  	
  	    <div class="row-fluid">
 		    <div class="span12" align="center"><h1>${ecard.name }</h1></div>
-		    <div class="span8" align="center"><label>部门</label>	</div>
+		    <div class="span8" align="center"><label>部门:</label> ${ecard.department }	</div>
+		    <div class="span8" align="center"><label>QQ:</label> ${ecard.qq }	</div>
+		    <div class="span8" align="center"><label>电话:</label> ${ecard.mobile }	</div>
     	</div>
     	<img alt="照片" src="${url }">
     
