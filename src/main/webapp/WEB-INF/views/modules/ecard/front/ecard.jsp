@@ -10,14 +10,6 @@
 <meta name="description" content="Bianca Mobile Template">
 <meta name="viewport"
 	content="width=device-width initial-scale=1.0  maximum-scale=1.0">
-<meta name="author" content="ariella - WrapBootstrap">
-<link href="${ctxStatic}/jquery-mobile/css/jquery.mobile-1.3.1.min.css" type="text/css" rel="stylesheet" />
-<script src="${ctxStatic}/jquery-mobile/jquery.mobile-1.3.1.js" type="text/javascript"></script>
-<script type="text/javascript">
-	function goUrl(url){
-		location.href=url;
-	}
-</script>
 
 
 
