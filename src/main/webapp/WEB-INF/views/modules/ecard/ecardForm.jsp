@@ -31,7 +31,7 @@
 		<li><a href="${ctx}/ecard/ecard/">公司活动列表</a></li>
 		<li class="active"><a href="${ctx}/ecard/ecard/form?id=${ecard.id}">公司活动<shiro:hasPermission name="ecard:ecard:edit">${not empty ecard.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="ecard:ecard:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
-	<form:form id="inputForm" modelAttribute="ecard" action="${ctx}/ecard/ecard/save" method="post" class="form-horizontal">
+	<form:form id="inputForm" modelAttribute="ecard" action="${ctx}/ecard/ecard/save" method="post" class="form-horizontal" enctype="multipart/form-data">
 		<form:hidden path="id"/>
 		<form:hidden path="user.id"/>
 		<form:hidden path="organInfo.id"/>
@@ -101,13 +101,13 @@
 		<div class="control-group">
 			<label class="control-label">上传照片:</label>
 			<div class="controls">
-				<form:input path="logo" htmlEscape="false" maxlength="11" />
+				<input type="file" name="file">				<label class="alert">照片大小请不要超过2M</label>
 			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">简介:</label>
 			<div class="controls">
-				<form:input path="logo" htmlEscape="false" maxlength="200" />
+				<form:input path="description" htmlEscape="false" maxlength="200" />
 			</div>
 		</div>
 		
