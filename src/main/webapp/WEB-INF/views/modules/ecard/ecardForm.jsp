@@ -107,7 +107,6 @@
 		<div class="control-group">
 			<label class="control-label">简介:</label>
 			<div class="controls">
-				<form:input path="description" htmlEscape="false" maxlength="200" />
 				<form:textarea path="description"  htmlEscape="false"  cols="10" rows="8"/>
 			</div>
 		</div>
