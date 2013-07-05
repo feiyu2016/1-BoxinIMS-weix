@@ -3,6 +3,8 @@
  */
 package com.boxin.ims.modules.ecard.service;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
@@ -16,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.service.BaseService;
+import com.boxin.framework.base.utils.Constants;
 import com.boxin.ims.modules.ecard.entity.Ecard;
 import com.boxin.ims.modules.ecard.dao.EcardDao;
 import com.boxin.ims.modules.momarketing.common.QRCodeUtils;
@@ -62,17 +65,23 @@ public class EcardService extends BaseService {
 	}
 	
 	@Transactional(readOnly = false)
-	public void save(Ecard ecard) {
+	public void save(Ecard ecard,HttpServletRequest request) {
 		
 		QRCode qrCode = new QRCode();
 		qrCode.setContent("None");
 		
 		QRCode savedqrCode = QRCodeDao.save(qrCode);
 		
-		qrCode.setJpegPath(Global.QRCODE_REPOSITORY+"\\ecard-"+savedqrCode.getId());
+		String qrPath = Constants.getEcardQRCodeResourceSavePath();
+		qrCode.setJpegPath(qrPath +savedqrCode.getId());
 		ecard.setQrCode(savedqrCode);
 		Ecard  savedEcard = ecardDao.save(ecard);
-		String con = QRCodeUtils.generateEcardURL(savedEcard.getId());
+		
+		String path = request.getContextPath();
+        String basePath = request.getScheme() + "://" + request.getLocalAddr() + ":"
+                                   + request.getServerPort() + path ;
+		
+		String con = QRCodeUtils.generateEcardURL(basePath,savedEcard.getId());
 		qrCode.setContent(con);
 		QRCodeUtils.generateQRCodeJPEG(qrCode.getContent(), qrCode.getJpegPath(), 200, 200);
 		QRCodeDao.save(qrCode);

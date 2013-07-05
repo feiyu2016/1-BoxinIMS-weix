@@ -1,5 +1,7 @@
 package com.boxin.framework.base.utils;
 
+import com.thinkgem.jeesite.modules.sys.utils.DictUtils;
+
 /**
  * @author Jakemanse
  *	常量类
@@ -34,6 +36,44 @@ public class Constants {
 	public final static String MOBILE_SITE_NAV_BONUS= "5";				//抽奖活动
 	public final static String MOBILE_SITE_NAV_NEWS= "6";				//公司动态新闻
 	public final static String MOBILE_SITE_NAV_CONTACT= "7";			//联系我们
+	
+	
+	
+	
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-6-22  上午12:31:38
+	 * @function <p>获取微信设置中上传的文件资源路径  </p>
+	 * @return
+	 */
+	public static String getWechatResourceSavePath(){
+		 return DictUtils.getDictValue("微信资源目录", "res_wp_path", "微信资源目录");
+	}
+	
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-1  下午3:00:23
+	 * @function <p> 电子名称的二维码存储路径 </p>
+	 * @return
+	 */
+	public static String getEcardQRCodeResourceSavePath(){
+		return DictUtils.getDictValue("电子名片二维码路径", "res_qr_ecard_path", "电子名片二维码存储路径");
+	}
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-1  下午3:00:47
+	 * @function <p> 电子名片的照片路径 </p>
+	 * @return
+	 */
+	public static String getEcardResourceSavePath(){
+		return DictUtils.getDictValue("电子名片图片路径", "res_ecard_path", "电子名片图片存储路径");
+	}
+	
+	
+	
 	
 	
 	

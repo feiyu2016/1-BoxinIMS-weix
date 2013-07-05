@@ -18,9 +18,13 @@ import com.boxin.ims.modules.momarketing.entity.ProjectVisit;
 import com.boxin.ims.modules.momarketing.entity.QRCode;
 import com.boxin.ims.modules.momarketing.service.ProjectService;
 import com.boxin.ims.modules.momarketing.service.ProjectVisitService;
+import com.boxin.ims.modules.wechat.entity.Product;
+import com.boxin.ims.modules.wechat.service.ProductService;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.BaseEntity;
 import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.sys.entity.User;
+import com.thinkgem.jeesite.modules.sys.service.SystemService;
 
 @Controller
 @RequestMapping(value= Global.MOBILE_SITE_PATH + "/mom")
@@ -31,6 +35,12 @@ public class MobileSiteController extends BaseController {
 	
 	@Autowired
 	private DaoHelper daoHelper;
+	
+	@Autowired
+	ProductService productService;
+	
+	@Autowired
+	SystemService systemService;
 	
 	@Autowired
 	private ProjectVisitService projectVisitService;
@@ -83,5 +93,26 @@ public class MobileSiteController extends BaseController {
 		return "modules/ims/front/mobile/mobile";
 	}
 
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-6-28  下午11:49:10
+	 * @function <p> 查看产品 页 </p>
+	 * @param id
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "prod/{id}" + Global.URL_SUFFIX)
+	public String viewProduct(@PathVariable Long id,HttpServletRequest request,HttpServletResponse response){
+		Product product = new Product();
+		User user = systemService.getUser(id);
+		product.setUser(user);
+		List<Product> productList =  productService.find( product);
+		request.setAttribute("productList", productList);
+		return  "modules/ims/front/mobile/product";
+	}
+	
+	
 
 }

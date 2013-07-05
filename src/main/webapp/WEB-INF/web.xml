@@ -169,6 +169,49 @@
   </servlet-mapping>
   
   
+  <!-- 支付宝 接口 相关 -->
+  <servlet>
+      <servlet-name>Trade</servlet-name>
+      <servlet-class>com.alipay.client.trade.Trade</servlet-class>
+    </servlet>
+	
+	<servlet-mapping> 
+		<servlet-name>Trade</servlet-name> 
+		<url-pattern>/servlet/Trade</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>NotifyReceiver</servlet-name>
+      <servlet-class>com.alipay.client.notify.NotifyReceiver</servlet-class>
+    </servlet>
+	
+	<servlet-mapping> 
+		<servlet-name>NotifyReceiver</servlet-name> 
+		<url-pattern>/servlet/NotifyReceiver</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>CallBack</servlet-name>
+      <servlet-class>com.alipay.client.callback.CallBack</servlet-class>
+    </servlet>
+ 
+	<servlet-mapping> 
+		<servlet-name>CallBack</servlet-name> 
+		<url-pattern>/servlet/CallBack</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>PayChannelList</servlet-name>
+      <servlet-class>com.alipay.client.pay.PayChannelList</servlet-class>
+    </servlet>
+	
+	<servlet-mapping> 
+		<servlet-name>PayChannelList</servlet-name> 
+		<url-pattern>/servlet/paychannellist</url-pattern>
+	</servlet-mapping>
+  <!-- 支付宝 接口 相关 -->
+  
+  
   <!-- Session 配置 -->
   <session-config>
     <session-timeout>20</session-timeout>

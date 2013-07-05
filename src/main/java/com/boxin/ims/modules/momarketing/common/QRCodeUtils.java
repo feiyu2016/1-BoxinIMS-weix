@@ -98,8 +98,16 @@ public class QRCodeUtils {
 		return Global.DNS_TEMP + Global.MOBILE_SITE_PATH+"/mom/pro/"+projectId+".html";
 	}
 	
-	public static String generateEcardURL(Long ecardId){
-		return Global.DNS_TEMP + Global.MOBILE_ECARD_PATH +"/"+ecardId+Global.URL_SUFFIX;
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-1  下午2:47:12
+	 * @function <p>  Base Path  即  http://localhost:80/zxims</p>
+	 * @param basePath
+	 * @param ecardId
+	 * @return
+	 */
+	public static String generateEcardURL(String basePath, Long ecardId){
+		return basePath  + Global.MOBILE_ECARD_PATH +"/"+ecardId+Global.URL_SUFFIX;
 	}
 	
 	
