@@ -17,3 +17,39 @@
 </c:if>
 <link href="${ctxStaticFront}/themes/${site.theme}/style.min.css" type="text/css" rel="stylesheet" />
 <script src="${ctxStaticFront}/themes/${site.theme}/script.min.js" type="text/javascript"></script>
+
+
+<!-- My Site Css -->
+
+
+<link href="${ctxStatic}/mysite/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="${ctxStatic}/mysite/css/layout.css" rel="stylesheet" type="text/css" />
+<link href="${ctxStatic}/mysite/css/style.css" rel="stylesheet" type="text/css" />
+<link href="${ctxStatic}/mysite/css/jqueryslidemenu.css" rel="stylesheet" type="text/css" />
+<link href="${ctxStatic}/mysite/css/elastic_slider.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/widgets.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/skin.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/responsive.css" rel="stylesheet" type="text/css"  /> 
+
+
+<script src="${ctxStaticFront}/themes/${site.theme}/script.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="${ctxStatic}/mysite/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/jqueryslidemenu.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.eislideshow.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/custom.js"></script>
+<script type="text/javascript">
+	// Elastic Slider
+	$(function() {
+	$('#ei-slider').eislideshow({
+	easing		: 'easeOutExpo',
+	titleeasing	: 'easeOutExpo',
+	titlespeed	: 1200
+	});
+	});// 
+</script>
+
+
