@@ -126,21 +126,21 @@
             <li>
                 <img src="${ctxStatic }/mysite/images/icon_4.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>Clean and modern design</h4>
+                    <h4>清晰、现在代化设计</h4>
                     <p>Aenean sollicitudin, ligula eu placerat rhoncus, dui felis ornare magna, vel tempor sem nibh eu nulla.</p>
                 </div>
             </li>
             <li>
                 <img src="${ctxStatic }/mysite/images/icon_5.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>24/7 Support</h4>
+                    <h4>24*7 服务支持</h4>
                     <p>Etiam faucibus bibendum lorem et vehicula. Suspendisse lacinia sem ac nulla tincidunt aliquam sed turpis.</p>
                 </div>
             </li>
             <li>
                 <img src="${ctxStatic }/mysite/images/icon_6.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>SEO Optimized</h4>
+                    <h4>SEO 搜索优化</h4>
                     <p>Fusce feugiat vestibulum augue, non egestas odio ornare varius. vitae ultricies ipsum euismod hendrerit.</p>
                 </div>
             </li>
@@ -155,21 +155,21 @@
             <li>
             <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
             <div class="description">
-                <h4>Fusce lobortis egestas</h4>
+                <h4>手机微购物</h4>
                 <p>Morbi quis sem magna vitae venenatis felis Nam nec risus dui. Suspendisse potenti Vestibulum vitae magna.</p>
             </div>
             </li>
             <li>
             <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
             <div class="description">
-                <h4>Risus tincidunt facilisis</h4>
+                <h4>电子优惠券</h4>
                 <p>Suspendisse feugiat vestibulum augue, non egestas odio ornare varius. vitae ultricies euismod vitae.</p>
             </div>
             </li>
             <li>
             <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
             <div class="description">
-                <h4>Donec non consequat justo</h4>
+                <h4>电子名片</h4>
                 <p>Potenti feugiat vestibulum augue, non egestas odio ornare varius. vitae ultricies ipsum euismod risus.</p>
             </div>
             </li>
@@ -179,9 +179,6 @@
     
 </section>
 <!--  Content wide end -->
-
-
-
 </body>
 </html>
 
