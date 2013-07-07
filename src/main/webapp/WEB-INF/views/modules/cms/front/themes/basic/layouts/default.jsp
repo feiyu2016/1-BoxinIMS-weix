@@ -31,7 +31,7 @@
 					<li><span class=" call_1st_col">邮箱:</span> <span
 						class="call_2nd_col">hdzhixun@163.com</span></li>
 				</ul>
-				 <span class="call_2nd_col">	致力于打造专业二维码行业平台，竭诚为您提供最完美的解决方案！</span> 
+				 <span class="call_2nd_col">	致力于打造专业二维码行业平台，竭诚为您提供最完美的解决方案！</span>  	
 				<div id="social_media" style="display:none">
 					<img src="images/rss_icon.png" alt="img" /> <img
 						src="images/twitter_icon.png" alt="img" /> <img
