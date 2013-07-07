@@ -24,11 +24,11 @@
 			</figure>
 			<div class="top_right">
 				<ul class="top_info">
-					<li><span class=" call_1st_col">Call:</span> <span
+					<li><span class=" call_1st_col">电话:</span> <span
 						class="call_2nd_col">0310-3298268</span></li>
-					<li><span class=" call_1st_col">Fax:</span> <span
+					<li><span class=" call_1st_col">传真:</span> <span
 						class="call_2nd_col">0310-3298268</span></li>
-					<li><span class=" call_1st_col">Mail:</span> <span
+					<li><span class=" call_1st_col">邮箱:</span> <span
 						class="call_2nd_col">hdzhixun@163.com</span></li>
 				</ul>
 				<div id="social_media" style="display:none">
@@ -47,7 +47,7 @@
 		<nav >
 			<div id="myslidemenu" class="jqueryslidemenu clearfix container">
 				<ul>
-					<li><a class="active" href="index.html"><i
+					<li><a class="active" href="index-1.html"><i
 							class="icon-home"></i>首页</a></li>
 					<c:forEach items="${fnc:getMainNavList(site.id)}" var="category"
 						varStatus="status">
