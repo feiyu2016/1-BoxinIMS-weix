@@ -3,7 +3,7 @@
 <%@ taglib prefix="sitemesh"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><sitemesh:title default="欢迎光临" /> - ${site.title} -
 	Powered By 邯郸博信</title>
@@ -15,7 +15,7 @@
 <div id="background_bg"></div>
 
 	<!-- container Start -->
-	<section id="container">
+	<section id="container" style="width:1100px">
 		<header>
 			<figure id="logo">
 				<a href="index.html"><img alt="Logo"
@@ -45,8 +45,8 @@
 
 
 		<!-- Nav start -->
-		<nav >
-			<div id="myslidemenu" class="jqueryslidemenu clearfix container">
+		<nav>
+			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px">
 				<ul>
 					<li><a class="active" href="index-1.html"><i
 							class="icon-home"></i>首页</a></li>
@@ -77,7 +77,7 @@
 
 				</ul>
 
-				<div>
+				<div style="display:none">
 					<form class="navbar-search pull-right" action="${ctx}/search"
 						method="get">
 						<input type="text" name="q" maxlength="20"
@@ -89,13 +89,9 @@
 		</nav>
 		<!-- Nav end -->
 
-	</section>
+	
 
-	<div class="container">
-		<div class="container">
 			<sitemesh:body />
-		</div>
-	</div>
 	<!-- /container -->
 	<hr style="margin: 20px 0 10px;">
 	<!--  trigger content start -->
@@ -105,6 +101,8 @@
         <p>Responsive Layout is powerfull and easy to customize.Quick Contact <strong>templatesden@yourmail.com</strong></p>
     </div>
 </div>
+
+</section>
 	<footer>
 
 		<div class="one_third">
