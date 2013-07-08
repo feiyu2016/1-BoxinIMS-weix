@@ -95,15 +95,20 @@
 	<!-- /container -->
 	<hr style="margin: 20px 0 10px;">
 	<!--  trigger content start -->
-<div class="trigger_container">
-    <span class="trigger"><a href="#"></a></span>
-    <div class="toggle_container">
-        <p>Responsive Layout is powerfull and easy to customize.Quick Contact <strong>templatesden@yourmail.com</strong></p>
-    </div>
-</div>
+
 
 </section>
+		<div class="trigger_container">
+			<span class="trigger"><a href="#"></a></span>
+			<div class="toggle_container">
+				<p>
+					Responsive Layout is powerfull and easy to customize.Quick Contact
+					<strong>templatesden@yourmail.com</strong>
+				</p>
+			</div>
+		</div>
 	<footer>
+
 
 		<div class="one_third">
 			<div class="widget_container">
@@ -177,11 +182,11 @@
 
 		<section class="footer">
 			<div class="copyright">
-				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.
+				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.</p>
 				<div class="pull-right">${fns:getDate('yyyy年MM月dd日 E')}</div>
 				<div class="copyright">${site.copyright}</div>
+				
 			</div>
-			</p>
 		</section>
 
 	</footer>
