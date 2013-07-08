@@ -55,7 +55,7 @@
 <section class="teaser">
     <div class="one_third">
     
-        <h3>最好的 <span>服务</span></h3>
+        <h3>最优质的 <span>服务</span></h3>
         Duis dignissim blandit varius. Curabitur adipiscing ornare luctus. 
         Vestibulum venenatis sagittis turpis, eu varius enim vulputate pretium. 
         Sed eget leo sed diam aliquam interdum ut auctor erat. Suspendisse vitae 
