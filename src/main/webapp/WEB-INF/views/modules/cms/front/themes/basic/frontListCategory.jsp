@@ -34,7 +34,7 @@
 	
     <img src="<c:if test="${category.image eq '' }">${ctxStatic }/mysite/images/blog_img_1.png</c:if> <c:if test="${category.image ne '' }">${category.image }</c:if>" alt="img" class="alignleft" />
     <h3><span>${category.name }</span></h3>
-    <p>摘要:${category.desciption}</p><br />
+    <p>介绍:${category.desciption}</p><br />
     
     <span class="divider"></span>
     

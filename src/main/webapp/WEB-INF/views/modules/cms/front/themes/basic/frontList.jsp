@@ -26,7 +26,7 @@
 							<span class="divider">&nbsp;</span>
 								<div class="blog_element">
 							    <div class="one_third">
-							        <img src="${article.thumb}" alt="img" /><br />
+							        <img src="<c:if test="${article.thumb eq '' }">${ctxStatic }/mysite/images/blog_img_1.png</c:if> <c:if test="${article.thumb ne '' }">${article.thumb}</c:if>" alt="img" /><br />
 							         <span class="post_comment">
 							                <strong><a href="#">2</a></strong> Comments
 							            </span>
@@ -39,7 +39,6 @@
 							                <strong>Admin</strong>
 							            </span>     
 							        </span>
-							        
 							    </div>
 							    <div class="two_third_last">
 							        <h4><a href="#">${fns:abbr(article.title,96)}</a></h4>       
@@ -49,7 +48,7 @@
 							</div>
 						
 					</c:forEach>
-				
+				<span class="divider">&nbsp;</span>
 				<div class="pagination">${page}</div>
 				<script type="text/javascript">
 					function page(n, s) {
