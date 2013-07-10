@@ -19,7 +19,7 @@
 		<header>
 			<figure id="logo">
 				<a href="index.html"><img alt="Logo"
-					src="${ctxStatic }/images/logo.jpg" class="img-rounded" width="60"
+					src="${ctxStatic }/images/logo.png" class="img-rounded" width="60"
 					height="70">邯郸智讯</a>
 			</figure>
 			<div class="top_right">
