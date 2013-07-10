@@ -66,7 +66,6 @@
     <h3><span>栏目列表</span></h3>
     <ul>
     	 <c:forEach items="${categoryList}" var="category">
-			 
 				<li><a href="${ctx}/list-${category.id}${urlSuffix}">${category.name}</a></li>
 			 </c:forEach>
 			 
