@@ -70,7 +70,7 @@
 		<div class="pagination">${page}</div>
     
 <div class="two_third">
-    <form:form id="contact-form"action="" method="post" class="form-horizontal" >	
+    <form:form id="contact-form"   name="myform"  action="" method="post" class="form-horizontal" >	
         <div id="main">
         <div id="response" /></div>
             <label for="name">姓名:</label>
