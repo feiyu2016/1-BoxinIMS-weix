@@ -127,6 +127,15 @@ a:hover {
 .description {
 	display:block;
 	overflow: hidden;
+	
+}
+.description span{
+	font-size: 15px;
+	color:black;
+}
+.description h4{
+	color:black;
+	background: white;
 }
 .img_radius {
 	height:100px;
