@@ -57,6 +57,7 @@ h2 {
 	font-size: 25px;
 }
 h3 {
+	
 	font-size: 22px;
 }
 h4 {
@@ -144,10 +145,11 @@ a:hover {
 	text-align:center;
 	behavior: url(ie-css3.htc);
 }
-.drop_cap h5 {
+.drop_cap h5,h3 {
 	color:#fff;
-	padding-top:25px;
+	padding-top:23px;
 }
+
 .drop_cap:hover {
 	-moz-transition: background-color 0.3s ease 0s, border 0.2s ease 0s, color 0.2s ease 0s, opacity 0.2s ease-in-out 0s;
 	background-color:#ff6c00;
