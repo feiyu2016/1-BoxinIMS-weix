@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Subqueries;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +59,7 @@ public class NewsReplyService extends BaseService {
 		if (newsReply.getWechatConfig()!=null && newsReply.getWechatConfig().getId()>0){
 			dc.add(Restrictions.eq("wechatConfig.id", newsReply.getWechatConfig().getId()));
 		}else{
-			dc.add(Restrictions.eq("wechatConfig.id", -1L));
+			dc.add(Restrictions.eq("weChat.id", newsReply.getWeChat().getId()));
 		}
 		if (StringUtils.isNotEmpty(newsReply.getTitle())){
 			dc.add(Restrictions.like("title", "%"+newsReply.getTitle()+"%"));

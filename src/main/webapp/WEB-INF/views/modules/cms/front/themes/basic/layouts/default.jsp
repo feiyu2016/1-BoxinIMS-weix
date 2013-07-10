@@ -40,7 +40,7 @@
 		<nav>
 			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px;">
 				<ul   >
-					<li ><a class="active" href="index-1.html" ><i
+					<li ><a   href="index-1.html" ><i
 							class="icon-home"></i>首页</a></li>
 					<c:forEach items="${fnc:getMainNavList(site.id)}" var="category"
 						varStatus="status">
@@ -62,7 +62,7 @@
 								</c:otherwise>
 							</c:choose>
 							<li
-								class="${requestScope.category.id eq category.id||fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"><a
+								class="${requestScope.category.id eq category.id || fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"><a
 								href="${url}" target="${category.target}"><span>${category.name}</span></a></li>
 						</c:if>
 					</c:forEach>
@@ -104,39 +104,33 @@
 
 		<div class="one_third">
 			<div class="widget_container">
-				<h4>
-					ABOUT <span>US</span>
-				</h4>
-				<img src="${ctxStatic }/mysite/images/footer_logo.png" alt="img"
-					class="alignleft" /> Nullam ultrices suscipit erat, eu suscipit
-				diam lacinia id. Quisque diam sapien, euismod eget volutpat sed,
-				pharetra a nibh. Praesent a velit eros, id scelerisque ipsum.
-				Praesent adipiscing ultrices convallis. Fusce erat neque, porta
-				vitae convallis vel, elementum vitae enim. Praesent sit amet erat
-				sapien. In metus nisl, ultricies quis facilisis quis, aliquet eget
-				magna.
+				<img src="${ctxStatic }/images/logo.png" alt="img"
+					class="alignleft" /> 邯郸智讯二维码，在二维码识读及相关高新技术应用研发方面有雄厚的实力。其核心团队是由移动互联网、图像识别、数据算法、软件技术、市场营销等领域的资深人员组成，致力于为邯郸手机用户提供上乘的产品服务体验。
+      邯郸智讯二维码，致力于从客户角度出发，不拘于普通的模式话应用，为客户提供详尽的解决方案，让我们共同享受科技带来的便捷和震撼！
+      我们的业务范围：电子凭证、富媒体广告、防伪溯源、会议签到、系统集成、软件开发、数据分析、语音呼叫、群发短信、网路安全、无线连接等.
 			</div>
 		</div>
 
 		<div class="one_third">
 			<div class="widget_container">
-				<h4>
-					RECENT <span>POST</span>
-				</h4>
 				<ul>
 					<li><img
-						src="${ctxStatic }/mysite/images/recent_post_img_1.png" alt="img"
-						class="thumb_img" />
+						src="${ctxStatic }/mysite/images/partner_jindianzi.png" alt="img"
+						class="thumb_img" width="92px" height="56px"/>
 						<div class="description">
-							<strong>Nullam ultrices suscipit</strong><br /> Suscipit diam
-							lacinia id quisque diam sapien.
+							<strong>金点子传媒</strong><br /> 智讯移动互联与金点子传媒打造邯郸新媒体，新体验，新生活的综合应用平台
 						</div></li>
 					<li><img
-						src="${ctxStatic }/mysite/images/recent_post_img_2.png" alt="img"
-						class="thumb_img" />
+						src="${ctxStatic }/mysite/images/partner_kaoyan.jpg" alt="img"
+						class="thumb_img"  width="92px" height="56px"/>
 						<div class="description">
-							<strong>Nullam ultrices suscipit</strong><br /> Euismod eget
-							volutpat sed pharetra a nibh.
+							<strong>烤宴自助烧烤主题餐厅</strong><br /> 
+						</div></li>
+					<li><img
+						src="${ctxStatic }/mysite/images/partner_bitebao.jpg" alt="img"
+						class="thumb_img" width="92px" height="56px"/>
+						<div class="description">
+							<strong>比特堡啤酒健康烤肉</strong><br />
 						</div></li>
 				</ul>
 			</div>
@@ -144,9 +138,6 @@
 
 		<div class="one_third_last">
 			<div class="widget_container">
-				<h4>
-					FLICKR <span>PHOTO'S</span>
-				</h4>
 				<div class="flickr_widget">
 					<img src="${ctxStatic }/mysite/images/flickr_img_1.png" alt="img" />
 					<img src="${ctxStatic }/mysite/images/flickr_img_2.png" alt="img" />
@@ -174,9 +165,7 @@
 
 		<section class="footer">
 			<div class="copyright">
-				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.</p>
-				<div class="pull-right">${fns:getDate('yyyy年MM月dd日 E')}</div>
-				<div class="copyright">${site.copyright}</div>
+				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.    ${fns:getDate('yyyy年MM月dd日 E')}</p>
 				
 			</div>
 		</section>

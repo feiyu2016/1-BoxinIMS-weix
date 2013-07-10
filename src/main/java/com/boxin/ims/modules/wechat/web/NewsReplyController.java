@@ -4,6 +4,7 @@
 package com.boxin.ims.modules.wechat.web;
 
 import java.io.File;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +21,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.boxin.ims.modules.momarketing.common.QRCodeUtils;
 import com.boxin.ims.modules.wechat.entity.ImageMessage;
-import com.boxin.ims.modules.wechat.entity.MusicMessage;
 import com.boxin.ims.modules.wechat.entity.NewsReply;
 import com.boxin.ims.modules.wechat.entity.WeChat;
 import com.boxin.ims.modules.wechat.entity.WechatConfig;
@@ -69,6 +69,8 @@ public class NewsReplyController extends BaseController {
 	@RequestMapping(value = {"list", ""})
 	public String list(NewsReply newsReply, HttpServletRequest request, HttpServletResponse response, Model model) {
 		User user = UserUtils.getUser();
+		WeChat weChat = weChatService.getWeChatByUserId(user.getId());
+		newsReply.setWeChat(weChat);
         Page<NewsReply> page = newsReplyService.find(new Page<NewsReply>(request, response), newsReply); 
         model.addAttribute("page", page);
 		return "modules/wechat/newsReplyList";
@@ -79,10 +81,10 @@ public class NewsReplyController extends BaseController {
 	public String form(NewsReply newsReply,HttpServletRequest request, HttpServletResponse response, Model model ) {
 		String wid = request.getParameter("wid");		//对应的 WeChat 用户配置
 		String cfid= request.getParameter("cfid");		//对应的 WechatConfig 回复的问题名称
+		WeChat weChat = weChatService.getWeChatByUserId(UserUtils.getUser().getId());
 		
 		if(cfid==null || cfid.trim().length()==0){	//未添加对应的问题
 			//保存问题
-			WeChat weChat = weChatService.getWeChatByUserId(UserUtils.getUser().getId());
 			if(weChat == null ){
 				//需要返回绑家微信公众平台
 				model.addAttribute("message", "请先绑定微信!");
@@ -111,7 +113,7 @@ public class NewsReplyController extends BaseController {
 			newsReply.setWechatConfig(config);
 		}
 			
-		
+		newsReply.setWeChat(weChat);
 		model.addAttribute("newsReply", newsReply);
 		
 		return "modules/wechat/newsReplyForm";

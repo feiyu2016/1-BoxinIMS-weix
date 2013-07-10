@@ -36,6 +36,7 @@ public class NewsReply extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	private Long id; 		// 编号
 	private String title;	//微信ID
+	private WeChat weChat;	
 	private WechatConfig wechatConfig;	//对应的上行
 	private WechatWelcome wechatWelcome;	//对应的欢迎信息
 	private String description; 	// 微信名称
@@ -165,6 +166,21 @@ public class NewsReply extends BaseEntity {
 
 	public void setWechatWelcome(WechatWelcome wechatWelcome) {
 		this.wechatWelcome = wechatWelcome;
+	}
+
+
+	@ManyToOne
+	@JoinColumn(name="wechat_id")
+	@NotFound(action = NotFoundAction.IGNORE)
+	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+	public WeChat getWeChat() {
+		return weChat;
+	}
+
+
+
+	public void setWeChat(WeChat weChat) {
+		this.weChat = weChat;
 	}
 	
 	

@@ -44,10 +44,10 @@ public class WechatConfig extends BaseEntity {
 	private static final long serialVersionUID = 1L;
 	private Long id; 		// 编号
 	private WeChat weChat;	//对应的微信账号
-	private String upContent; 	// 上行数据内容
-	private String downContent; // 下行数据内容
+	private String upContent; 	//上行数据内容
+	private String downContent; //下行数据内容
 	private String msgType;		//消息类型
-	private Date createTime;	// 创建日期
+	private Date createTime;	//创建日期
 	private Date updateTime;	//更新时间
 	private String delFlag ;	
 	private boolean isDefaultReply;	//是否默认的回复

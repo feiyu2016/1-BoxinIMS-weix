@@ -90,27 +90,28 @@
 
     <div class="one_third">
     <div class="widget_container">
-        <h3>怎样的<span>流程</span></h3>
+        <h3>我们<span>最便宜</span></h3>
         <ul>
             <li>
                 <img src="${ctxStatic }/mysite/images/creative_ideas.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>创造性行业思维</h4>
-                    <p>Phasellus tortor lectus, tincidunt eu vehicula ut, posuere Nulla facilisi etiam .</p>
+                    <h4>电子名片</h4>
+                    <p>现在起你的名片不只是只有你的基本信息了，还可以有声音、图片、视频、公司活动等信息了</p>
                 </div>
             </li>
+            
             <li>
                 <img src="${ctxStatic }/mysite/images/best_solutions.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>最佳解决方案</h4>
-                    <p>Maecenas sodales libero elit, et sagittis orci. Ut condimentum velit malesuada feugiat volutpat.</p>
+                    <h4>电子会员卡</h4>
+                    <p>还用普通会员卡你Out了，从现在开始你可享受高科技电子会员卡，电子会员卡与你的手机融为 一体,再不用担心忘记带在身上.</p>
                 </div>
             </li>
             <li>
                 <img src="${ctxStatic }/mysite/images/growth_strategies.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>成长策略</h4>
-                    <p>Nullam adipiscing varius diam, ut rhoncus orci congue a. Maecenas sollicitudin posuere at sapien.</p>
+                    <h4>电子点餐系统</h4>
+                    <p>还为服务员忙不过来而烦心，还为客人多了招呼不过来而苦恼? 电子点餐系统为您提供最方便高效的服务功能，降低您的投入成本，提高您的经营效益.</p>
                 </div>
             </li>
         </ul>
@@ -119,27 +120,27 @@
     
     <div class="one_third">
     <div class="widget_container">
-        <h3>为什么 <span>选择我们</span></h3>
+        <h3>我们<span>最专业</span></h3>
         <ul>
             <li>
                 <img src="${ctxStatic }/mysite/images/icon_4.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>清晰、现在代化设计</h4>
-                    <p>Aenean sollicitudin, ligula eu placerat rhoncus, dui felis ornare magna, vel tempor sem nibh eu nulla.</p>
+                    <h4>通用电子票核销管理</h4>
+                    <p>为商家解决商户管理、商品管理、订单管理、消费管理、终端管理、凭证管理、帐单管理、凭证核销。</p>
                 </div>
             </li>
             <li>
                 <img src="${ctxStatic }/mysite/images/icon_5.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>24*7 服务支持</h4>
-                    <p>Etiam faucibus bibendum lorem et vehicula. Suspendisse lacinia sem ac nulla tincidunt aliquam sed turpis.</p>
+                    <h4>淘宝电子票核销管理</h4>
+                    <p>为淘宝商家提供非常完善的核销管理平台，方便商家维护和分析管理客户，及非常完善的数据服务和更多更开放的模式。</p>
                 </div>
             </li>
             <li>
                 <img src="${ctxStatic }/mysite/images/icon_6.png" alt="img" class="thumb_img" />
                 <div class="description">
-                    <h4>SEO 搜索优化</h4>
-                    <p>Fusce feugiat vestibulum augue, non egestas odio ornare varius. vitae ultricies ipsum euismod hendrerit.</p>
+                    <h4>电子优惠券</h4>
+                    <p>为合作商家提供电子优惠劵的发放与统计管理，商家可以自行设定优惠劵的内容以及各种属性，方便商家的管理与操作.</p>
                 </div>
             </li>
         </ul>
@@ -148,27 +149,28 @@
     
     <div class="one_third_last">
     <div class="widget_container">
-        <h3>我们的 <span>专业领域</span></h3>
+        <h3>我们<span>最优秀</span></h3>
         <ul>
+        	  <li>
+            <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
+            <div class="description">
+                <h4><span>移动营销</span>  </h4>
+                <p>为企业提供二维码发布、平台展示、数据分析、个性服务、整合营销等一系列的相关管理，并且具有电子优惠劵的所有功能.</p>
+            </div>
+            </li>
             <li>
             <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
             <div class="description">
                 <h4>手机微购物</h4>
-                <p>Morbi quis sem magna vitae venenatis felis Nam nec risus dui. Suspendisse potenti Vestibulum vitae magna.</p>
+                <p>为您的产品提供最方便的营销渠道，减少广告投入，增加利润附加值，利用最新电子凭证科技核销手段实现高效经营管理.</p>
             </div>
             </li>
+          
             <li>
             <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
             <div class="description">
-                <h4>电子优惠券</h4>
-                <p>Suspendisse feugiat vestibulum augue, non egestas odio ornare varius. vitae ultricies euismod vitae.</p>
-            </div>
-            </li>
-            <li>
-            <img src="${ctxStatic }/mysite/images/icon_7.png" alt="img" class="thumb_img" />
-            <div class="description">
-                <h4>电子名片</h4>
-                <p>Potenti feugiat vestibulum augue, non egestas odio ornare varius. vitae ultricies ipsum euismod risus.</p>
+                <h4>防伪溯源</h4>
+                <p>为产品建立一套产品信息化管理系统，每个产品拥有一个可追溯的二维码.</p>
             </div>
             </li>
         </ul>
