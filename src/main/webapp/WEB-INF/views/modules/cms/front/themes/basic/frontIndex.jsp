@@ -38,12 +38,20 @@
                 <h3>根据您的业务流程，制定最完善的解决方案.</h3>
             </div>
         </li>
+        <li>  
+            <img src="${ctxStatic }/mysite/images/slider_img_4.jpg" alt="img" />
+            <div class="ei-title">
+                <h2><span>您最需要</span>的 <span>解决方案</span> !</h2>
+                <h3>根据您的业务流程，制定最完善的解决方案.</h3>
+            </div>
+        </li>
     </ul>
     <ul class="ei-slider-thumbs">
         <li class="ei-slider-element">Current</li>
         <li><a href="#">Slide 1</a></li>
         <li><a href="#">Slide 2</a></li>
         <li><a href="#">Slide 3</a></li>
+        <li><a href="#">Slide 4</a></li>
     </ul>
 </div>
 <div class="clear"></div>
