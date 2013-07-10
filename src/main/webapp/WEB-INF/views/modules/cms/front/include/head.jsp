@@ -44,11 +44,11 @@
 <script type="text/javascript">
 	// Elastic Slider
 	$(function() {
-	$('#ei-slider').eislideshow({
-	easing		: 'easeOutExpo',
-	titleeasing	: 'easeOutExpo',
-	titlespeed	: 1200
-	});
+		$('#ei-slider').eislideshow({
+			easing		: 'easeOutExpo',
+			titleeasing	: 'easeOutExpo',
+			titlespeed	: 1200
+		});
 	});// 
 </script>
 
