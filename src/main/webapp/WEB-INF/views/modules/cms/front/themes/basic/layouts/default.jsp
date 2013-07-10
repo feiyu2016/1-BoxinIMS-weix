@@ -13,17 +13,17 @@
 
 <body class="home">
 <div id="background_bg"></div>
-
 	<!-- container Start -->
-	<section id="container" style="width:1100px">
+	<section id="container" style="width:1100px;margin-top:1px;">
 		<header>
 			<figure id="logo">
 				<a href="index.html"><img alt="Logo"
-					src="${ctxStatic }/images/logo.png" class="img-rounded" width="200"
-					height="250">	</a>
+					src="${ctxStatic }/images/logo.png" class="img-rounded" width="180"
+					height="90">	</a>
 			</figure>
 			<div class="top_right">
-				<h2 style="color:white">致力于打造专业二维码行业平台，竭诚为您提供最完美的解决方案！</h2>  	
+				<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"  style="margin-right:10px;">	
+				<img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:30px;">	
 				<div id="social_media" style="display:none">
 					<img src="images/rss_icon.png" alt="img" /> <img
 						src="images/twitter_icon.png" alt="img" /> <img
@@ -38,9 +38,9 @@
 
 		<!-- Nav start -->
 		<nav>
-			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px">
-				<ul>
-					<li><a class="active" href="index-1.html"><i
+			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px;">
+				<ul   >
+					<li ><a class="active" href="index-1.html" ><i
 							class="icon-home"></i>首页</a></li>
 					<c:forEach items="${fnc:getMainNavList(site.id)}" var="category"
 						varStatus="status">

@@ -63,35 +63,27 @@
 <section class="teaser">
     <div class="one_third">
     
-        <h3>最优质的 <span>服务</span></h3>
-        Duis dignissim blandit varius. Curabitur adipiscing ornare luctus. 
-        Vestibulum venenatis sagittis turpis, eu varius enim vulputate pretium. 
-        Sed eget leo sed diam aliquam interdum ut auctor erat. Suspendisse vitae 
-        velit leo, et pulvinar velit.
+        <h3>营销过程 <span>管理优化</span></h3>
+        在移动互联网时代，企业无法容易有效的低成本的实现现场管控，云媒体营销平台—“过程管理、分段治事”，迅速帮企业将繁琐的常态互动营销进行快速优化， 通过二维码形式优化营销管理过程，提升客户服务质量，降低管理成本。.
         <span class="teaser_icon">
         <img src="${ctxStatic }/mysite/images/paper_plane.png" alt="img" />
         </span>
     </div>
-    <div class="one_third">
-        <h3>最高效的 <span>技术支持</span></h3>
-        Interdum dignissim blandit varius. Curabitur adipiscing ornare luctus. 
-        Vestibulum venenatis sagittis turpis, eu varius enim vulputate pretium. 
-        Sed eget leo sed diam aliquam interdum ut auctor erat. Suspendisse vitae 
-        velit leo, et pulvinar leo.
-        <span class="teaser_icon">
-        <img src="${ctxStatic }/mysite/images/wheel.png" alt="img" />
-        </span>
-    </div>
     <div class="one_third_last">
-        <h3>最全面的 <span>解决方案</span></h3>
-        Suspendisse dignissim blandit varius. Curabitur adipiscing ornare luctus. 
-        Vestibulum venenatis sagittis turpis, eu varius enim vulputate pretium. 
-        Sed eget leo sed aliquam interdum ut auctor erat. Suspendisse vitae 
-        velit leo, et pulvinar diam.
+        <h3>效果数据 <span>量化分析</span></h3>
+        通过互动营销活动快速收集顾客的来源，关注点，反馈意见，使用体验信息，实现对营销过程中的渠道效果、兴趣所向，时间分布、客户满意度等方面多纬度多角度进行精准的数据统计以及详尽的数据分析，从而实现营销效果的量化以及商业机会的挖掘。
         <span class="teaser_icon">
         <img src="${ctxStatic }/mysite/images/chart.png" alt="img" />
         </span>
     </div>
+    <div class="one_third">
+        <h3>互动营销 <span>效果增强</span></h3>
+        盘活、整合、优化传统媒介资源，带动线上线下互动营销，又能丰富微信、微博互动营销的形式，增强营销的效果；帮助广大传统企业将通过智能手机这个重要媒介将大量的客户群进行线上线下的互为转化，让企业赢在移动互联网时代的起跑线上。
+        <span class="teaser_icon">
+        <img src="${ctxStatic }/mysite/images/wheel.png" alt="img" />
+        </span>
+    </div>
+    
 </section>
 <!-- teaser content end -->
 
