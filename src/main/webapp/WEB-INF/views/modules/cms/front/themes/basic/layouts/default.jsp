@@ -19,19 +19,11 @@
 		<header>
 			<figure id="logo">
 				<a href="index.html"><img alt="Logo"
-					src="${ctxStatic }/images/logo.png" class="img-rounded" width="60"
-					height="70">邯郸智讯</a>
+					src="${ctxStatic }/images/logo.png" class="img-rounded" width="200"
+					height="250">	</a>
 			</figure>
 			<div class="top_right">
-				<ul class="top_info">
-					<li><span class=" call_1st_col">电话:</span> <span
-						class="call_2nd_col">0310-3298268</span></li>
-					<li><span class=" call_1st_col">传真:</span> <span
-						class="call_2nd_col">0310-3298268</span></li>
-					<li><span class=" call_1st_col">邮箱:</span> <span
-						class="call_2nd_col">hdzhixun@163.com</span></li>
-				</ul>
-				 <span class="call_2nd_col">	致力于打造专业二维码行业平台，竭诚为您提供最完美的解决方案！</span>  	
+				<h2 style="color:white">致力于打造专业二维码行业平台，竭诚为您提供最完美的解决方案！</h2>  	
 				<div id="social_media" style="display:none">
 					<img src="images/rss_icon.png" alt="img" /> <img
 						src="images/twitter_icon.png" alt="img" /> <img
