@@ -69,6 +69,7 @@
 	
 	<form:form id="inputForm" modelAttribute="newsReply" action="${ctx}/wechat/newsReply/save" method="post" class="form-horizontal"  enctype="multipart/form-data">
 		<form:hidden path="id"/>
+		<form:hidden path="weChat.id"/>
 		<form:hidden path="wechatConfig.id"/>
 		<form:hidden path="wechatConfig.weChat.id"/>
 		<tags:message content="${message}"/>
