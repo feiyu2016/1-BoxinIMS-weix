@@ -14,6 +14,7 @@
 
 <!--  Content wide start -->
 <section class="content">
+<!-- 
 
 <section class="sub_header">
     <h2>About Us</h2>
@@ -27,18 +28,13 @@
     </form>
     </div>
 </section>
+ -->
 
 <div class="two_third">
-    <img src="${ctxStatic }/mysite/images/about_us_img_1.png" alt="img" class="alignleft" />
-    <h3>About Our <span>Company</span></h3>
-    <p>Etiam magna libero dapibus eu suscipit condimentum fringilla mattis ligula. 
-    Morbi eget sem nunc. Ut felis ipsum mollis a ultrices id condimentum ac odio. 
-    Nam id velit non dui cursus aliquam. Vestibulum ante ipsum primis in faucibus orci 
-    luctus et ultrices posuere cubilia Curae Nulla facilisi. Praesent nec dolor non 
-    eros tempus mollis. Maecenas feugiat facilisis ipsum at pellentesque. Sed dolor 
-    ipsum feugiat non euismod at pulvinar ut sem. Maecenas id ante quam. 
-    Class aptent taciti sociosq.</p><br />
-    <a href="#" class="read_more">Read More</a>
+	
+    <img src="<c:if test="${category.image eq '' }">${ctxStatic }/mysite/images/blog_img_1.png</c:if> <c:if test="${category.image ne '' }">${category.image }</c:if>" alt="img" class="alignleft" />
+    <h3><span>${category.name }</span></h3>
+    <p>摘要:${category.desciption}</p><br />
     
     <span class="divider"></span>
     

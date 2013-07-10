@@ -24,36 +24,64 @@
 	</script>
 </head>
 <body>
-	<div class="row">
-	   <div class="span2">
-	  	<h4>栏目列表</h4>
-		<ol><c:forEach items="${categoryList}" var="category">
-			<li><a href="${ctx}/list-${category.id}${urlSuffix}">${category.name}</a></li>
-		</c:forEach></ol>
-	   </div>
-	   <div class="span10">
-	     <div class="row">
-	       <div class="span10">
-			<h3 style="color:#555555;font-size:20px;text-align:center;border-bottom:1px solid #ddd;padding-bottom:15px;margin:25px 0;">${article.title}</h3>
-			<c:if test="${not empty article.desciption}"><div>摘要：${article.desciption}</div></c:if>
-			<div>${article.articleData.content}</div>
-			<div style="border-top:1px solid #ddd;padding:10px;margin:25px 0;">发布者：${article.user.name} &nbsp; 点击数：${article.hits} &nbsp; 发布时间：<fmt:formatDate value="${article.inputDate}" pattern="yyyy-MM-dd HH:mm:ss"/> &nbsp; 更新时间：<fmt:formatDate value="${article.updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
-  	       </div>
-  	     </div>
-	     <div class="row">
+	
+<!--  Content wide start -->
+<section class="content">
+
+<div class="two_third">
+    <img src="${article.thumb }" alt="img" class="alignleft" />
+    <h3><span>${article.title}</span></h3>
+    <p>摘要：${article.desciption}</p>
+    <br />
+    
+    
+    <div style="border-top:1px solid #ddd;padding:10px;margin:25px 0;">发布者：${article.user.name} &nbsp; 点击数：${article.hits} &nbsp; 发布时间：<fmt:formatDate value="${article.inputDate}" pattern="yyyy-MM-dd HH:mm:ss"/> &nbsp; 更新时间：<fmt:formatDate value="${article.updateDate}" pattern="yyyy-MM-dd HH:mm:ss"/></div>
+    
+    <div>${article.articleData.content}</div>
+    
 			<div id="comment" class="hide span10">
 				正在加载评论...
 			</div>
-	     </div>
-	     <div class="row">
-	       <div class="span10">
-			<h5>相关文章</h5>
-			<ol><c:forEach items="${relationList}" var="relation">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="one_third_last">
+<aside>
+
+<div class="widget_container">
+<h3>  <span>栏目列表</span></h3>
+<ul>
+		
+	<c:forEach items="${categoryList}" var="category">
+			<li><a href="${ctx}/list-${category.id}${urlSuffix}">${category.name}</a></li>
+		</c:forEach>		 
+</ul>
+</div>
+
+<div class="widget_container">
+<h3>相关 <span>文章</span></h3>
+<ul>
+	<c:forEach items="${relationList}" var="relation">
 				<li style="float:left;width:230px;"><a href="${ctx}/view-${relation[0]}-${relation[1]}${urlSuffix}">${fns:abbr(relation[2],30)}</a></li>
-			</c:forEach></ol>
-	  	  </div>
-  	    </div>
-  	  </div>
-   </div>
+			</c:forEach>
+</ul>
+</div>
+
+
+
+</aside>
+</div>
+
+
+<!-- --------------------------------------- -->
+   
+   </section>
 </body>
 </html>
