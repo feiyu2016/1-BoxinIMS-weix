@@ -82,7 +82,6 @@
 <div class="widget_container">
 <h3>  <span>类别</span></h3>
 <ul>
-
 		
 	<c:forEach items="${categoryList}" var="category">
 			<li><a href="${ctx}/list-${category.id}${urlSuffix}">${category.name}</a></li>
@@ -112,16 +111,6 @@
     <a href="#">nice</a>
     <a href="#">only</a>
     <a href="#">plugins</a>
-    <a href="#">podcast</a>
-    <a href="#">post</a>
-    <a href="#">reply</a>
-    <a href="#">simple</a>
-    <a href="#">skills</a>
-    <a href="#">tag</a>
-    <a href="#">video</a>
-    <a href="#">web</a>
-    <a href="#">wordpress</a>
-    <a href="#">wp</a>
 </div>
 </div>
 

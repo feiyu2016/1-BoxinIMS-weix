@@ -42,7 +42,6 @@
     
     <span class="divider"></span>
     
-    <h3>What Makes <span>Us Special</span></h3><br />
     <c:forEach items="${categoryMap}" var="map" varStatus="status">
 	   	  ${status.index % 2 eq 0    ? '<div class="one_half">':'<div class="one_half_last">'}
 			 <div class="drop_cap thumb_img"><h3 style="color:white">${status.index+1} </h3></div>
@@ -59,7 +58,7 @@
 					</c:forEach></ul>
 				</c:if>
 			 </div>
-		  ${status.index % 2 ne 0 ? '</div>':''}
+		  ${status.index % 2 ne 0 ? '</div>':'</div>'}
 	</c:forEach>
 </div>   
     
@@ -87,37 +86,5 @@
 
 
 
-
-
-
-
-
-<!-- ########################################### -->
-
-
-
-
-
-	<div class="row">
-	   <div class="span10">
-	   	  <c:forEach items="${categoryMap}" var="map" varStatus="status">
-	   	  ${status.index % 2 eq 0 ? '<div class="row">':''}
-			 <div class="span5">
-				<h4><small><a href="${ctx}/list-${map.key.id}${urlSuffix}" class="pull-right">更多&gt;&gt;</a></small>${map.key.name}</h4>
-				<c:if test="${map.key.module eq 'article'}">
-					<ul><c:forEach items="${map.value}" var="article">
-						<li><span class="pull-right"><fmt:formatDate value="${article.updateDate}" pattern="yyyy.MM.dd"/></span><a href="${ctx}/view-${article.category.id}-${article.id}${urlSuffix}" style="color:${article.color}">${fns:abbr(article.title,40)}</a></li>
-					</c:forEach></ul>
-				</c:if>
-				<c:if test="${map.key.module eq 'link'}">
-					<ul><c:forEach items="${map.value}" var="link">
-						<li><a href="${link.href}" target="_blank" style="color:${link.color}"><c:out value="${link.title}" /></a></li>
-					</c:forEach></ul>
-				</c:if>
-			 </div>
-		  ${status.index % 2 ne 0 ? '</div>':''}
-		  </c:forEach>
-	   </div>
-	</div>
 </body>
 </html>
