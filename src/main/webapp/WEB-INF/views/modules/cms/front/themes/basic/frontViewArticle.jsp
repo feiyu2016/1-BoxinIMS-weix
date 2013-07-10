@@ -29,7 +29,8 @@
 <section class="content">
 
 <div class="two_third">
-    <img src="${article.thumb }" alt="img" class="alignleft" />
+    <img src="<c:if test="${article.thumb eq '' }">${ctxStatic }/mysite/images/blog_img_1.png</c:if> <c:if test="${article.thumb ne '' }">${article.thumb }</c:if>" alt="img" class="alignleft" />
+    
     <h3><span>${article.title}</span></h3>
     <p>摘要：${article.desciption}</p>
     <br />
