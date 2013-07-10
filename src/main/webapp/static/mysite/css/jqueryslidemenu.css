@@ -25,7 +25,8 @@ float: left;
 /*Top level menu link items style*/
 .jqueryslidemenu ul li a{
 display: block;
-font-size:11px;
+font-size:16px;
+font-family:微软雅黑;
 /*background: #111111; background of tabs (default state)*/
 color: white;
 padding:16px 22px 16px 20px;
