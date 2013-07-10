@@ -43,13 +43,7 @@
 			<div id="comment" class="hide span10">
 				正在加载评论...
 			</div>
-
-
 </div>
-
-
-
-
 
 
 
