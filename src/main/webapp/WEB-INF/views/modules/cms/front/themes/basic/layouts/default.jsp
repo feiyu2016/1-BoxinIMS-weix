@@ -56,7 +56,7 @@
 										value="${ctx}/list-${category.id}${fns:getUrlSuffix()}" />
 								</c:otherwise>
 							</c:choose>
-							<li> <a  class="${requestScope.category.id eq category.id || fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"
+							<li> <a id="${category.id }"   class="${requestScope.category.id eq category.id || ( empty requestScope.category.name && category.name eq '首页')  ||  fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"
 								href="${url}" target="${category.target}"><i class="icon-${category.icon }"></i><span>${category.name}</span></a>
 								
 								<%/**********
