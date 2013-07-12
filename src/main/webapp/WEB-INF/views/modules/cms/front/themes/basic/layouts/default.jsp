@@ -63,8 +63,24 @@
 							</c:choose>
 							<li
 								class="${requestScope.category.id eq category.id || fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"><a
-								href="${url}" target="${category.target}"><span>${category.name}</span></a></li>
-						</c:if>
+								href="${url}" target="${category.target}"><span>${category.name}</span></a>
+								
+								<c:if test="${ not empty fnc:getCategoryList(site.id,category.id,5,'menuparam') }">
+									<ul>
+									<c:forEach items="${fnc:getCategoryList(site.id,category.id,5,'menuparam')}" var="child"
+									varStatus="status">
+									<c:set var="childUrl"
+													value="${ctx}/list-${child.id}${fns:getUrlSuffix()}" />
+											<li><a
+											href="${childUrl}" target="${child.target}"><span>${child.name}</span></a></li>
+									</c:forEach>
+									</ul>
+								</c:if>	
+								
+							</li>
+							
+						</c:if >
+						
 					</c:forEach>
 
 				</ul>
