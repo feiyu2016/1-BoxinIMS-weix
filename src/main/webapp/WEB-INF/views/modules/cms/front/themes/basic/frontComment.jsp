@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ include file="/WEB-INF/views/modules/cms/front/include/taglib.jsp"%>
+<%@ include file="/WEB-INF/views/modules/cms/front/include/head.jsp"%>
 <link href="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.min.css" type="text/css" rel="stylesheet" />
 <script src="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.min.js" type="text/javascript"></script>
 <script src="${ctxStatic}/jquery-validation/1.11.0/jquery.validate.method.min.js" type="text/javascript"></script>
@@ -48,7 +49,7 @@
 		}
 	}
 </script>
-<h5>评论列表</h5>
+<h3>评论列表</h3>
 <ul>
 	<c:forEach items="${page.list}" var="comment">
 		<li>
@@ -63,28 +64,26 @@
 	</c:if>
 </ul>
 <div class="pagination">${page}</div>
-<h5>我要评论</h5>
+<h3>我要评论</h3>
+<span class="divider"></span>
 <div id="commentForm0"></div>
 <div id="commentFormTpl" class="hide">
-	<form:form action="${ctx}/comment" method="post" class="form-horizontal">
+	<form:form id="contact-form" action="${ctx}/comment" method="post" class="form-horizontal">
 		<input type="hidden" name="module" value="${comment.module}"/>
 		<input type="hidden" name="contentId" value="${comment.contentId}"/>
 		<input type="hidden" name="title" value="${comment.title}"/>
 		<input type="hidden" name="replyId"/>
-		<div class="control-group">
-			<label class="control-label">留言内容:</label>
-			<div class="controls">
-				<textarea name="content" rows="4" maxlength="200" class="txt required" style="width:400px;"></textarea>
+		<div id="main">
+			<label for="content">留言内容:</label>
+			<p>	<textarea name="content" rows="4" maxlength="200" class="txt required" style="width:400px;"></textarea></p>
+		
+			<label for="name" >姓名:</label>
+			<p><input type="text" name="name" maxlength="11" class="txt required" style="width:100px;" value="匿名"/></p>
+			<label for="validateCode">验证码:</label><tags:validateCode name="validateCode" /><br/>
+			<div align="center">
+			<button class="btn btn-info" type="submit">提交 </button>&nbsp; 
 			</div>
+			<div class="alert alert-error messageBox" style="display:none"><p>输入有误，请先更正。</p></div> 
 		</div>
-		<div class="control-group">
-			<label class="control-label">姓名:</label>
-			<div class="controls">
-				<input type="text" name="name" maxlength="11" class="txt required" style="width:100px;" value="匿名"/>
-				<label class="mid">验证码:</label><tags:validateCode name="validateCode" />
-				<input class="btn mid" type="submit" value="提 交"/>&nbsp;
-			</div>
-		</div>
-		<div class="alert alert-error messageBox" style="display:none">输入有误，请先更正。</div>
 	</form:form>
 </div>

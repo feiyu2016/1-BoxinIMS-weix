@@ -65,7 +65,7 @@
 <ul>
 	<c:forEach items="${relationList}" var="relation">
 				<li style="float:left;width:230px;"><a href="${ctx}/view-${relation[0]}-${relation[1]}${urlSuffix}">${fns:abbr(relation[2],30)}</a></li>
-			</c:forEach>
+	</c:forEach>
 </ul>
 </div>
 

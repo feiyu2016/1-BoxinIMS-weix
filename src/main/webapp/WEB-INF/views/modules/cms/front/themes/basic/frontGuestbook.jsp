@@ -129,7 +129,7 @@
     <div class="description">
         <h5>联系电话</h5><br />
         <p><strong>固话:</strong>0310-3298268</p>
-        <p><strong>手机:</strong> 555-88-56425-89</p>
+        <p><strong>手机:</strong>13784017885</p>
     </div>
 </div>
 
@@ -150,9 +150,6 @@
     
 </section>
 <!--  Content wide end -->
-
-
-
 
 </body>
 </html>
