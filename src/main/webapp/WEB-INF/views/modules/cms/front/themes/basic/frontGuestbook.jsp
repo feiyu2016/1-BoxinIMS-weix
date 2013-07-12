@@ -48,20 +48,6 @@
 
     <iframe width="1000" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://ditu.google.cn/maps?f=q&amp;source=s_q&amp;hl=zh-CN&amp;geocode=&amp;q=%E9%82%AF%E9%83%B8%E5%B8%82%E4%BA%BA%E6%B0%91%E8%B7%AF++%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7++%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;aq=&amp;sll=36.611161,114.481686&amp;sspn=0.002407,0.005284&amp;brcurrent=3,0x35dc39cf614428cf:0x2179a2d2f5b7ada,0,0x35dc365cded504ff:0xd32b0a77c8249cef%3B5,0,0&amp;ie=UTF8&amp;hq=%E4%BA%BA%E6%B0%91%E8%B7%AF+%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7+%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;hnear=%E6%B2%B3%E5%8C%97%E7%9C%81%E9%82%AF%E9%83%B8%E5%B8%82&amp;ll=36.610972,114.480721&amp;spn=0.03219,0.128401&amp;t=m&amp;output=embed"></iframe><br /><small><a href="http://ditu.google.cn/maps?f=q&amp;source=embed&amp;hl=zh-CN&amp;geocode=&amp;q=%E9%82%AF%E9%83%B8%E5%B8%82%E4%BA%BA%E6%B0%91%E8%B7%AF++%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7++%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;aq=&amp;sll=36.611161,114.481686&amp;sspn=0.002407,0.005284&amp;brcurrent=3,0x35dc39cf614428cf:0x2179a2d2f5b7ada,0,0x35dc365cded504ff:0xd32b0a77c8249cef%3B5,0,0&amp;ie=UTF8&amp;hq=%E4%BA%BA%E6%B0%91%E8%B7%AF+%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7+%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;hnear=%E6%B2%B3%E5%8C%97%E7%9C%81%E9%82%AF%E9%83%B8%E5%B8%82&amp;ll=36.610972,114.480721&amp;spn=0.03219,0.128401&amp;t=m" style="color:#0000FF;text-align:left">查看大图</a></small>
 <br /><br /><br />
-    <ul>
-			<c:forEach items="${page.list}" var="guestbook">
-				<li>
-					<h5>姓名: ${guestbook.name} &nbsp;时间：<fmt:formatDate value="${guestbook.createDate}" pattern="yyyy-MM-dd HH:mm:ss"/></h5>
-					<p>内容：${guestbook.content}</p>
-					<h6>回复人：${guestbook.reUser.name} 时间：<fmt:formatDate value="${guestbook.reDate}" pattern="yyyy-MM-dd HH:mm:ss"/></h6>
-					<p>回复内容：${guestbook.reContent}</p>
-				</li>
-			</c:forEach>
-			<c:if test="${fn:length(page.list) eq 0}">
-				<li>暂时还没有人留言！</li>
-			</c:if>
-		</ul>
-		<div class="pagination">${page}</div>
     
 <div class="two_third" style="display:none">
     <form:form id="contact-form"   name="myform"  action="" method="post" class="form-horizontal" >	
