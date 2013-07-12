@@ -63,6 +63,12 @@
 			</div>
 		</div>
 		<div class="control-group">
+			<label class="control-label">小图标:</label>
+			<div class="controls">
+				<tags:iconselect id="icon" name="icon" value="${category.icon}"></tags:iconselect>
+			</div>
+		</div>
+		<div class="control-group">
 			<label class="control-label">链接:</label>
 			<div class="controls">
 				<form:input path="href" htmlEscape="false" maxlength="200"/>
