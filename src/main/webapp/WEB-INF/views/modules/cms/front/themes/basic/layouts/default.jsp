@@ -36,9 +36,7 @@
 		<!-- Nav start -->
 		<nav>
 			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px;">
-				<ul   >
-					<li ><a   href="index-1.html" ><i
-							class="icon-home"></i>首页</a></li>
+				<ul>
 					<c:forEach items="${fnc:getMainNavList(site.id)}" var="category"
 						varStatus="status">
 						<c:if test="${status.index lt 6}">
@@ -58,9 +56,8 @@
 										value="${ctx}/list-${category.id}${fns:getUrlSuffix()}" />
 								</c:otherwise>
 							</c:choose>
-							<li
-								class="${requestScope.category.id eq category.id || fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"><a
-								href="${url}" target="${category.target}"><span>${category.name}</span></a>
+							<li> <a  class="${requestScope.category.id eq category.id || fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"
+								href="${url}" target="${category.target}"><i class="icon-${category.icon }"></i><span>${category.name}</span></a>
 								
 								<%/**********
 									暂不显示二级菜单
