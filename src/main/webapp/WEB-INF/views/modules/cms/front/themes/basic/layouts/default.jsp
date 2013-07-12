@@ -22,14 +22,19 @@
 					height="90">	</a>
 			</figure>
 			<div class="top_right">
+				
 				<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"  style="margin-right:10px;">	
 				<img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:30px;">	
+				 <ul class="top_info">
+		            <li> <a >微信营销服务</a></li>
+		            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
+        		</ul>
 				<div id="social_media" style="display:none">
-					<img src="images/rss_icon.png" alt="img" /> <img
-						src="images/twitter_icon.png" alt="img" /> <img
-						src="images/facebook_icon.png" alt="img" /> <img
-						src="images/skype_icon.png" alt="img" /> <img
-						src="images/link_in_icon.png" alt="img" />
+					<img src="images/rss_icon.png" alt="img" /> 
+					<img src="images/twitter_icon.png" alt="img" /> 
+					<img src="images/facebook_icon.png" alt="img" /> 
+					<img src="images/skype_icon.png" alt="img" /> 
+					<img src="images/link_in_icon.png" alt="img" />
 				</div>
 			</div>
 		</header>
