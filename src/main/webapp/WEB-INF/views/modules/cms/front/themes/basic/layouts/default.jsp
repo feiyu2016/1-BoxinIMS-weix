@@ -15,27 +15,19 @@
 <div id="background_bg"></div>
 	<!-- container Start -->
 	<section id="container" style="width:1100px;margin-top:1px;">
-		<header>
+		<header style="margin-top:0px">
 			<figure id="logo">
 				<a href="index.html"><img alt="Logo"
 					src="${ctxStatic }/images/logo.png" class="img-rounded" width="180"
 					height="90">	</a>
 			</figure>
-			<div class="top_right">
+			<div class="top_right" align="right">
 				
-				<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"  style="margin-right:10px;">	
-				<img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:30px;">	
-				 <ul class="top_info">
+				<ul class="top_info">
 		            <li> <a >微信营销服务</a></li>
 		            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
-        		</ul>
-				<div id="social_media" style="display:none">
-					<img src="images/rss_icon.png" alt="img" /> 
-					<img src="images/twitter_icon.png" alt="img" /> 
-					<img src="images/facebook_icon.png" alt="img" /> 
-					<img src="images/skype_icon.png" alt="img" /> 
-					<img src="images/link_in_icon.png" alt="img" />
-				</div>
+        		 </ul>
+				<img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;">
 			</div>
 		</header>
 		<!-- top section end -->
@@ -160,12 +152,7 @@
 		<div class="one_third_last">
 			<div class="widget_container">
 				<div class="flickr_widget">
-					<img src="${ctxStatic }/mysite/images/flickr_img_1.png" alt="img" />
-					<img src="${ctxStatic }/mysite/images/flickr_img_2.png" alt="img" />
-					<img src="${ctxStatic }/mysite/images/flickr_img_3.png" alt="img" />
-					<img src="${ctxStatic }/mysite/images/flickr_img_4.png" alt="img" />
-					<img src="${ctxStatic }/mysite/images/flickr_img_5.png" alt="img" />
-					<img src="${ctxStatic }/mysite/images/flickr_img_6.png" alt="img" />
+					<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"  style="margin-right:10px;">	
 				</div>
 			</div>
 		</div>
