@@ -28,7 +28,7 @@
 							    <div class="one_third">
 							        <img src="<c:if test="${article.thumb eq '' }">${ctxStatic }/mysite/images/blog_img_1.png</c:if> <c:if test="${article.thumb ne '' }">${article.thumb}</c:if>" alt="img" /><br />
 							         <span class="post_comment">
-							                <strong><a href="#">2</a></strong> Comments
+							                 
 							            </span>
 							         <span class="post_meta_info">
 							            <span class="post_date">
@@ -36,14 +36,14 @@
 									value="${article.updateDate}" pattern="yyyy.MM.dd" /></strong>
 							            </span>
 							            <span class="post_author">
-							                <strong>Admin</strong>
+							                <strong>${article.user.name }</strong>
 							            </span>     
 							        </span>
 							    </div>
 							    <div class="two_third_last">
 							        <h4><a href="#">${fns:abbr(article.title,96)}</a></h4>       
 							        <p>${article.desciption}</p><br />
-							        <a href="#" class="btn">详细信息</a>
+							        <a href="${ctx}/view-${article.category.id}-${article.id}${urlSuffix}" class="btn">详细信息</a>
 							    </div>
 							</div>
 						
@@ -88,40 +88,7 @@
 </ul>
 </div>
 
-<div class="widget_container">
-<h3>Recent <span>Comments</span></h3>
-<ul>
-	<li><a href="#">Pellentesque suscipit.</a></li>
-    <li><a href="#">Turpis eget ante rhoncus.</a></li>
-    <li><a href="#">Imperdiet lobortis venenatis.</a></li>
-    <li><a href="#">Bibendum ornare congue.</a></li>
-    <li><a href="#">Integer vel nulla eget.</a></li>
-    <li><a href="#">Lacinia posuere lorem.</a></li>
-    <li><a href="#">Accumsan ipsum bibendum in.</a></li>
-</ul>
-</div>
 
-<div class="widget_container">
-<h3>tags</h3>
-<div class="tagcloud">
-    <a href="#">amazing</a>
-    <a href="#">blog</a>
-    <a href="#">greenstar</a>
-    <a href="#">nice</a>
-    <a href="#">only</a>
-    <a href="#">plugins</a>
-</div>
-</div>
-
-<div class="widget_container">
-<h3>Recent <span>Categories</span></h3>
-<ul>
-	<li><a href="#">Portfolio</a></li>
-    <li><a href="#">Web Design</a></li>
-    <li><a href="#">Latest News</a></li>
-    <li><a href="#">Blog</a></li>
-</ul>
-</div>
 
 </aside>
 </div>
