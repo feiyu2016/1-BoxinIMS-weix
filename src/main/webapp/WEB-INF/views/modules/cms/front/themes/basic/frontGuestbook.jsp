@@ -63,7 +63,7 @@
 		</ul>
 		<div class="pagination">${page}</div>
     
-<div class="two_third">
+<div class="two_third" style="display:none">
     <form:form id="contact-form"   name="myform"  action="" method="post" class="form-horizontal" >	
         <div id="main">
         <div id="response" /></div>
