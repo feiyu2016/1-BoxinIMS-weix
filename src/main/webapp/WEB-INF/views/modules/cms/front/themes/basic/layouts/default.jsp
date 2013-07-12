@@ -107,7 +107,7 @@
 			<span class="trigger"><a href="#"></a></span>
 			<div class="toggle_container">
 				<p>
-					邯郸智讯二维码服务平台打造专业务优质秀平台
+					邯郸智讯二维码服务平台打造专业优质秀平台
 					<strong>hdzhixun@163.com</strong>
 				</p>
 			</div>
