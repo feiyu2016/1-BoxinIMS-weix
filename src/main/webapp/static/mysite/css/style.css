@@ -229,7 +229,7 @@ list-style:none;
 
 ul.top_info li{
 display: inline-block;
-background-color:#555;
+color:white;
 margin-left:10px;
 }
 
@@ -239,6 +239,13 @@ margin:0px;
 float:left;
 
 }
+
+ul.top_info a{
+	color: white;
+	font-size:16px;
+	font-family: 微软雅黑
+}
+
 span.call_1st_col{
 background-color:#2b2b2b;
 font-weight:bold;
