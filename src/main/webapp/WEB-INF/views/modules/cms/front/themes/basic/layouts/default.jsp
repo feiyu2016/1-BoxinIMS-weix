@@ -62,17 +62,22 @@
 								class="${requestScope.category.id eq category.id || fn:indexOf(requestScope.category.parentIds,category.id) ge 1?'active':''}"><a
 								href="${url}" target="${category.target}"><span>${category.name}</span></a>
 								
-								<c:if test="${ not empty fnc:getCategoryList(site.id,category.id,5,'menuparam') }">
-									<ul>
-									<c:forEach items="${fnc:getCategoryList(site.id,category.id,5,'menuparam')}" var="child"
-									varStatus="status">
-									<c:set var="childUrl"
-													value="${ctx}/list-${child.id}${fns:getUrlSuffix()}" />
-											<li><a
-											href="${childUrl}" target="${child.target}"><span>${child.name}</span></a></li>
-									</c:forEach>
-									</ul>
-								</c:if>	
+								<%/**********
+									暂不显示二级菜单
+									<c:if test="${ not empty fnc:getCategoryList(site.id,category.id,5,'menuparam') }">
+										<ul>
+										<c:forEach items="${fnc:getCategoryList(site.id,category.id,5,'menuparam')}" var="child"
+										varStatus="status">
+										<c:set var="childUrl"
+														value="${ctx}/list-${child.id}${fns:getUrlSuffix()}" />
+												<li><a
+												href="${childUrl}" target="${child.target}"><span>${child.name}</span></a></li>
+										</c:forEach>
+										</ul>
+									</c:if>	
+								
+								
+								**********/ %>
 								
 							</li>
 							
@@ -171,7 +176,7 @@
 
 		<section class="footer">
 			<div class="copyright">
-				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.    ${fns:getDate('yyyy年MM月dd日 E')}</p>
+				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.    ${fns:getDate('yyyy年MM月dd日 ')}</p>
 			</div>
 		</section>
 
