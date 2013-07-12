@@ -30,7 +30,7 @@
 			and welcome_id = #welcomeId#
 		</isNotEmpty>
 		    and del_flag = 0
-		    order by id desc
+		    order by id 
 	</select>	
 	
 	<select id="getNewsReplyCountByConfigId" resultClass="java.lang.Integer">
