@@ -28,19 +28,26 @@
 <link href="${ctxStatic}/mysite/css/jqueryslidemenu.css" rel="stylesheet" type="text/css" />
 <link href="${ctxStatic}/mysite/css/elastic_slider.css" rel="stylesheet" type="text/css"/>
 <link href="${ctxStatic}/mysite/css/widgets.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/portfolio.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/quicksand.css" rel="stylesheet" type="text/css"/>
 <link href="${ctxStatic}/mysite/css/skin.css" rel="stylesheet" type="text/css"/>
 <link href="${ctxStatic}/mysite/css/font-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="${ctxStatic}/mysite/css/responsive.css" rel="stylesheet" type="text/css"  /> 
+<link href="${ctxStatic}/mysite/js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen" /> 
 
 
 <script src="${ctxStaticFront}/themes/${site.theme}/script.min.js" type="text/javascript"></script>
 
 
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/html5.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jqueryslidemenu.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.eislideshow.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/custom.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/quicksand.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+
 <script type="text/javascript">
 	// Elastic Slider
 	$(function() {
