@@ -18,9 +18,9 @@
         <li>
             <img src="${ctxStatic }/mysite/images/slider_img_1.png" alt="img" />
             <div class="ei-title">
-                <h2>最优秀的 <span>二维码</span> 服务平台</h2>
-                <h3>提供最完善的解决方案.</h3>
-                <h3>提供满足您需要的解决方案.</h3>
+                <h2><span></span></h2>
+                <h3></h3>
+                <h3></h3>
             </div>
         </li>
         <li> 
@@ -34,7 +34,7 @@
         <li>  
             <img src="${ctxStatic }/mysite/images/slider_img_3.png" alt="img" />
             <div class="ei-title">
-                <h2><span></span>的 <span></span> !</h2>
+                <h2><span></span> <span></span></h2>
                 <h3></h3>
             </div>
         </li>
