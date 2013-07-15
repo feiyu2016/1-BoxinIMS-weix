@@ -34,12 +34,12 @@
 	
     <img src="<c:if test="${category.image eq '' }">${ctxStatic }/mysite/images/blog_img_1.png</c:if> <c:if test="${category.image ne '' }">${category.image }</c:if>" alt="img" class="alignleft" />
     <h3><span>${category.name }</span></h3>
-    <p>介绍:${category.desciption}</p><br />
+    <p>简介:${category.desciption}</p><br />
     
     <span class="divider"></span>
     
     <c:forEach items="${categoryMap}" var="map" varStatus="status">
-	   	  ${status.index % 2 eq 0    ? '<div class="one_half">':'<div class="one_half_last">'}
+	   	  ${status.index % 2 eq 0    ? '<div>':'<div>'}
 			 <div class="drop_cap thumb_img"><h3 style="color:white">${status.index+1} </h3></div>
 			 	<div class="description">
 				<h4><small><a href="${ctx}/list-${map.key.id}${urlSuffix}" class="pull-right">更多&gt;&gt;</a></small>${map.key.name}</h4>
