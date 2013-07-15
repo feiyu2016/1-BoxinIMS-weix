@@ -96,11 +96,8 @@
 		</nav>
 		<!-- Nav end -->
 
-	
-
 			<sitemesh:body />
 	<!-- /container -->
-	<hr style="margin: 20px 0 10px;">
 	<!--  trigger content start -->
 
 
