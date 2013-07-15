@@ -37,7 +37,6 @@
 </div>
 <div class="one_third_last">
 	<div class="portfolio_single">
-		<h3>${article.title }</h3>
         <ul>
             <li><strong>简介:</strong>${article.desciption }</li>
         </ul>
