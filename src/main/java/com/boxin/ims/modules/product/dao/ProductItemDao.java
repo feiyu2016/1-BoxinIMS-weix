@@ -1,7 +1,7 @@
 /**
  * There are <a href="https://github.com/thinkgem/jeesite">JeeSite</a> code generation
  */
-package com.boxin.ims.modules.product.dao.item;
+package com.boxin.ims.modules.product.dao;
 
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.thinkgem.jeesite.common.persistence.BaseDao;
 import com.thinkgem.jeesite.common.persistence.BaseDaoImpl;
-import com.boxin.ims.modules.product.entity.item.ProductItem;
+import com.boxin.ims.modules.product.entity.ProductItem;
 
 /**
  * 产品DAO接口

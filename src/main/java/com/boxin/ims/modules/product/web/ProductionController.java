@@ -12,10 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.boxin.ims.modules.product.entity.classify.ProductClassify;
-import com.boxin.ims.modules.product.entity.item.ProductItem;
-import com.boxin.ims.modules.product.service.classify.ProductClassifyService;
-import com.boxin.ims.modules.product.service.item.ProductItemService;
+import com.boxin.ims.modules.product.entity.ProductClassify;
+import com.boxin.ims.modules.product.entity.ProductItem;
+import com.boxin.ims.modules.product.service.ProductClassifyService;
+import com.boxin.ims.modules.product.service.ProductItemService;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.persistence.Page;
 import com.thinkgem.jeesite.common.web.BaseController;
