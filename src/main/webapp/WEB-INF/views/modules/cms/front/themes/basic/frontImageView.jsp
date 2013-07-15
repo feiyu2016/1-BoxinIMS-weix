@@ -24,26 +24,23 @@
 <!--  Content wide start -->
 <section class="content">
 
-<section class="sub_header">
-    <h2>${article.title }</h2>
-</section>
+<h3>${article.title }</h3>
 
-<div class="two_third">
+<div class="one_third">
 <div class="flexslider">
     <ul class="slides">
         <li><img src="${article.thumb }" alt="img" /></li>
      </ul>
 </div>
 </div>
-<div class="one_third_last">
+<div class="two_third_last">
 	<div class="portfolio_single">
         <ul>
             <li><strong>简介:</strong>${article.desciption }</li>
         </ul>
-        <p>${article.articleData.content }</p><br />
     </div>
 </div>
-
+<p>${article.articleData.content }</p><br />
 </section>
 <!--  Content wide end -->
 
