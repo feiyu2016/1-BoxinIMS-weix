@@ -131,19 +131,19 @@
 				<ul>
 					<li><img
 						src="${ctxStatic }/mysite/images/partner_jindianzi.png" alt="img"
-						class="thumb_img" width="92px" height="56px"/>
+						class="thumb_img" width="92px" height="56px"  style="width:92px;height:56px"/>
 						<div class="description">
 							<strong>金点子传媒</strong><br /> 智讯移动互联与金点子传媒打造邯郸新媒体，新体验，新生活的综合应用平台
 						</div></li>
 					<li><img
 						src="${ctxStatic }/mysite/images/partner_kaoyan.jpg" alt="img"
-						class="thumb_img"  width="92px" height="56px"/>
+						class="thumb_img"  width="92px" height="56px" style="width:92px;height:56px"/>
 						<div class="description">
 							<strong>烤宴自助烧烤主题餐厅</strong><br /> 
 						</div></li>
 					<li><img
 						src="${ctxStatic }/mysite/images/partner_bitebao.jpg" alt="img"
-						class="thumb_img" width="92px" height="56px"/>
+						class="thumb_img" width="92px" height="56px"  style="width:92px;height:56px"/>
 						<div class="description">
 							<strong>比特堡啤酒健康烤肉</strong><br />
 						</div></li>
@@ -154,7 +154,7 @@
 		<div class="one_third_last">
 			<div class="widget_container">
 				<div class="flickr_widget">
-					<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"  style="margin-right:10px;">	
+					<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"   style="margin-right:10px; width:90px;height:90px ">	
 				</div>
 			</div>
 		</div>
