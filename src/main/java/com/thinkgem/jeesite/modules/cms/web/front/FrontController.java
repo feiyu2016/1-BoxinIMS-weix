@@ -101,6 +101,36 @@ public class FrontController extends BaseController{
 			return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontViewArticle";
 		}else{
 			List<Category> categoryList = categoryService.findByParentId(category.getId(), category.getSite().getId());
+			
+			
+			//判断是否商家展示类型
+			if("image".equals(category.getModule())){
+				
+				Map<Category, List> categoryMap = Maps.newLinkedHashMap();
+				
+				if (Category.SHOW.equals(category.getInList())){
+					categoryMap.put(category, articleService.find(new Page<Article>(1, 40, -1),
+								new Article(category)).getList());
+					Page<Article> page = new Page<Article>(pageNo, pageSize);
+					page = articleService.find(page, new Article(category));
+					model.addAttribute("page", page);
+					
+					
+				}
+				
+				model.addAttribute("category", category);
+				model.addAttribute("categoryMap", categoryMap);
+				
+				model.addAttribute("category", category);
+				model.addAttribute("categoryList", categoryList);
+				return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontImages";
+			}
+			
+			
+			
+			
+			
+			
 			// 展现方式为1 、无子栏目或公共模型，显示栏目内容列表
 			if("1".equals(category.getShowModes())||categoryList.size()==0){
 				// 有子栏目并展现方式为1，则获取第一个子栏目；无子栏目，则获取同级分类列表。
@@ -109,6 +139,8 @@ public class FrontController extends BaseController{
 				}else{
 					categoryList = categoryService.findByParentId(category.getParent().getId(), category.getSite().getId());
 				}
+				
+				
 				// 获取内容列表
 				if ("article".equals(category.getModule())){
 					Page<Article> page = new Page<Article>(pageNo, pageSize);
@@ -130,7 +162,7 @@ public class FrontController extends BaseController{
 				for (Category c : categoryList){
 					if (Category.SHOW.equals(c.getInList())){
 						if ("article".equals(c.getModule())){
-							categoryMap.put(c, articleService.find(new Page<Article>(1, 5, -1),
+							categoryMap.put(c, articleService.find(new Page<Article>(1, 10, -1),
 									new Article(c)).getList());
 						}else if ("link".equals(c.getModule())){
 							categoryMap.put(c, linkService.find(new Page<Link>(1, 5, -1),
@@ -145,6 +177,59 @@ public class FrontController extends BaseController{
 			}
 		}
 	}
+	
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-14  上午12:06:08
+	 * @function <p> 商家产品图片展示 </p>
+	 * @param categoryId
+	 * @param pageNo
+	 * @param pageSize
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "pics-{categoryId}" + Global.URL_SUFFIX)
+	public String pic(@PathVariable Long categoryId, @RequestParam(required=false, defaultValue="1") Integer pageNo,
+			@RequestParam(required=false, defaultValue="30") Integer pageSize, Model model) {
+		Category category = categoryService.get(categoryId);
+		
+		Map<Category, List> categoryMap = Maps.newLinkedHashMap();
+		
+		if (Category.SHOW.equals(category.getInList())){
+			categoryMap.put(category, articleService.find(new Page<Article>(1, 12, -1),
+						new Article(category)).getList());
+		}
+		
+		model.addAttribute("category", category);
+		model.addAttribute("categoryMap", categoryMap);
+		return   "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontImages";
+		
+	}
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-14  上午12:07:04
+	 * @function <p> 商家产品详细内容 </p>
+	 * @param categoryId
+	 * @param pageNo
+	 * @param pageSize
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "picdeta-{categoryId}-{articleId}" + Global.URL_SUFFIX)
+	public String viewImage(@PathVariable Long categoryId,@PathVariable Long articleId, @RequestParam(required=false, defaultValue="1") Integer pageNo,
+			@RequestParam(required=false, defaultValue="30") Integer pageSize, Model model) {
+		Category category = categoryService.get(categoryId);
+		Article article = articleService.get(articleId);
+		
+		model.addAttribute("article", article);
+		return   "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontImageView";
+		
+	}
+	
+	
+	
 
 	/**
 	 * 显示内容
@@ -175,6 +260,14 @@ public class FrontController extends BaseController{
 			List<Object[]> relationList = articleService.findByIds(article.getArticleData().getRelation());
 			model.addAttribute("relationList", relationList); 
 			return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontViewArticle";
+			
+		}else if("image".equals(category.getModule())){
+			List<Category> categoryList = categoryService.findByParentId(category.getId(), category.getSite().getId());
+			
+			Article article = articleService.get(contentId);
+			model.addAttribute("categoryList", categoryList);
+			model.addAttribute("article", article);
+			return   "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontImageView";
 		}
 		return null;
 	}
