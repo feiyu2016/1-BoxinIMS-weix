@@ -31,10 +31,7 @@
 <div class="two_third">
 <div class="flexslider">
     <ul class="slides">
-        <li><img src="${ctxStatic }/mysite/images/portfolio_single_page_img_1.png" alt="img" /></li>
-        <li><img src="${ctxStatic }/mysite/images/portfolio_single_page_img_2.png" alt="img" /></li>
-        <li><img src="${ctxStatic }/mysite/images/portfolio_single_page_img_3.png" alt="img" /></li>
-        <li><img src="${ctxStatic }/mysite/images/portfolio_single_page_img_4.png" alt="img" /></li>
+        <li><img src="${article.thumb }" alt="img" /></li>
      </ul>
 </div>
 </div>
