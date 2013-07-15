@@ -26,16 +26,16 @@
         <li> 
             <img src="${ctxStatic }/mysite/images/slider_img_2.png" alt="img" />
             <div class="ei-title">
-                <h2>简洁 <span>高效</span>定制 <span>数据安全</span> </h2>
-                <h3>提供最最简洁高效的服务，保证用户个性化定制需求， </h3>
-                <h3>提供安全的数据服务， </h3>
+                <h2> <span></span> <span></span> </h2>
+                <h3> </h3>
+                <h3> </h3>
             </div>
         </li>
         <li>  
             <img src="${ctxStatic }/mysite/images/slider_img_3.png" alt="img" />
             <div class="ei-title">
-                <h2><span>您最需要</span>的 <span>解决方案</span> !</h2>
-                <h3>根据您的业务流程，制定最完善的解决方案.</h3>
+                <h2><span></span>的 <span></span> !</h2>
+                <h3></h3>
             </div>
         </li>
         <li>  
