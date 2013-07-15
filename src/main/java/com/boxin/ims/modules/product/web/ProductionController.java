@@ -23,8 +23,8 @@ import com.thinkgem.jeesite.modules.sys.entity.User;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/product")
-public class ProductController extends BaseController{
+@RequestMapping(value = Global.ADMIN_PATH+"/mproduct")
+public class ProductionController extends BaseController{
 	@Autowired
 	private ProductClassifyService productClassifyService;
 	@Autowired
