@@ -45,8 +45,55 @@
 
 <!--  Content wide start -->
 <section class="content">
+<section >
+<div class="two_third">
+    <iframe width="95%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://ditu.google.cn/maps?f=q&amp;source=s_q&amp;hl=zh-CN&amp;geocode=&amp;q=%E9%82%AF%E9%83%B8%E5%B8%82%E4%BA%BA%E6%B0%91%E8%B7%AF++%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7++%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;aq=&amp;sll=36.611161,114.481686&amp;sspn=0.002407,0.005284&amp;brcurrent=3,0x35dc39cf614428cf:0x2179a2d2f5b7ada,0,0x35dc365cded504ff:0xd32b0a77c8249cef%3B5,0,0&amp;ie=UTF8&amp;hq=%E4%BA%BA%E6%B0%91%E8%B7%AF+%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7+%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;hnear=%E6%B2%B3%E5%8C%97%E7%9C%81%E9%82%AF%E9%83%B8%E5%B8%82&amp;ll=36.610972,114.480721&amp;spn=0.03219,0.128401&amp;t=m&amp;output=embed"></iframe><br /><small><a href="http://ditu.google.cn/maps?f=q&amp;source=embed&amp;hl=zh-CN&amp;geocode=&amp;q=%E9%82%AF%E9%83%B8%E5%B8%82%E4%BA%BA%E6%B0%91%E8%B7%AF++%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7++%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;aq=&amp;sll=36.611161,114.481686&amp;sspn=0.002407,0.005284&amp;brcurrent=3,0x35dc39cf614428cf:0x2179a2d2f5b7ada,0,0x35dc365cded504ff:0xd32b0a77c8249cef%3B5,0,0&amp;ie=UTF8&amp;hq=%E4%BA%BA%E6%B0%91%E8%B7%AF+%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7+%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;hnear=%E6%B2%B3%E5%8C%97%E7%9C%81%E9%82%AF%E9%83%B8%E5%B8%82&amp;ll=36.610972,114.480721&amp;spn=0.03219,0.128401&amp;t=m" style="color:#0000FF;text-align:left">查看大图</a></small>
+</div>
+<div class="one_third_last">
+	<h4>公司位置</h4>
+<br />
+<div class="contact_details">
+    <div class="thumb_img contact_identify">
+        <img src="${ctxStatic }/mysite/images/home.png" alt="img"/>
+    </div>
+    <div class="description">
+        <h5>地址</h5><br />
+        <p>公司地址：人民路金帝豪B座1108室</p>
+    </div>
+</div>
 
-    <iframe width="1000" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://ditu.google.cn/maps?f=q&amp;source=s_q&amp;hl=zh-CN&amp;geocode=&amp;q=%E9%82%AF%E9%83%B8%E5%B8%82%E4%BA%BA%E6%B0%91%E8%B7%AF++%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7++%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;aq=&amp;sll=36.611161,114.481686&amp;sspn=0.002407,0.005284&amp;brcurrent=3,0x35dc39cf614428cf:0x2179a2d2f5b7ada,0,0x35dc365cded504ff:0xd32b0a77c8249cef%3B5,0,0&amp;ie=UTF8&amp;hq=%E4%BA%BA%E6%B0%91%E8%B7%AF+%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7+%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;hnear=%E6%B2%B3%E5%8C%97%E7%9C%81%E9%82%AF%E9%83%B8%E5%B8%82&amp;ll=36.610972,114.480721&amp;spn=0.03219,0.128401&amp;t=m&amp;output=embed"></iframe><br /><small><a href="http://ditu.google.cn/maps?f=q&amp;source=embed&amp;hl=zh-CN&amp;geocode=&amp;q=%E9%82%AF%E9%83%B8%E5%B8%82%E4%BA%BA%E6%B0%91%E8%B7%AF++%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7++%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;aq=&amp;sll=36.611161,114.481686&amp;sspn=0.002407,0.005284&amp;brcurrent=3,0x35dc39cf614428cf:0x2179a2d2f5b7ada,0,0x35dc365cded504ff:0xd32b0a77c8249cef%3B5,0,0&amp;ie=UTF8&amp;hq=%E4%BA%BA%E6%B0%91%E8%B7%AF+%E4%BA%BA%E6%B0%91%E4%B8%9C%E8%B7%AF12%E5%8F%B7+%E9%87%91%E5%B8%9D%E8%B1%AA%E5%A4%A7%E9%85%92%E5%BA%97&amp;hnear=%E6%B2%B3%E5%8C%97%E7%9C%81%E9%82%AF%E9%83%B8%E5%B8%82&amp;ll=36.610972,114.480721&amp;spn=0.03219,0.128401&amp;t=m" style="color:#0000FF;text-align:left">查看大图</a></small>
+<span class="divider"></span>
+
+<div class="contact_details">
+<aside>
+	<div>
+    <div class="thumb_img contact_identify">
+        <img src="${ctxStatic }/mysite/images/phone.png" alt="img"/>
+    </div>
+    <div class="description">
+        <h5>联系电话</h5><br />
+        <p><strong>固话:</strong>0310-3298268</p>
+        <p><strong>手机:</strong>13784017885</p>
+    </div>
+</div>
+
+<span class="divider"></span>
+
+<div class="contact_details">
+    <div class="thumb_img contact_identify">
+        <img src="${ctxStatic }/mysite/images/mail.png" alt="img"/>
+    </div>
+    <div class="description">
+        <h5>公司邮箱</h5><br />
+        <p><strong>Email:&nbsp;&nbsp;</strong>hdzhixun@163.com</p>
+    </div>
+</div>
+
+</aside>
+</div>
+</div>
+
+</section>
 <br /><br /><br />
     
 <div class="two_third" style="display:none">
@@ -88,45 +135,7 @@
 <div class="one_third_last">
 <aside>
 
-<h4>公司位置</h4>
-<br />
-<div class="contact_details">
-    <div class="thumb_img contact_identify">
-        <img src="${ctxStatic }/mysite/images/home.png" alt="img"/>
-    </div>
-    <div class="description">
-        <h5>地址</h5><br />
-        <p>公司地址：人民路金帝豪B座1108室</p>
-    </div>
-</div>
 
-<span class="divider"></span>
-
-<div class="contact_details">
-    <div class="thumb_img contact_identify">
-        <img src="${ctxStatic }/mysite/images/phone.png" alt="img"/>
-    </div>
-    <div class="description">
-        <h5>联系电话</h5><br />
-        <p><strong>固话:</strong>0310-3298268</p>
-        <p><strong>手机:</strong>13784017885</p>
-    </div>
-</div>
-
-<span class="divider"></span>
-
-<div class="contact_details">
-    <div class="thumb_img contact_identify">
-        <img src="${ctxStatic }/mysite/images/mail.png" alt="img"/>
-    </div>
-    <div class="description">
-        <h5>公司邮箱</h5><br />
-        <p><strong>Email:&nbsp;&nbsp;</strong>hdzhixun@163.com</p>
-    </div>
-</div>
-
-</aside>
-</div>
     
 </section>
 <!--  Content wide end -->
