@@ -23,13 +23,42 @@
 <!--  Content wide start -->
 <section class="content">
 
-<div id="background_bg_inner"></div>
 <div class="demo">
 <ul id="list" class="image-grid">
+
+
+<!-- -------Start------------ -->
+
+
+<c:forEach items="${page.list}" var="article">
+
+	<li data-id="id-${article.id }" class="buisness">
+        <div class="portfolio_content">
+        	<span class="pf_img_br"></span>
+              <img src="${article.thumb }" alt="img" />          
+            <h4><a href="${article.thumb }">${article.title }</a></h4>
+            <p>${article.keywords }</p>
+            <div class="link_btn">
+                <a href="${article.thumb }"  class="zoom example6"></a>
+                <a href="${ctx}/view-${article.category.id}-${article.id}${urlSuffix}" class="link_post"></a>
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </li>
+
+
+</c:forEach>
+
+
+<!-- -------End ----------- -->
+
+
+
+
     <li data-id="id-1" class="buisness">
         <div class="portfolio_content">
         	<span class="pf_img_br"></span>
-              <img src="${ctxStatic }/mysite/images/portfolio_4col_img_10.png" alt="img" />          
+              <img src="${ctxStatic }/mysite/images/portfolio_4col_img_10.png" alt="img"/>          
             <h4><a href="portfolio_single_page.html">Lemon Water</a></h4>
             <p>Blandit Varius</p>
             <div class="link_btn">
