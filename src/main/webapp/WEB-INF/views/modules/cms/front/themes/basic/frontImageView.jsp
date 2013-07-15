@@ -39,7 +39,7 @@
 	<div class="portfolio_single">
 		<h3>${article.title }</h3>
         <ul>
-            <li><strong>介绍:</strong>${article.desciption }</li>
+            <li><strong>简介:</strong>${article.desciption }</li>
         </ul>
         <p>${article.articleData.content }</p><br />
     </div>
