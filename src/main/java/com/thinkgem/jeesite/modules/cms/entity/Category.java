@@ -57,6 +57,7 @@ public class Category extends BaseEntity {
 	private String image; 	// 栏目图片
 	private String href; 	// 链接
 	private String target; 	// 目标（ _blank、_self、_parent、_top）
+	private String icon;	//显示图标
 	private String desciption; 	// 描述，填写有助于搜索引擎优化
 	private String keywords; 	// 关键字，填写有助于搜索引擎优化
 	private Integer sort; 		// 排序（升序）
@@ -250,6 +251,16 @@ public class Category extends BaseEntity {
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	public User getUser() {
 		return user;
+	}
+	
+	
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 	public void setUser(User user) {

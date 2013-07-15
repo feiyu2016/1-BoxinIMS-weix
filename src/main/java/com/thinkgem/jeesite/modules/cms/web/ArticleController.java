@@ -37,7 +37,7 @@ import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
  * @version 2013-3-23
  */
 @Controller
-@RequestMapping(value = Global.ADMIN_PATH+"/cms/article")
+@RequestMapping(value = Global.ADMIN_PATH+"/cms/image")
 public class ArticleController extends BaseController {
 
 	@Autowired
