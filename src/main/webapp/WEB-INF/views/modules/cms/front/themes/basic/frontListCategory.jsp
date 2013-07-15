@@ -56,8 +56,7 @@
 			 </div>
 		  ${status.index % 2 ne 0 ? '</div>':'</div>'}
 		  <c:if test="${empty map.value }">
-					<br/><br>
-					<div></div>
+					<div style="margin-top:50px"></div>
 		  </c:if>
 	</c:forEach>
 </div>   
