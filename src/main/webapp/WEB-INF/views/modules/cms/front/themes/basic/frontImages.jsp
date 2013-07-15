@@ -35,7 +35,7 @@
 	<li data-id="id-${article.id }" class="buisness">
         <div class="portfolio_content">
         	<span class="pf_img_br"></span>
-              <img src="${article.thumb }" alt="img" />          
+              <img src="${article.thumb }" alt="img" style="width:212px;height:145px"/>          
             <h4><a href="${article.thumb }">${article.title }</a></h4>
             <p>${article.keywords }</p>
             <div class="link_btn">
