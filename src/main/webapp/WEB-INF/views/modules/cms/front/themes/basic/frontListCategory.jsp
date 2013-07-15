@@ -39,7 +39,7 @@
     <span class="divider"></span>
     
     <c:forEach items="${categoryMap}" var="map" varStatus="status">
-	   	  ${status.index % 2 eq 0    ? '<div>':'<div>'}
+	   	  ${status.index % 2 eq 0  ? '<div>':'<div>'}
 			 <div class="drop_cap thumb_img"><h3 style="color:white">${status.index+1} </h3></div>
 			 	<div class="description">
 				<h4><small><a href="${ctx}/list-${map.key.id}${urlSuffix}" class="pull-right">更多&gt;&gt;</a></small>${map.key.name}</h4>
@@ -53,12 +53,12 @@
 						<li><a href="${link.href}" target="_blank" style="color:${link.color}"><c:out value="${link.title}" /></a></li>
 					</c:forEach></ul>
 				</c:if>
-				<c:if test="${empty map.value }">
-					<br/><br>
-					<div></div>
-				</c:if>
 			 </div>
 		  ${status.index % 2 ne 0 ? '</div>':'</div>'}
+		  <c:if test="${empty map.value }">
+					<br/><br>
+					<div></div>
+		  </c:if>
 	</c:forEach>
 </div>   
     
