@@ -44,9 +44,10 @@
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jqueryslidemenu.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.eislideshow.js"></script>
-<script type="text/javascript" src="${ctxStatic}/mysite/js/custom.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/quicksand.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/jquery.flexslider.js"></script>
 <script type="text/javascript" src="${ctxStatic}/mysite/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="${ctxStatic}/mysite/js/custom.js"></script>
 
 <script type="text/javascript">
 	// Elastic Slider
