@@ -53,6 +53,9 @@
 						<li><a href="${link.href}" target="_blank" style="color:${link.color}"><c:out value="${link.title}" /></a></li>
 					</c:forEach></ul>
 				</c:if>
+				<c:if test="${empty map.value }">
+					<br/>
+				</c:if>
 			 </div>
 		  ${status.index % 2 ne 0 ? '</div>':'</div>'}
 	</c:forEach>
