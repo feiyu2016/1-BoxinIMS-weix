@@ -39,12 +39,9 @@
 	<div class="portfolio_single">
 		<h3>${article.title }</h3>
         <ul>
-            <li><strong>价格:</strong>￥0.00元</li>
-            <li>&nbsp;</li>
             <li><strong>介绍:</strong>${article.desciption }</li>
         </ul>
         <p>${article.articleData.content }</p><br />
-        <a href="#" class="read_more">购买</a>
     </div>
 </div>
 
