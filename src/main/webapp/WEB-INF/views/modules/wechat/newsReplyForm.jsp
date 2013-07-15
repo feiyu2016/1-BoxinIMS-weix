@@ -125,11 +125,12 @@
 		<div class="control-group">
 			<label class="control-label">上传图片:</label>
 			<div class="controls">
-				
 				<c:if test="${newsReply.filePath ne '' }">
-					<img src="${newsReply.picUrl }" style="width:90px;height:120px"/>
+					<div class="control"><img src="${newsReply.picUrl }" style="width:90px;height:120px"/></div>
 				</c:if>
-				<input type="file" name="file" htmlEscape="false"   />    <span class="alert">大图片建议尺寸：720像素 * 400像素;  小图片建议尺寸：400像素 * 400像素 </span>      
+				<div class="control">
+					<input type="file" name="file" htmlEscape="false"   />    <span class="alert">大图片建议尺寸：720像素 * 400像素;  小图片建议尺寸：400像素 * 400像素 </span>      
+				</div>
 			</div>
 		</div>
 		
