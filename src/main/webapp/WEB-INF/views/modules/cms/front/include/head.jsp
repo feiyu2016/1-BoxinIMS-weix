@@ -32,6 +32,7 @@
 <link href="${ctxStatic}/mysite/css/quicksand.css" rel="stylesheet" type="text/css"/>
 <link href="${ctxStatic}/mysite/css/skin.css" rel="stylesheet" type="text/css"/>
 <link href="${ctxStatic}/mysite/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="${ctxStatic}/mysite/css/flexslider.css" rel="stylesheet" type="text/css"  /> 
 <link href="${ctxStatic}/mysite/css/responsive.css" rel="stylesheet" type="text/css"  /> 
 <link href="${ctxStatic}/mysite/js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" media="screen" /> 
 
