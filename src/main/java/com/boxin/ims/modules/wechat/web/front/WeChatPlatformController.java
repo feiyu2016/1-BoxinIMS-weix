@@ -120,29 +120,6 @@ public class WeChatPlatformController  extends BaseController{
 			textMessage.setContent(reply);	//默认自动回复的内容
 			reply = textMessage.replyMessage();
 			
-//			//没有找到对应的回复内容时，默认回复欢迎词。
-//			WechatWelcome wechatWelcome = weChat.getWechatWelcome();
-//			if(MusicMessage.MSG_TYPE.equals(wechatWelcome.getType())){
-//				MusicMessage musicMessage = new MusicMessage(map);
-//				musicMessage.setMusicUrl(wechatWelcome.getMusicUrl() );
-//				musicMessage.setHQMusicUrl(wechatWelcome.getMusicUrl());
-//				musicMessage.setTitle(wechatWelcome.getTitle());
-//				musicMessage.setDescription(wechatWelcome.getDescription());
-//				reply =  musicMessage.replyMessage();
-//				
-//			}else if(ImageMessage.MSG_TYPE.equals(wechatWelcome.getType())){	//回复图文信息
-//				ImageMessage imageMessage = new ImageMessage(map);
-//				imageMessage.setArticleCount("1");
-//				imageMessage.setTitle(wechatWelcome.getTitle());
-//				imageMessage.setDescription(wechatWelcome.getDescription());
-//				imageMessage.setPicUrl(wechatWelcome.getPicUrl());
-//				imageMessage.setUrl(wechatWelcome.getUrl());
-//				reply =  imageMessage.replyMessage();
-//			}else{
-//				TextMessage textMessage = new TextMessage(map);
-//				textMessage.setContent(wechatWelcome.getContent());
-//				reply =  textMessage.replyMessage();
-//			}
 			
 			
 			
