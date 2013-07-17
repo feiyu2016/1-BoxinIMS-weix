@@ -39,7 +39,7 @@
 				<ul>
 					<c:forEach items="${fnc:getMainNavList(site.id)}" var="category"
 						varStatus="status">
-						<c:if test="${status.index lt 6}">
+						<c:if test="${status.index lt 10}">
 							<c:choose>
 								<c:when test="${not empty category.href}">
 									<c:choose>
