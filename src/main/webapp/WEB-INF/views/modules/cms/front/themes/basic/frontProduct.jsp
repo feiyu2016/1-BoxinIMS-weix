@@ -41,7 +41,7 @@
         <li>数据统计分析</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-97.html" class="read_more">详细信息</a>
     </div>
 </div>
 
@@ -60,7 +60,7 @@
         <li>数据分析</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-97.html" class="read_more">详细信息</a>
     </div>
 </div>
 
@@ -78,7 +78,7 @@
         <li>自动余额查询、积分查询</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-110.html" class="read_more">详细信息</a>
     </div>
 </div>
 
@@ -100,7 +100,7 @@
         <li>个人像册</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-112.html" class="read_more">详细信息</a>
     </div>
 </div>
 <div class="one_fourth highlight">
@@ -118,7 +118,7 @@
         <li>一桌一单，灵活管理，简化业务流程。</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-113.html" class="read_more">详细信息</a>
     </div>
 </div>
 <div class="one_fourth">
@@ -136,7 +136,7 @@
         <li>二维码电子票据，扫描使用方便</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-115.html" class="read_more">详细信息</a>
     </div>
 </div>
 <div class="one_fourth">
@@ -154,7 +154,7 @@
         <li>成本低廉</li>
     </ul>
     <div class="price_button">
-        <a href="#" class="read_more">详细信息</a>
+        <a href="${ctx}/view-41-116.html" class="read_more">详细信息</a>
     </div>
 </div>
 
