@@ -133,13 +133,13 @@
 						src="${ctxStatic }/mysite/images/partner_kaoyan.jpg" alt="img"
 						class="thumb_img"  width="92px" height="56px" style="width:92px;height:56px"/>
 						<div class="description">
-							<strong>烤宴自助烧烤主题餐厅</strong><br /> 烤宴自助烧烤主题餐厅主营自助烧烤、日韩美食、南北大菜等各种丰富的种类。拥有营业面积1500㎡，可同时容纳400余人就餐环境风格优雅，时尚前卫的主题风格
+							<strong>烤宴自助烧烤主题餐厅</strong><br /> 烤宴自助烧烤主题餐厅主营自助烧烤、日韩美食、南北大菜等各种丰富的种类。
 						</div></li>
 					<li><img
 						src="${ctxStatic }/mysite/images/partner_bitebao.jpg" alt="img"
 						class="thumb_img" width="92px" height="56px"  style="width:92px;height:56px"/>
 						<div class="description">
-							<strong>比特堡啤酒健康烤肉</strong><br />比特堡以中档的价格定位，欧式的现代派室内装潢与世界啤酒文化的融合为顾客提供高品质的享受，比特堡以现代化企业管理模式为先导，秉承“以人为本”的经营管理理念。
+							<strong>比特堡啤酒健康烤肉</strong><br />比特堡以中档的价格定位，欧式的现代派室内装潢与世界啤酒文化的融合为顾客提供高品质的享受。
 						</div></li>
 				</ul>
 			</div>
