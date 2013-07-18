@@ -39,7 +39,7 @@
             </div>
         </li>
         <li>  
-            <img src="${ctxStatic }/mysite/images/slider_img_4.jpg" alt="img" />
+            <img src="${ctxStatic }/mysite/images/slider_img_4.png" alt="img" />
             <div class="ei-title">
             </div>
         </li>
