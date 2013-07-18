@@ -21,7 +21,7 @@
 				            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
 		        		 </ul>
 						<ul class="top_logo" >
-				            <li style="margin-left:1px;" > <img alt="" src="${ctxStatic }/images/logo.png"   class="img-rounded" style="width:120px;height:55px"></li>
+				            <li style="margin-left:0px;" > <img alt="" src="${ctxStatic }/images/logo.png"   class="img-rounded" style="width:120px;height:55px"></li>
 				            <li style="margin-right:40px;"><img alt="" src="${ctxStatic }/mysite/images/360anquan.jpg"  class="img-rounded" style="width:120px;height:55px"></li>
 				            <li> <img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;"></li>
 		        		 </ul>
