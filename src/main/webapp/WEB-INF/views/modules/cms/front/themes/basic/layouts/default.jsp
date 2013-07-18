@@ -149,6 +149,7 @@
 			<div class="widget_container">
 				<div class="flickr_widget">
 					<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"   style="margin-right:10px; width:90px;height:90px ">	
+					<img alt="" src="${ctxStatic }/mysite/images/2weima-weixin.png" width="90px;" height="90px;"   style="margin-right:10px; width:90px;height:90px ">	
 				</div>
 			</div>
 		</div>
