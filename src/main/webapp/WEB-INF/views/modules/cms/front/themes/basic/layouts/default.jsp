@@ -136,7 +136,7 @@
 							<strong>烤宴自助烧烤主题餐厅</strong><br /> 
 						</div></li>
 					<li><img
-						src="/zxims/userfiles/2/_thumbs/images/cms/article/2013/07/kaoyan.png" alt="img"
+						src="/zxims/userfiles/2/_thumbs/images/cms/article/2013/07/bitebao.png" alt="img"
 						class="thumb_img" width="92px" height="92px"  style="width:92px;height:92px"/>
 						<div class="description">
 							<strong>比特堡啤酒健康烤肉</strong><br />
