@@ -124,6 +124,23 @@ public class FrontController extends BaseController{
 				model.addAttribute("category", category);
 				model.addAttribute("categoryList", categoryList);
 				return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontImages";
+			}else if("product".equals(category.getModule())){
+				Map<Category, List> categoryMap = Maps.newLinkedHashMap();
+				
+				if (Category.SHOW.equals(category.getInList())){
+					categoryMap.put(category, articleService.find(new Page<Article>(1, 40, -1),
+								new Article(category)).getList());
+					Page<Article> page = new Page<Article>(pageNo, pageSize);
+					page = articleService.find(page, new Article(category));
+					model.addAttribute("page", page);
+				}
+				
+				model.addAttribute("category", category);
+				model.addAttribute("categoryMap", categoryMap);
+				
+				model.addAttribute("category", category);
+				model.addAttribute("categoryList", categoryList);
+				return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontProduct";
 			}
 			
 			

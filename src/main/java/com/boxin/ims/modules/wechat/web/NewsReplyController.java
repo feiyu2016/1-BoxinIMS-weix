@@ -125,7 +125,7 @@ public class NewsReplyController extends BaseController {
 		if (!beanValidator(model, newsReply)){
 			return form(newsReply,request,response, model);
 		}
-		if(image != null){
+		if(image != null && image.getOriginalFilename().length()>4){
 			String wpPath = WeChatUtils.getWechatResourceSavePath();
 			String sname = image.getOriginalFilename();
 			String fileType = sname.substring(sname.lastIndexOf("."));

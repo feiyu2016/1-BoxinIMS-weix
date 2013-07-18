@@ -50,7 +50,7 @@
 				</c:if>
 				<c:if test="${map.key.module eq 'link'}">
 					<ul><c:forEach items="${map.value}" var="link">
-						<li><a href="${link.href}" target="_blank" style="color:${link.color}"><c:out value="${link.title}" /></a></li>
+						<li><a href="${link.href}" target="_blank" style="color:${link.color};"><c:out value="${link.title}" /></a></li>
 					</c:forEach></ul>
 				</c:if>
 			 </div>

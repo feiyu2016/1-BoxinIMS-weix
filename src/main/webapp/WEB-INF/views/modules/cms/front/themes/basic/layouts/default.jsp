@@ -15,31 +15,28 @@
 <div id="background_bg"></div>
 	<!-- container Start -->
 	<section id="container" style="width:1100px;margin-top:1px;">
-		<header style="margin-top:0px">
-			<figure id="logo">
-				<a href="index.html"><img alt="Logo"
-					src="${ctxStatic }/images/logo.png" class="img-rounded" width="180"
-					height="90">	</a>
-			</figure>
-			<div class="top_right" align="right">
-				
-				<ul class="top_info">
-		            <li> <a >微信营销服务</a></li>
-		            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
-        		 </ul>
-				<img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;">
-			</div>
-		</header>
+					<div align="right"> 
+						<ul class="top_info">
+				            <li> <a >微信营销服务</a></li>
+				            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
+		        		 </ul>
+						<ul class="top_logo" >
+				            <li style="margin-left:0px;" > <img alt="" src="${ctxStatic }/images/logo.png"   class="img-rounded" style="width:120px;height:55px"></li>
+				            <li style="margin-right:50px;"><img alt="" src="${ctxStatic }/mysite/images/360anquan.jpg"  class="img-rounded" style="width:120px;height:55px"></li>
+				            <li> <img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;"></li>
+		        		 </ul>
+							
+					</div>
 		<!-- top section end -->
 
-
+ 	
 		<!-- Nav start -->
 		<nav>
 			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px;">
 				<ul>
 					<c:forEach items="${fnc:getMainNavList(site.id)}" var="category"
 						varStatus="status">
-						<c:if test="${status.index lt 6}">
+						<c:if test="${status.index lt 10}">
 							<c:choose>
 								<c:when test="${not empty category.href}">
 									<c:choose>
@@ -152,6 +149,7 @@
 			<div class="widget_container">
 				<div class="flickr_widget">
 					<img alt="" src="${ctxStatic }/mysite/images/2weima.png" width="90px;" height="90px;"   style="margin-right:10px; width:90px;height:90px ">	
+					<img alt="" src="${ctxStatic }/mysite/images/2weima-weixin.png" width="90px;" height="90px;"   style="margin-right:10px; width:90px;height:90px ">	
 				</div>
 			</div>
 		</div>
@@ -170,7 +168,10 @@
 
 		<section class="footer">
 			<div class="copyright">
-				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.    ${fns:getDate('yyyy年MM月dd日 ')}</p>
+				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.    ${fns:getDate('yyyy年MM月dd日 ')}    冀ICP备1301087</p>
+				<p><a href="http://www.cnzz.com/stat/website.php?web_id=5203923" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/pic1.gif"></a>
+					<a href="http://tongji.baidu.com/hm-web/welcome/ico?s=176b323eb4f479f4d418d2263cf74be9" target="_blank"><img border="0" src="http://eiv.baidu.com/hmt/icon/21.gif" width="20" height="20"></a>
+				</p>
 			</div>
 		</section>
 

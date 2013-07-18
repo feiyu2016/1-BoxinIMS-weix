@@ -225,7 +225,15 @@ header figure {
 ul.top_info{
 list-style:none;
 }
+ul.top_logo{
+	list-style:none;
+}
 
+ul.top_logo li{
+display: inline-block;
+color:white;
+margin-left:1px;
+}
 
 ul.top_info li{
 display: inline-block;
