@@ -15,24 +15,23 @@
 <div id="background_bg"></div>
 	<!-- container Start -->
 	<section id="container" style="width:1100px;margin-top:1px;">
-		<header style="margin-top:0px">
-			<figure id="logo">
-				<a href="index.html"><img alt="Logo"
-					src="${ctxStatic }/images/logo.png" class="img-rounded" width="180"
-					height="90">	</a>
-			</figure>
-			<div class="top_right" align="right">
-				
-				<ul class="top_info">
-		            <li> <a >微信营销服务</a></li>
-		            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
-        		 </ul>
-				<img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;">
-			</div>
-		</header>
+					<div align="right"> 
+						<ul class="top_info">
+				            <li> <a >微信营销服务</a></li>
+				            <li> <a href="http://2weima.hdzhx.com/users/login" target="_blank">移动平台服务</a></li>
+		        		 </ul>
+						<ul class="top_logo">
+				            <li style="margin-right:10px;"> <img alt="" src="${ctxStatic }/images/logo.png" style="width:120px;height:55px">
+				            	
+				             </li>
+				             <li style="margin-right:40px;"><img alt="" src="${ctxStatic }/mysite/images/360anquan.jpg" style="width:120px;height:55px"></li>
+				            <li> <img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;"></li>
+		        		 </ul>
+							
+					</div>
 		<!-- top section end -->
 
-
+ 	
 		<!-- Nav start -->
 		<nav>
 			<div id="myslidemenu" class="jqueryslidemenu clearfix container" style="width:1100px;">
