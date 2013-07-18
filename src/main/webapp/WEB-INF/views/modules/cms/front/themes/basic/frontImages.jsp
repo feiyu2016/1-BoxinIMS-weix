@@ -36,8 +36,8 @@
         <div class="portfolio_content">
         	<span class="pf_img_br"></span>
               <img src="${article.thumb }" alt="img" style="width:212px;height:212px"/>          
-            <h4><a href="${article.thumb }">${article.title }</a></h4>
-            <p><span style="color:red">${article.keywords }</span> </p>
+            <h4><a href="${article.thumb }">${article.keywords }</a></h4>
+            <p><span style="color:red">${article.title }</span> </p>
             <div class="link_btn">
                 <a href="${article.thumb }"  class="zoom example6"></a>
                 <a href="${ctx}/view-${article.category.id}-${article.id}${urlSuffix}" class="link_post"></a>
