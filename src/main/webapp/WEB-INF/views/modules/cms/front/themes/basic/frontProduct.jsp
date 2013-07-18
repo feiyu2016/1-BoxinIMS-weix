@@ -123,17 +123,17 @@
 </div>
 <div class="one_fourth">
     <div class="heading pricing_col_3">
-        <h3><strong>电子票凭证</strong></h3>
+        <h3><strong>电子签到</strong></h3>
         <h2><strong></strong></h2>
         <span><i></i></span>
     </div>
     <ul>
         <li>节约成本</li>
-        <li>用户感受度好</li>
+        <li>易组织和管理</li>
         <li>数据安全</li>
-        <li>准确的业务统计数据</li>
+        <li>数据统计</li>
         <li>节省时间，提高效率</li>
-        <li>二维码电子票据，扫描使用方便</li>
+        <li>电子签到，会议签到</li>
     </ul>
     <div class="price_button">
         <a href="${ctx}/view-41-115.html" class="read_more">详细信息</a>
