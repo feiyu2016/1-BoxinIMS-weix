@@ -22,7 +22,7 @@
 		        		 </ul>
 						<ul class="top_logo" >
 				            <li style="margin-left:1px;" > <img alt="" src="${ctxStatic }/images/logo.png"   class="img-rounded" style="width:120px;height:55px"></li>
-				            <li style="margin-right:35px;"><img alt="" src="${ctxStatic }/mysite/images/360anquan.jpg"  class="img-rounded" style="width:120px;height:55px"></li>
+				            <li style="margin-right:30px;"><img alt="" src="${ctxStatic }/mysite/images/360anquan.jpg"  class="img-rounded" style="width:120px;height:55px"></li>
 				            <li> <img alt="" src="${ctxStatic }/mysite/images/header_right_top.png" style="margin-top:10px;"></li>
 		        		 </ul>
 							
