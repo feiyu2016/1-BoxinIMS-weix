@@ -24,7 +24,7 @@ import com.thinkgem.jeesite.modules.sys.entity.Office;
 public interface OfficeDao extends OfficeDaoCustom, CrudRepository<Office, Long> {
 
 	@Modifying
-	@Query("update Office set delFlag='" + Office.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like ?2")
+	@Query("update Office set delFlag='" + Office.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like %?2%")
 	public int deleteById(Long id, String likeParentIds);
 	
 	public List<Office> findByParentIdsLike(String parentIds);
@@ -32,7 +32,7 @@ public interface OfficeDao extends OfficeDaoCustom, CrudRepository<Office, Long>
 	@Query("from Office where delFlag='" + Office.DEL_FLAG_NORMAL + "' order by code")
 	public List<Office> findAllList();
 	
-	@Query("from Office where (id=?1 or parent.id=?1 or parentIds like ?2) and delFlag='" + Office.DEL_FLAG_NORMAL + "' order by code")
+	@Query("from Office where (id=?1 or parent.id=?1 or parentIds like %?2%) and delFlag='" + Office.DEL_FLAG_NORMAL + "' order by code")
 	public List<Office> findAllChild(Long parentId, String likeParentIds);
 }
 

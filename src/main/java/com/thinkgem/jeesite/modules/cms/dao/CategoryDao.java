@@ -29,7 +29,7 @@ import com.thinkgem.jeesite.modules.sys.entity.User;
 public interface CategoryDao extends CategoryDaoCustom, CrudRepository<Category, Long> {
 
 	@Modifying
-	@Query("update Category set delFlag='" + Category.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like ?2")
+	@Query("update Category set delFlag='" + Category.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like %?2%")
 	public int deleteById(Long id, String likeParentIds);
 	
 	public List<Category> findByParentIdsLike(String parentIds);

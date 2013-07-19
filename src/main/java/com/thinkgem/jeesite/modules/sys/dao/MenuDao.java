@@ -26,7 +26,7 @@ import com.thinkgem.jeesite.modules.sys.entity.User;
 public interface MenuDao extends MenuDaoCustom, CrudRepository<Menu, Long> {
 
 	@Modifying
-	@Query("update Menu set delFlag='" + Menu.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like ?2")
+	@Query("update Menu set delFlag='" + Menu.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like %?2%")
 	public int deleteById(Long id, String likeParentIds);
 	
 	public List<Menu> findByParentIdsLike(String parentIds);

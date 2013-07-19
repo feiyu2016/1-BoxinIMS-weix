@@ -16,7 +16,7 @@ public interface CustomerDao extends CustomerDaoCustom, CrudRepository<Customer,
 	
 	
 	@Modifying
-	@Query("update Customer set delFlag='" + Office.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like ?2")
+	@Query("update Customer set delFlag='" + Office.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like %?2%")
 	public int deleteById(Long id, String likeParentIds);
 	
 

@@ -24,7 +24,7 @@ import com.thinkgem.jeesite.modules.sys.entity.Area;
 public interface AreaDao extends AreaDaoCustom, CrudRepository<Area, Long> {
 
 	@Modifying
-	@Query("update Area set delFlag='" + Area.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like ?2")
+	@Query("update Area set delFlag='" + Area.DEL_FLAG_DELETE + "' where id = ?1 or parentIds like %?2%")
 	public int deleteById(Long id, String likeParentIds);
 	
 	public List<Area> findByParentIdsLike(String parentIds);
@@ -32,7 +32,7 @@ public interface AreaDao extends AreaDaoCustom, CrudRepository<Area, Long> {
 	@Query("from Area where delFlag='" + Area.DEL_FLAG_NORMAL + "' order by code")
 	public List<Area> findAllList();
 	
-	@Query("from Area where (id=?1 or parent.id=?1 or parentIds like ?2) and delFlag='" + Area.DEL_FLAG_NORMAL + "' order by code")
+	@Query("from Area where (id=?1 or parent.id=?1 or parentIds like %?2%) and delFlag='" + Area.DEL_FLAG_NORMAL + "' order by code")
 	public List<Area> findAllChild(Long parentId, String likeParentIds);
 	
 }
