@@ -169,7 +169,7 @@
 		<section class="footer">
 			<div class="copyright">
 				<p>&copy; Copyright &copy; 2013.邯郸博信 All rights reserved.    ${fns:getDate('yyyy年MM月dd日 ')}    冀ICP备1301087</p>
-				<p><a href="http://www.cnzz.com/stat/website.php?web_id=5203923" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="http://icon.cnzz.com/pic1.gif"></a>
+				<p><script src="http://s22.cnzz.com/stat.php?id=5538950&web_id=5538950&show=pic1" language="JavaScript"></script></a>
 					<a href="http://tongji.baidu.com/hm-web/welcome/ico?s=176b323eb4f479f4d418d2263cf74be9" target="_blank"><img border="0" src="http://eiv.baidu.com/hmt/icon/21.gif" width="20" height="20"></a>
 				</p>
 			</div>
