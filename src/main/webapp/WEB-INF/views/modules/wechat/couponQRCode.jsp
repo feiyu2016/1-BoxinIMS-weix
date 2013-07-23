@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><button class="btn" onclick="javascript:location.href='${qrcodeImg }'" >保存</button> </td>
+			<td><button class="btn" onclick="javascript:location.href='${qrcodeImg }&action=d&fn=${coupon.number }'" >保存</button> </td>
 			<td>&nbsp;</td>
 		</tr>
 	</table>
