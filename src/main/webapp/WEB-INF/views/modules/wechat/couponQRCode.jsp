@@ -8,6 +8,7 @@
 <meta name="description" content="Bianca Mobile Template">
 <meta name="viewport"
 	content="width=device-width initial-scale=1.0  maximum-scale=1.0">
+	
 </head>
 <body>
 	<table>
@@ -18,7 +19,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td><button class="btn" onclick="location.href= "${qrcodeImg }" ></button> 下载</td>
 			<td>&nbsp;</td>
 		</tr>
 	</table>
