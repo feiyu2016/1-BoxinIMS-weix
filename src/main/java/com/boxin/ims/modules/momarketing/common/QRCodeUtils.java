@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.Hashtable;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 
@@ -22,6 +23,7 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.thinkgem.jeesite.common.config.Global;
+import com.thinkgem.jeesite.common.utils.DateUtils;
 
 /**
  * @author Jakemanse
@@ -29,6 +31,7 @@ import com.thinkgem.jeesite.common.config.Global;
  */
 public class QRCodeUtils {
 	
+	private  static final String QRCODE_URL_PRIX = "http://www.hdzhx.com/zxims/servlet/qrc?qrcodeId=";
 	
 	/**
 	 * @author Jakemanse
@@ -170,5 +173,39 @@ public class QRCodeUtils {
             e.printStackTrace();  
         }  
     }  
+	
+	
+	
+	
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-22  上午11:37:26
+	 * @function <p> 优惠券 序列号 </p>
+	 * @param userId
+	 * @return
+	 */
+	public static String  generateSN(Long userId){
+		
+		
+		StringBuffer sb = new StringBuffer();
+		Random random = new Random();
+		int number = random.nextInt(100);
+		String strNumber = (number<10) ? "0"+number : ""+number;
+		sb.append("ZHX").append(userId).append(System.currentTimeMillis()+strNumber);
+		return sb.toString();
+		
+	}
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-23  下午11:50:16
+	 * @function <p> 二维码的下载路径 </p>
+	 * @param qrCodeId
+	 * @return
+	 */
+	public static String getQRCodeURL(Long qrCodeId){
+		return QRCODE_URL_PRIX+qrCodeId;
+	}
 
 }

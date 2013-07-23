@@ -20,6 +20,8 @@ import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.utils.CookieUtils;
 import com.thinkgem.jeesite.common.utils.StringUtils;
 import com.thinkgem.jeesite.common.web.BaseController;
+import com.thinkgem.jeesite.modules.cms.entity.Site;
+import com.thinkgem.jeesite.modules.cms.utils.CmsUtils;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 
 /**
@@ -39,6 +41,12 @@ public class LoginController extends BaseController{
 		if(UserUtils.getUser().getId() != null){
 			return "redirect:" + Global.ADMIN_PATH;
 		}
+		if("front".equals(request.getParameter("type"))){
+			Site site = CmsUtils.getSite(1L);
+			return "modules/cms/front/themes/"+site.getTheme()+"/frontLogin";
+		}
+		
+		
 		model.addAttribute("theme", getTheme(request, response));
 		return "modules/sys/sysLogin";
 	}
@@ -79,4 +87,8 @@ public class LoginController extends BaseController{
 		}
 		return StringUtils.isNotBlank(theme)?theme:"default";
 	}
+	
+	
+	
+	
 }

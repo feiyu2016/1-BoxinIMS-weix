@@ -27,7 +27,7 @@
 </head>
 <body>
 	<ul class="nav nav-tabs">
-		<li><a href="${ctx}/momarketing/coupon/">优惠券列表</a></li>
+		<li><a href="${ctx}/mom/coupon/">优惠券列表</a></li>
 		<li class="active"><a href="${ctx}/momarketing/coupon/form?id=${coupon.id}">优惠券<shiro:hasPermission name="momarketing:coupon:edit">${not empty coupon.id?'修改':'添加'}</shiro:hasPermission><shiro:lacksPermission name="momarketing:coupon:edit">查看</shiro:lacksPermission></a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="coupon" action="${ctx}/momarketing/coupon/save" method="post" class="form-horizontal">
@@ -39,6 +39,21 @@
 				<form:input path="name" htmlEscape="false" maxlength="11" class="required"/>
 			</div>
 		</div>
+		<div class="control-group">
+			<label class="control-label">开始时间:</label>
+			<div class="controls">
+				<form:input path="startTime" htmlEscape="false"  class="required"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label">结束时间:</label>
+			<div class="controls">
+				<form:input path="endTime" htmlEscape="false"  class="required"/>
+			</div>
+		</div>
+		
+		
+		
 		<div class="control-group">
 			<label class="control-label">备注:</label>
 			<div class="controls">

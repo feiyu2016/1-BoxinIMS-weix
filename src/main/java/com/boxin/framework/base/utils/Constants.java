@@ -64,6 +64,16 @@ public class Constants {
 	
 	/**
 	 * @author Jakemanse
+	 * @time 2013-7-1  下午3:00:23
+	 * @function <p> 优惠券的二维码存储路径 </p>
+	 * @return
+	 */
+	public static String getCouponQRCodeResourceSavePath(){
+		return DictUtils.getDictValue("优惠券二维码路径", "res_qr_coupon_path", "优惠券二维码存储路径");
+	}
+	
+	/**
+	 * @author Jakemanse
 	 * @time 2013-7-1  下午3:00:47
 	 * @function <p> 电子名片的照片路径 </p>
 	 * @return

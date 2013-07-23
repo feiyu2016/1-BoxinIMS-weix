@@ -69,6 +69,8 @@ public class CouponController extends BaseController {
 		if (!beanValidator(model, coupon)){
 			return form(coupon, model);
 		}
+		
+		
 		couponService.save(coupon);
 		addMessage(redirectAttributes, "保存优惠券'" + coupon.getName() + "'成功");
 		return "redirect:"+Global.ADMIN_PATH+"/modules/momarketing/coupon/?repage";
@@ -79,7 +81,23 @@ public class CouponController extends BaseController {
 	public String delete(Long id, RedirectAttributes redirectAttributes) {
 		couponService.delete(id);
 		addMessage(redirectAttributes, "删除优惠券成功");
-		return "redirect:"+Global.ADMIN_PATH+"/modules/momarketing/coupon/?repage";
+		return "redirect:"+Global.ADMIN_PATH+"/mom/coupon/?repage";
+	}
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-23  下午11:02:12
+	 * @function <p> 核销优惠券  </p>
+	 * @param id
+	 * @param redirectAttributes
+	 * @return
+	 */
+	@RequiresPermissions("momarketing:coupon:edit")
+	@RequestMapping(value = "cancel")
+	public String cancel(Long id, RedirectAttributes redirectAttributes) {
+		couponService.cancel(id);
+		addMessage(redirectAttributes, "核销优惠券成功");
+		return "redirect:"+Global.ADMIN_PATH+"/mom/coupon/?repage";
 	}
 
 }

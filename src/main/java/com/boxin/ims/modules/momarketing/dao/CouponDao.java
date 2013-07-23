@@ -23,6 +23,10 @@ public interface CouponDao extends CouponDaoCustom, CrudRepository<Coupon, Long>
 	@Query("update Coupon set delFlag='" + Coupon.DEL_FLAG_DELETE + "' where id = ?1")
 	public int deleteById(Long id);
 	
+	@Modifying
+	@Query("update Coupon set delFlag='" + Coupon.DEL_FLAG_DELETE + "',status='"+Coupon.CANCEL_FLAG_DELETE+"' where id = ?1")
+	public int cancelById(Long id);
+	
 }
 
 /**

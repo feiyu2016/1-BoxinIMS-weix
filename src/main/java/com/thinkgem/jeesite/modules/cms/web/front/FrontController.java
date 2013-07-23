@@ -101,8 +101,6 @@ public class FrontController extends BaseController{
 			return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontViewArticle";
 		}else{
 			List<Category> categoryList = categoryService.findByParentId(category.getId(), category.getSite().getId());
-			
-			
 			//判断是否商家展示类型
 			if("image".equals(category.getModule())){
 				
@@ -141,6 +139,23 @@ public class FrontController extends BaseController{
 				model.addAttribute("category", category);
 				model.addAttribute("categoryList", categoryList);
 				return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontProduct";
+			}else if("login".equals(category.getModule())){
+				Map<Category, List> categoryMap = Maps.newLinkedHashMap();
+				
+				if (Category.SHOW.equals(category.getInList())){
+					categoryMap.put(category, articleService.find(new Page<Article>(1, 40, -1),
+								new Article(category)).getList());
+					Page<Article> page = new Page<Article>(pageNo, pageSize);
+					page = articleService.find(page, new Article(category));
+					model.addAttribute("page", page);
+				}
+				
+				model.addAttribute("category", category);
+				model.addAttribute("categoryMap", categoryMap);
+				
+				model.addAttribute("category", category);
+				model.addAttribute("categoryList", categoryList);
+				return "modules/cms/front/themes/"+category.getSite().getTheme()+"/frontLogin";
 			}
 			
 			

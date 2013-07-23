@@ -83,7 +83,7 @@ public class ImageMessage extends Message {
 		sb.append("\t").append("<Title><![CDATA["+getTitle()+"]]></Title>").append("\n");
 		sb.append("\t").append("<Description><![CDATA["+getDescription()+"]]></Description>").append("\n");
 		sb.append("\t").append("<PicUrl><![CDATA["+getPicUrl()+"]]></PicUrl>").append("\n");
-		if(getUrl()!=null || getUrl().trim().length()>0){
+		if(getUrl()!=null && getUrl().trim().length()>0){
 			sb.append("\t").append("<Url><![CDATA["+getUrl()+"]]></Url>").append("\n");
 		}
 		sb.append("\t").append("</item>").append("\n");

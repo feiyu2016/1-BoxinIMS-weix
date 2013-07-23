@@ -25,6 +25,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boxin.framework.base.dao.DaoHelper;
+import com.boxin.ims.modules.momarketing.common.ProjectUtils;
+import com.boxin.ims.modules.momarketing.common.QRCodeUtils;
+import com.boxin.ims.modules.momarketing.entity.Coupon;
+import com.boxin.ims.modules.momarketing.entity.QRCode;
+import com.boxin.ims.modules.momarketing.service.CouponService;
 import com.boxin.ims.modules.wechat.entity.EventMessage;
 import com.boxin.ims.modules.wechat.entity.ImageMessage;
 import com.boxin.ims.modules.wechat.entity.MusicMessage;
@@ -41,6 +46,7 @@ import com.boxin.ims.modules.wechat.service.WeChatService;
 import com.boxin.ims.modules.wechat.service.WechatConfigService;
 import com.boxin.ims.modules.wechat.service.WechatMybatisService;
 import com.boxin.ims.modules.wechat.service.WechatWelcomeService;
+import com.boxin.ims.modules.wechat.utils.SessionUtils;
 import com.boxin.ims.modules.wechat.utils.WeChatUtils;
 import com.boxin.ims.modules.wechat.utils.XMLUtils;
 import com.google.common.collect.Maps;
@@ -74,6 +80,9 @@ public class WeChatPlatformController  extends BaseController{
 	
 	@Autowired
 	DaoHelper daoHelper;
+	
+	@Autowired
+	CouponService couponService;
 	
 	@Autowired
 	WechatMybatisService wechatMybatisService;
@@ -116,6 +125,7 @@ public class WeChatPlatformController  extends BaseController{
 			TextMessage textMessage = new TextMessage(map);
 			//上行数据
 			String upcon = textMessage.getContent();	//用户输入的内容
+			String fromUser = textMessage.getFromUserName();
 			
 			textMessage.setContent(reply);	//默认自动回复的内容
 			reply = textMessage.replyMessage();
@@ -171,10 +181,38 @@ public class WeChatPlatformController  extends BaseController{
 				
 			}
 			
+			SessionUtils.addSession(fromUser, upcon);		//创建会话
 			
-			
-			
-			if(upcon.endsWith("天气")){//查天气
+			if( upcon.equals("优惠券")){//		t生成优惠券
+				Coupon coupon = new Coupon();
+				coupon.setUser(weChat.getUser());
+				TextMessage txtMsg = new TextMessage(map);
+				txtMsg.setContent("请输入您的手机号");
+				response.getWriter().print(txtMsg.replyMessage() );
+				printReplyLogger(txtMsg.replyMessage());
+				return ;
+				
+				
+			}else if(SessionUtils.getLastUpContent(fromUser).equals("优惠券")){	//上一条回复内容
+				Coupon coupon = new Coupon();
+				coupon.setUser(weChat.getUser());
+				coupon.setMobile(upcon);
+				
+				couponService.save(coupon);
+				
+				ImageMessage imageMessage = new ImageMessage(map);
+				imageMessage.setArticleCount("1");
+				imageMessage.setTitle("电子优惠券");
+				imageMessage.setDescription("优惠券");
+				imageMessage.setPicUrl(QRCodeUtils.getQRCodeURL(coupon.getQrCode().getId()));
+				imageMessage.setUrl(ProjectUtils.getCouponQRCodeURL(coupon.getId()));
+				reply = imageMessage.replyMessage();
+				response.getWriter().print(reply );
+				logger.debug(reply);
+				return ;
+				
+				
+			}else if(upcon.endsWith("天气")){//查天气
 				Region region = new Region();
 				region.setName(upcon.replaceAll("天气", "").trim());
 				List<Region> regions = 	regionService.find(region);
@@ -197,7 +235,6 @@ public class WeChatPlatformController  extends BaseController{
 					response.getWriter().print(txtMessage.replyMessage() );
 					printReplyLogger(txtMessage.replyMessage());
 					return ;
-					
 					//未找到。
 				}
 				
@@ -386,6 +423,22 @@ public class WeChatPlatformController  extends BaseController{
 	}
 	
 	
+	@RequestMapping(value =  "vrqr")
+	public String viewQRCode(HttpServletRequest request, HttpServletResponse response){
+		String strId = request.getParameter("id");
+		try {
+			Long id = Long.parseLong(strId);
+			Coupon coupon = couponService.get(id);
+			QRCode qrCode = coupon.getQrCode();
+			request.setAttribute("qrcodeImg", QRCodeUtils.getQRCodeURL(qrCode.getId()));
+			request.setAttribute("coupon", coupon);
+			return "modules/wechat/couponQRCode";
+		} catch (Exception e) {
+			
+		}
+		
+		return null;
+	}
 	
 	
 	
