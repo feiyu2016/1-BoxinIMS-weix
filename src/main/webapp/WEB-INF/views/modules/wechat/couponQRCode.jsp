@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><button class="btn" onclick="location.href= "${qrcodeImg }" ></button> 下载</td>
+			<td><button class="btn" onclick="javascript:location.href='${qrcodeImg }'" >保存</button> </td>
 			<td>&nbsp;</td>
 		</tr>
 	</table>
