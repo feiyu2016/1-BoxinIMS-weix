@@ -32,6 +32,7 @@
 		<li class="active"><a href="${ctx}/wechat/config/form">文字回复</a></li>
 	</ul><br/>
 	<form:form id="inputForm" modelAttribute="wechatConfig" action="${ctx}/wechat/config/save" method="post" class="form-horizontal">
+		<form:hidden path="id"/>
 		<form:hidden path="weChat.id"/>
 		<tags:message content="${message}"/>
 		<div class="control-group">
