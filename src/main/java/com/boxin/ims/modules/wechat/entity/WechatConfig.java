@@ -42,7 +42,7 @@ import com.thinkgem.jeesite.common.persistence.BaseEntity;
 public class WechatConfig extends BaseEntity {
 	
 	private static final long serialVersionUID = 1L;
-	private Long id; 		// 编号
+	private Long id ; 		// 编号
 	private WeChat weChat;	//对应的微信账号
 	private String upContent; 	//上行数据内容
 	private String downContent; //下行数据内容
