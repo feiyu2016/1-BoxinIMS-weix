@@ -11,19 +11,19 @@
 	
 </head>
 <body>
-
-	<iframe name="myframe" style="display:none"></iframe>
-	<table>
-		<tr>
-			<td>&nbsp;</td>
-			<td><img src="${qrcodeImg }"/></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td><a class="btn" href="${qrcodeImg }&action=d&fn=${coupon.number }"  target="myframe">保存</a> </td>
-			<td>&nbsp;</td>
-		</tr>
-	</table>
+	<form action="${qrcodeImg }&action=d&fn=${coupon.number }" method="post" target="_self">
+		<table>
+			<tr>
+				<td>&nbsp;</td>
+				<td><img src="${qrcodeImg }" name="${coupon.number }" /></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><button type="submit" class="btn btn-success" >保存</button> </td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>
