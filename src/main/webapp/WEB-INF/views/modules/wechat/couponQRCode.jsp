@@ -11,6 +11,8 @@
 	
 </head>
 <body>
+
+	<iframe name="myframe" style="display:none"></iframe>
 	<table>
 		<tr>
 			<td>&nbsp;</td>
@@ -19,7 +21,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td><a class="btn" href="${qrcodeImg }&action=d&fn=${coupon.number }" >保存</a> </td>
+			<td><a class="btn" href="${qrcodeImg }&action=d&fn=${coupon.number }"  target="myframe">保存</a> </td>
 			<td>&nbsp;</td>
 		</tr>
 	</table>
