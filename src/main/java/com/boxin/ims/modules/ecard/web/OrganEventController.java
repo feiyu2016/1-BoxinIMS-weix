@@ -80,7 +80,7 @@ public class OrganEventController extends BaseController {
 
 	@RequiresPermissions("ecard:organEvent:edit")
 	@RequestMapping(value = "save")
-	public String save(OrganEvent organEvent, Model model, RedirectAttributes redirectAttributes) {
+	public String save(@RequestParam(value="organEvent",required=false) OrganEvent organEvent, Model model, RedirectAttributes redirectAttributes) {
 		if (!beanValidator(model, organEvent)){
 			return form(organEvent, model,redirectAttributes);
 		}
