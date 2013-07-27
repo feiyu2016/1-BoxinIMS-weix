@@ -47,7 +47,7 @@
 
 
 				<div id="myModal${gift.id }" class="modal hide fade" tabindex="-1"
-					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:40px;">
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:400px;">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">×</button>
