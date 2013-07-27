@@ -66,13 +66,26 @@
 		<div class="row">
 			<div class="row">
 				<div class="grid_3">
-				<audio controls="controls" autoplay="autoplay">
-				  <source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
-				您的手机浏览器不支持播放声音文件.
-				</audio>
-							<p class="text-center">${gift.content }</p>
+				
+				<c:if test="${password eq '1'}">
+				${postUrl}
+					<form id="inputForm"  action="http://localhost/jeesite/f/gift/3.html" method="post" class="form-horizontal"  >
+						<tags:message content="${message}"/>
+						<div class="control-group">
+							密码: &nbsp;<input type="password" name="pwd" class="input-small" maxlength="40" />
+						</div>
+						<input id="btnSubmit" class="btn btn-primary " type="submit" value="提交"/>
+					</form>
+				</c:if>
+				<c:if test="${password eq '0'}">
+					<audio controls="controls" autoplay="autoplay">
+					  <source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
+					您的手机浏览器不支持播放声音文件.
+					</audio>
+								<p class="text-center">${gift.content }</p>
+				</c:if>
 					</div>
-				</div>
+						</div>
 			</div>
 	</header>
 	
