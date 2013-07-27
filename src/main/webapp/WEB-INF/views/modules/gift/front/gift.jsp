@@ -66,20 +66,18 @@
 		<div class="row">
 			<div class="row">
 				<div class="grid_3">
+				<audio controls="controls" autoplay="autoplay">
+				  <source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
+				您的手机浏览器不支持播放声音文件.
+				</audio>
+							<p class="text-center">${gift.content }</p>
 					</div>
 				</div>
 			</div>
 	</header>
 	
-	<div>
-		<p class="text-center">${gift.content }</p>
-	</div>
 	
 	
 	
-<audio controls="controls" autoplay="autoplay">
-  <source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
-Your browser does not support the audio element.
-</audio>
 </body>
 </html>
