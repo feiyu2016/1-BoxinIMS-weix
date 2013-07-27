@@ -62,11 +62,9 @@
 </head>
 
 <body>
-	
-		<div class="row">
+			<header>
 			<div class="row">
 				<div class="grid_3">
-
 					<c:if test="${password eq '1'}">
 
 						<form id="inputForm" action="${postUrl}" method="post"
@@ -89,7 +87,7 @@
 					</c:if>
 				</div>
 			</div>
-		</div>
+			</header>
 	
 	<footer>
 		<div id="footer">
