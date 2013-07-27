@@ -25,19 +25,11 @@
 		<div class="row">
 			<div class="row">
 				<div class="grid_3">
-					<h1>${ecard.name }</h1>
-					<div id="photo">
-						<img src="${url }" alt="我的照片" width="200" height="100" />
 					</div>
 				</div>
 			</div>
-		</div>
 	</header>
 
-
-	<audio  controls="controls"  autoplay="autoplay"> 
-		<source src="${ctxStatic }/flash/gift_2_1374948782743.mp3" type="audio/mpeg" />
-	</audio>
 	
 	<audio controls="controls" autoplay="autoplay">
   <source src="${ctxStatic }/flash/gift_2_1374948782743.mp3" type="audio/mpeg" />
