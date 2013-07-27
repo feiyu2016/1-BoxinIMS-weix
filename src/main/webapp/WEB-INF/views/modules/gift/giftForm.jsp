@@ -52,6 +52,18 @@
 				<input type="file" name="voiceFile" htmlEscape="false"    onchange="setFilePath(this.value)"/> &nbsp;<span class="alert">请上传Mp3文件，文件大小不得超过5M.</span>
 			</div>
 		</div>
+		
+		
+		<div class="control-group">
+			<label class="control-label">密码:</label>
+			<div class="controls">
+				<form:input path="password" htmlEscape="false" maxlength="50" />  <span class="alert">需要保密的语音，请设置密码，不设置默认为不加密.</span> 
+			</div>
+			
+		</div>
+		
+		
+		
 		<div class="control-group" style="display:none">
 			<label class="control-label">音频文件:</label>
 			<div class="controls">
