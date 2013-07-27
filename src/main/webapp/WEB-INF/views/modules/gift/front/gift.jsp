@@ -62,9 +62,7 @@
 </head>
 
 <body>
-	<div class="container">
 	
-	<header>
 		<div class="row">
 			<div class="row">
 				<div class="grid_3">
@@ -92,7 +90,6 @@
 				</div>
 			</div>
 		</div>
-	</header>
 	
 	<footer>
 		<div id="footer">
@@ -104,7 +101,6 @@
 		</div>
 	
 	</footer>
-	</div>
 	
 	
 	
