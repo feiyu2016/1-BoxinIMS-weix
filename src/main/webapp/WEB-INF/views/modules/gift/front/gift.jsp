@@ -62,7 +62,7 @@
 </head>
 
 <body>
-	<header> </header>		
+	<header> 
 	
 	<div class="row">
 				<div class="grid_3">
@@ -89,13 +89,16 @@
 					</c:if>
 				</div>
 			</div>
-					<div id="footer" style="margin-top:200px;">
+	<div style="margin-bottom:20px;">
 						<p>
 							&copy;2012-2013 <a
 								href="http://2weima.hdzhx.com/MediaApp/show/943/429">邯郸智讯二维码</a>
 							&nbsp;&nbsp;0310-3298268
 						</p>
 					</div>
+	</header>		
+	
+	
 	
 	
 	
