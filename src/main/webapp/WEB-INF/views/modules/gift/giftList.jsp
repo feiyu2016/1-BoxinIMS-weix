@@ -29,7 +29,7 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered ">
-		<thead><tr><th>名称</th><th>开始时间</th><th>结束时间</th><th>播放次数</th><th>简介</th><th>二维码</th><shiro:hasPermission name="gift:gift:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>名称</th><th>开始时间</th><th>结束时间</th><th>播放次数</th><th>二维码</th><shiro:hasPermission name="gift:gift:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="gift">
 			<tr>
@@ -37,7 +37,6 @@
 				<td>${gift.createDate}</td>
 				<td>${gift.endDate}</td>
 				<td>${gift.pvCount}</td>
-				<td>${gift.content}</td>
 				<td><button class="btn btn-success"  data-toggle="modal" data-target="#myModal${gift.id }">查看</button></td>
 				<shiro:hasPermission name="gift:gift:edit"><td>
     				<a href="${ctx}/gift/gift/form?id=${gift.id}">修改</a>
