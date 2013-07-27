@@ -51,14 +51,13 @@
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"
 				aria-hidden="true">×</button>
-			<h3 id="myModalLabel">查看二维码</h3>
+			<h3 id="myModalLabel">二维码</h3>
 		</div>
 		<div class="modal-body">
 			<p><img src="${qrCodeUrl }${gift.qrCode.id}"/></p>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-			<button class="btn btn-primary">Save changes</button>
 		</div>
 	</div>
 		</c:forEach>
