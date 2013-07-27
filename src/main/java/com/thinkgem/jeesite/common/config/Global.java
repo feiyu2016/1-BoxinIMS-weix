@@ -37,7 +37,8 @@ public class Global {
 	
 	public static final String MOBILE_SITE_PATH = FRONT_PATH +"/mobsite";
 	public static final String MOBILE_ECARD_PATH = FRONT_PATH +"/ecard";
-	
+	public static final String MOBILE_GIFT_PATH = FRONT_PATH +"/gift";
+	public static final String CONTEXT_PATH = "/zxims";
 	public static final String DNS = "http://www.hdzhx.com";
 	public static final String DNS_TEMP = "http://192.168.1.102:8080/jeesite";
 	

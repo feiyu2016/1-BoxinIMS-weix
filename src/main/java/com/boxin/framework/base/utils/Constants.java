@@ -83,6 +83,15 @@ public class Constants {
 	}
 	
 	
+	public static String getGiftResourceSavePath(){
+		return DictUtils.getDictValue("礼物音频路径", "res_gift_voice_path", "礼物音频存储路径");
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

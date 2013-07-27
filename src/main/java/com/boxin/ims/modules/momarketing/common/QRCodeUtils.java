@@ -31,7 +31,8 @@ import com.thinkgem.jeesite.common.utils.DateUtils;
  */
 public class QRCodeUtils {
 	
-	private  static final String QRCODE_URL_PRIX = "http://www.hdzhx.com/zxims/servlet/qrc?qrcodeId=";
+	public   static final String QRCODE_URL_PRIX = "http://www.hdzhx.com/zxims/servlet/qrc?qrcodeId=";
+	private static final String  QRCODE_URL_GIFT_PRIX = "http://www.hdzhx.com/zxims/";
 	
 	/**
 	 * @author Jakemanse
@@ -113,6 +114,18 @@ public class QRCodeUtils {
 		return basePath  + Global.MOBILE_ECARD_PATH +"/"+ecardId+Global.URL_SUFFIX;
 	}
 	
+	
+	/**
+	 * @author Jakemanse
+	 * @time 2013-7-28  上午2:06:29
+	 * @function <p> 生成礼物的URL如：http://www.hdzhx.com/zxims/f/gift/5.html </p>
+	 * @param giftId
+	 * @return
+	 */
+	public static String generateGiftURL(Long giftId){
+		
+		return Global.DNS + Global.CONTEXT_PATH + Global.MOBILE_GIFT_PATH +"/"+giftId+Global.URL_SUFFIX;
+	}
 	
 	
 	/**
