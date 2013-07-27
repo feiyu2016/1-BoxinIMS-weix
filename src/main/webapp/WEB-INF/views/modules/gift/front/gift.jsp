@@ -68,8 +68,8 @@
 				<div class="grid_3">
 				
 				<c:if test="${password eq '1'}">
-				${postUrl}
-					<form id="inputForm"  action="http://localhost/jeesite/f/gift/3.html" method="post" class="form-horizontal"  >
+				
+					<form id="inputForm"  action="${postUrl}" method="post" class="form-horizontal"  >
 						<tags:message content="${message}"/>
 						<div class="control-group">
 							密码: &nbsp;<input type="password" name="pwd" class="input-small" maxlength="40" />
