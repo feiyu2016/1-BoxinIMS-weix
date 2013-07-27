@@ -4,7 +4,7 @@
 
 <html>
 <head>
-<title>${ecard.name}</title>
+<title>邯郸智讯二维码</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="decorator" content="default" />
 <meta name="description" content="Bianca Mobile Template">
@@ -63,12 +63,11 @@
 
 <body>
 			<header>
-			<div class="row">
-				<div class="grid_3">
 					<c:if test="${password eq '1'}">
 
 						<form id="inputForm" action="${postUrl}" method="post"
 							class="form-horizontal">
+							<input name="flag" value="1"/>
 							<tags:message content="${message}" />
 							<div class="control-group">
 								密码: &nbsp;<input type="password" name="pwd" class="input-small"
@@ -85,8 +84,6 @@
 						</audio>
 						<p class="text-center">${gift.content }</p>
 					</c:if>
-				</div>
-			</div>
 			</header>
 	
 	<footer>
