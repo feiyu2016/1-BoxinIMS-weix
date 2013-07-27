@@ -62,35 +62,51 @@
 </head>
 
 <body>
+	<div class="container">
+	
 	<header>
 		<div class="row">
 			<div class="row">
 				<div class="grid_3">
-				
-				<c:if test="${password eq '1'}">
-				
-					<form id="inputForm"  action="${postUrl}" method="post" class="form-horizontal"  >
-						<tags:message content="${message}"/>
-						<div class="control-group">
-							密码: &nbsp;<input type="password" name="pwd" class="input-small" maxlength="40" />
-						</div>
-						<input id="btnSubmit" class="btn btn-primary " type="submit" value="提交"/>
-					</form>
-				</c:if>
-				<c:if test="${password eq '0'}">
-					<audio controls="controls" autoplay="autoplay">
-					  <source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
-					您的手机浏览器不支持播放声音文件.
-					</audio>
-								<p class="text-center">${gift.content }</p>
-				</c:if>
-					</div>
-						</div>
+
+					<c:if test="${password eq '1'}">
+
+						<form id="inputForm" action="${postUrl}" method="post"
+							class="form-horizontal">
+							<tags:message content="${message}" />
+							<div class="control-group">
+								密码: &nbsp;<input type="password" name="pwd" class="input-small"
+									maxlength="40" />
+							</div>
+							<input id="btnSubmit" class="btn btn-primary " type="submit"
+								value="提交" />
+						</form>
+					</c:if>
+					<c:if test="${password eq '0'}">
+						<audio controls="controls" autoplay="autoplay">
+							<source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
+							您的手机浏览器不支持播放声音文件.
+						</audio>
+						<p class="text-center">${gift.content }</p>
+					</c:if>
+				</div>
 			</div>
-			<div id="footer">
-			<p> &copy;2012-2013 <a href="http://2weima.hdzhx.com/MediaApp/show/943/429">邯郸智讯二维码</a> &nbsp;&nbsp;0310-3298268</p>
 		</div>
 	</header>
+	
+	<footer>
+		<div id="footer">
+			<p>
+				&copy;2012-2013 <a
+					href="http://2weima.hdzhx.com/MediaApp/show/943/429">邯郸智讯二维码</a>
+				&nbsp;&nbsp;0310-3298268
+			</p>
+		</div>
+	
+	</footer>
+	</div>
+	
+	
 	
 	
 	
