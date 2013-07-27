@@ -62,8 +62,9 @@
 </head>
 
 <body>
-			<header>
-			<div class="row">
+	<header> </header>		
+	
+	<div class="row">
 				<div class="grid_3">
 					<c:if test="${password eq '1'}">
 
@@ -95,9 +96,6 @@
 							&nbsp;&nbsp;0310-3298268
 						</p>
 					</div>
-			</header>
-	
-	
 	
 	
 	
