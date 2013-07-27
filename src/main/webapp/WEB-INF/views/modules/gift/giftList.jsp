@@ -44,23 +44,25 @@
 					<a href="${ctx}/gift/gift/delete?id=${gift.id}" onclick="return confirmx('确认要删除该礼品吗？', this.href)">删除</a>
 				</td></shiro:hasPermission>
 			</tr>
-			
-			
-			<div id="myModal${gift.id }" class="modal hide fade" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal"
-				aria-hidden="true">×</button>
-			<h3 id="myModalLabel">二维码</h3>
-		</div>
-		<div class="modal-body">
-			<p><img src="${qrCodeUrl }${gift.qrCode.id}"/></p>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-		</div>
-	</div>
-		</c:forEach>
+
+
+				<div id="myModal${gift.id }" class="modal hide fade" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:40px;">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">×</button>
+						<h3 id="myModalLabel">二维码</h3>
+					</div>
+					<div class="modal-body">
+						<p>
+							<img src="${qrCodeUrl }${gift.qrCode.id}" />
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+					</div>
+				</div>
+			</c:forEach>
 		</tbody>
 	</table>
 	
