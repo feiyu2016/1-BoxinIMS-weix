@@ -71,6 +71,12 @@
 			</div>
 	</header>
 	
+	<div>
+		<p class="text-center">${gift.content }</p>
+	</div>
+	
+	
+	
 <audio controls="controls" autoplay="autoplay">
   <source src="${ctxStatic }/audio/${fileName}" type="audio/mpeg" />
 Your browser does not support the audio element.
