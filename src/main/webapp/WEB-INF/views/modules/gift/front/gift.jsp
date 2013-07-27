@@ -69,7 +69,7 @@
 
 						<form id="inputForm" action="${postUrl}" method="post"
 							class="form-horizontal">
-							<input name="flag" value="1"/>
+							<input type="hidden" name="flag" value="1"/>
 							<tags:message content="${message}" />
 							<div class="control-group">
 								密码: &nbsp;<input type="password" name="pwd" class="input-small"
