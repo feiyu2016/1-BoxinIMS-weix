@@ -38,7 +38,7 @@
 				<td>${gift.endDate}</td>
 				<td>${gift.pvCount}</td>
 				<td>${gift.content}</td>
-				<td><button class="btn btn-success"  data-toggle="modal" data-target="#myModal">查看</button></td>
+				<td><button class="btn btn-success"  data-toggle="modal" data-target="#myModal${gift.id }">查看</button></td>
 				<shiro:hasPermission name="gift:gift:edit"><td>
     				<a href="${ctx}/gift/gift/form?id=${gift.id}">修改</a>
 					<a href="${ctx}/gift/gift/delete?id=${gift.id}" onclick="return confirmx('确认要删除该礼品吗？', this.href)">删除</a>
@@ -46,7 +46,7 @@
 			</tr>
 			
 			
-			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"
+			<div id="myModal${gift.id }" class="modal hide fade" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal"
